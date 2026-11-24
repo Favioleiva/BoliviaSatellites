@@ -20,7 +20,8 @@ por archivo local. El script verifica la igualdad de bytes originales tras
 decodificarlas. No se cargan todos los archivos en memoria. Los bloques mensuales
 de Black Marble conservan observaciones diarias; no son promedios mensuales.
 
-El candidato con 23 campos supera el presupuesto `dist` de 250 MiB. Esto queda
-registrado como fallo de distribución, sin modificar el umbral y sin congelar
-la arquitectura. Los ZIP versionados se dividen en assets menores de 250 MiB;
-este presupuesto por asset es distinto al presupuesto total de Netlify.
+Revision 11: el supervisor autoriza **300 MiB** para el total de dist. El
+candidato con 23 campos (~287 MiB) cabe sin modificar sus datos. Los ZIP conservan
+el limite de 250 MiB por asset, distinto del presupuesto total. / Revision 11
+authorizes a **300 MiB** total dist budget; the ~287 MiB candidate retains all
+original fields and bytes. ZIP assets remain below 250 MiB each.

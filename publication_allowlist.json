@@ -22,8 +22,8 @@
     },
     {
       "path": "netlify.toml",
-      "bytes": 522,
-      "sha256": "9540f36e3367514f7a58f0b065323a8543f5a4241206f8f8cdb4755dc08cdc11"
+      "bytes": 549,
+      "sha256": "7f0fcb376399213b1dd2933a072a93f19931a6aee643f2f10fcaf4ed6e9fcbfd"
     },
     {
       "path": "package-lock.json",
@@ -37,13 +37,13 @@
     },
     {
       "path": "README.en.md",
-      "bytes": 5545,
-      "sha256": "1c28c2725c779996955f4518bfc466191f64d31c6e650b72487394ee171e6cb8"
+      "bytes": 5521,
+      "sha256": "6ccb584949de5d10e87db5fd07954bbedd02e9693ee8ce0aeca0e28dafc2369d"
     },
     {
       "path": "README.md",
-      "bytes": 6631,
-      "sha256": "21f85200c6264f1a9582b26e3b6296db2a8e1f502047c9133a188851774e8a48"
+      "bytes": 6502,
+      "sha256": "fea7251a330857dba533730db5c22b63873b2a4d80be78fb6d43ee543829671f"
     },
     {
       "path": "requirements.lock",
@@ -128,7 +128,7 @@
     {
       "path": "scripts/build.mjs",
       "bytes": 2334,
-      "sha256": "b5f6dc1d399eeef6f1d5d41ce05e5b71276781b2c0de96b9de72fd52bf31f571"
+      "sha256": "e9b016dc79216dfa89a3a3756ee9c461c034ad130c1bf5782ea51f77aabe341b"
     },
     {
       "path": "scripts/build_netlify.py",
@@ -143,7 +143,7 @@
     {
       "path": "scripts/build_release.py",
       "bytes": 8582,
-      "sha256": "3c3699db2b8c75463649c5fbd380f544ef3255f56265c726e9e38e2522dbdfd3"
+      "sha256": "ab37d19c13b7fad769875eb9dc4e7517f4db715c1129d061893f0e9e9d85665b"
     },
     {
       "path": "scripts/compact_blackmarble_candidate.py",
@@ -178,7 +178,7 @@
     {
       "path": "scripts/summarize_validation.py",
       "bytes": 12703,
-      "sha256": "db10d392137c4cbfc6b36b768967380775d2ffadfcb4d53a91363d3e77b7f176"
+      "sha256": "5c232908df75da334b0455305d7c0a19b755b758e8b9a33fe859bb700dfe68a1"
     },
     {
       "path": "scripts/update_context_pools.py",
@@ -192,8 +192,8 @@
     },
     {
       "path": "scripts/visual_review.py",
-      "bytes": 15626,
-      "sha256": "02f0ae30d98c08a24a3c30e3a20dab8680d436d59a8f9f522e0e9b50671a8768"
+      "bytes": 15763,
+      "sha256": "ec541102cc818d5db169b7da314e08efa3cff5ffe460ae45ad57fae1eeb1284d"
     },
     {
       "path": "src/app.js",
@@ -457,8 +457,8 @@
     },
     {
       "path": "public/docs/architecture.md",
-      "bytes": 9215,
-      "sha256": "ccdf5f82e5ca0e2826739f859bd354070fb876694aa27ed70127cf73a5cc5a13"
+      "bytes": 9283,
+      "sha256": "d9a46295fcce2de4088b8b6113a6a7dbc9acd9d82d1f785627fce37342f2b85a"
     },
     {
       "path": "public/docs/blackmarble-variables.md",
@@ -487,8 +487,8 @@
     },
     {
       "path": "public/docs/publication.md",
-      "bytes": 7334,
-      "sha256": "c8ce231a34b01f48f8e34e0c5b5cd4f0a3492bf1e374ff769644c0f9dce09aa1"
+      "bytes": 7354,
+      "sha256": "465b265ac291807a172b61606438dbe4b02d149cef3fae0d4bc936a1ebf320a3"
     },
     {
       "path": "public/docs/reproducibility.md",
@@ -502,8 +502,8 @@
     },
     {
       "path": "public/docs/web-encoding.md",
-      "bytes": 1654,
-      "sha256": "30410d10ff2680e48ddbc0e7e6f0d9dbb74b0889c1d8585a109b28b13366963e"
+      "bytes": 1752,
+      "sha256": "e3ae9dc01e73af672914ff9013e1952b4ee0a058dc7a8aaf5b2b3a4ea0cc6eef"
     },
     {
       "path": "public/geo/bolivia339.geojson",
@@ -543,7 +543,7 @@
     {
       "path": "tests/performance/revision_02.py",
       "bytes": 3947,
-      "sha256": "a569911e5e80537e4e4df9e162d437d31faa8b5b898554e66038501a04a66b5a"
+      "sha256": "eabc86aa60bcd96b08e0c6c2a96b6e9d1e0ead61c51ba78c3584d0b197952e36"
     },
     {
       "path": "tests/scientific/blackmarble_extension.py",
@@ -602,10 +602,10 @@
     },
     {
       "path": "public/downloads/download_manifest.json",
-      "bytes": 5354,
-      "sha256": "04b2460a41c2e2487aa7a0740a156c5c59521a4b12341d6c00bd0536c38647cc"
+      "bytes": 5326,
+      "sha256": "95e17301bf5860534f9674a5b9ab0585e433cb56de26729cccb4d047ea3d826b"
     }
   ],
   "files_count": 120,
-  "bytes": 5093452
+  "bytes": 5093621
 }

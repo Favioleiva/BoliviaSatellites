@@ -11,7 +11,7 @@ local preparation and validation, not uploads, deployment, spending or acceptanc
 |---|---|---|
 | GitHub `Favioleiva/BoliviaSatellites` | Código, pruebas, documentación ES/EN, geometría exacta, diccionarios y manifiestos / Code, tests, bilingual docs, exact geography, dictionaries and manifests | Copia local con allowlist; repositorio remoto vacío en la consulta del 24-11-2026 / Local allowlisted copy; remote empty when inspected on 2026-11-24 |
 | Releases | Maestros completos, fuentes suministradas, código y arrays web; ZIP versionados y SHA-256 / Full masters, supplied sources, code and exact web arrays; versioned ZIPs and SHA-256 | Archivos locales; ningún asset subido / Local assets only |
-| Netlify | Solo sitio compilado `dist`; descargas pesadas en Releases / Built `dist` only; large downloads in Releases | Bloqueado por presupuesto de 250 MiB / Blocked by the 250 MiB budget |
+| Netlify | Solo sitio compilado `dist`; descargas pesadas en Releases / Built `dist` only; large downloads in Releases | Presupuesto autorizado 300 MiB; Release y pruebas remotas pendientes / Authorized 300 MiB budget; data Release and remote checks pending |
 | Portable | Sitio, cápsulas Offline, código y paquetes científicos / Site, Offline capsules, code and scientific packages | Extraer todas las partes en una carpeta / Extract all parts together |
 
 Git excluye `public/data`, maestros, fuentes pesadas, `dist`, `Offline`, paquetes,
@@ -44,12 +44,11 @@ datos existentes diferentes; no extrae datos satelitales nuevos. / The restorer
 checks archive and member hashes, completeness and paths. It refuses differing
 existing data and never performs satellite extraction.
 
-**El build genera la vista local pero termina con código 1 mientras se exceda
-el presupuesto.** El sitio ocupa aproximadamente 287 MiB; no se aumenta el
-límite contractual ni se declara listo para Netlify. La evaluación de compresión
-sin pérdida disponible no resuelve esa diferencia. / The build creates the local
-preview but returns exit code 1 while over budget. The approximately 287 MiB site
-is not declared ready for Netlify; the contractual limit remains unchanged.
+El supervisor autorizo ampliar el presupuesto total de dist a **300 MiB**
+(314.572.800 bytes) en la revision 11. El sitio de ~287 MiB cabe en ese limite.
+Se mantienen 15.000 archivos y 250 MiB por ZIP. / The supervisor explicitly
+authorized a **300 MiB** total build budget in revision 11. The ~287 MiB site fits.
+The 15,000-file limit and 250 MiB per ZIP remain unchanged.
 
 ## Pasos posteriores a autorización / Steps after authorization
 
@@ -68,10 +67,10 @@ is not declared ready for Netlify; the contractual limit remains unchanged.
    probar los enlaces ES/EN. Nunca usar `latest` para reproducibilidad. / Verify
    actual URLs and hashes, replace local package routes with verified Release URLs,
    and test bilingual download links. Never use `latest` for reproducibility.
-5. Resolver y medir el presupuesto web antes de solicitar despliegue Netlify.
+5. Verificar el presupuesto autorizado de 300 MiB antes del despliegue Netlify.
    Revisar caché, descarga inicial, memoria y respuesta en el artefacto exacto.
    No conectar automáticamente un checkout sin datos ni ignorar el error del build.
-   / Resolve and measure the web budget before deployment; do not bypass the build
+   / Verify the authorized 300 MiB web budget before deployment; do not bypass the build
    failure or connect a source-only checkout without restoring its data.
 
 No se incluye automatización que publique o despliegue. No hay URL Netlify inventada.
@@ -97,12 +96,12 @@ Scientific ZIPs retain their recorded hashes without being downloaded into the
 site. The script generates pinned Release download links only in `dist`.
 
 La consulta del remoto durante esta correccion no encontro Releases. La subida
-de datos debe completarse por separado. El limite de 250 MiB permanece vigente:
-la restauracion no elimina ese bloqueo ni certifica un despliegue.
+de datos debe completarse por separado. La revision 11 autoriza 300 MiB para dist. La restauracion y el cumplimiento
+del tamano no certifican por si solos un despliegue remoto.
 
 No Release existed at the read-only check for this correction. Asset uploading is
-a separate step. The 250 MiB budget remains enforced; restoration alone does not
-make the current build deployable.
+a separate step. Revision 11 authorizes a 300 MiB dist budget. Restoration and size compliance
+alone do not certify remote deployment.
 
 Referencia tecnica / Technical reference:
 [Netlify build environment variables](https://docs.netlify.com/build/configure-builds/environment-variables/).

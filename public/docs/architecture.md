@@ -29,7 +29,7 @@ Los números finales, resultados crudos, restricciones de memoria y ensayos est�
 | Destino | Contenido previsto | Situación local |
 |---|---|---|
 | GitHub `Favioleiva/BoliviaSatellites` | Allowlist de código, tests, documentación, diccionarios, geografía y manifiestos pequeños | Preparado localmente; no push, sin credenciales ni maestros |
-| Netlify | Solo `dist`, con datos web exactos y recursos locales | No deploy; presupuesto 250 MiB / 15.000 archivos |
+| Netlify | Solo `dist`, con datos web exactos y recursos locales | No deploy; presupuesto autorizado 300 MiB / 15.000 archivos |
 | GitHub Releases | Maestros completos, fuentes municipales, código y datos web por partes versionadas | Assets ZIP locales <250 MiB, SHA-256; sin URLs remotas inventadas |
 | Portable | Sitio completo, cápsulas Offline, fuente y paquetes científicos; HTML directo y servidor opcional | Extraer todas las partes; explorar sin conexión externa |
 
@@ -59,4 +59,4 @@ The selected visual transform now applies to the map, sparkline and spaghetti. N
 
 ## Preparacion GitHub / GitHub preparation
 
-El checkout fuente se restaura con `scripts/restore_webdata.py`, que verifica todos los hashes. El manifiesto y el procedimiento estan en [publication.md](publication.md). La evaluacion adicional de compresion sin perdida no resuelve el presupuesto web: sigue BLOCKED para Netlify. / The source checkout can restore all exact web arrays using the hash-verified restorer. Additional lossless-compression estimates do not meet the web budget; Netlify remains blocked.
+El checkout fuente se restaura con `scripts/restore_webdata.py`, que verifica todos los hashes. El manifiesto y el procedimiento estan en [publication.md](publication.md). La revision 11 amplia por autorizacion humana el presupuesto total a 300 MiB; la Release de datos y las pruebas remotas siguen pendientes. / The source checkout can restore all exact web arrays using the hash-verified restorer. Revision 11 explicitly authorizes a 300 MiB total budget; data Release upload and remote deployment checks remain pending.

@@ -47,7 +47,7 @@ def main():
     # Metadata and full source are independent assets, not embedded in every data partition.
     web=parts('BoliviaSatellites_webdata',[(p,'public/data/'+p.relative_to(ROOT/'public/data').as_posix()) for p in (ROOT/'public/data').rglob('*') if p.is_file()]);files+=web
     dist_bytes=sum(p.stat().st_size for p in (ROOT/'dist').rglob('*') if p.is_file())
-    manifest={'web_distribution':{'bytes':dist_bytes,'limit_bytes':250*2**20,'status':'PASS' if dist_bytes<=250*2**20 else 'FAIL_BUDGET_LOCAL_CANDIDATE_ONLY'},'snapshot':'c05-local-v2','scope':'Seven unfiltered municipal source datasets; visual transforms never change downloads','status':'LOCAL_REVIEW_PENDING_HUMAN_ACCEPTANCE','publication':'NOT_AUTHORIZED','files':files}
+    manifest={'web_distribution':{'bytes':dist_bytes,'limit_bytes':300*2**20,'status':'PASS' if dist_bytes<=300*2**20 else 'FAIL_BUDGET_LOCAL_CANDIDATE_ONLY'},'snapshot':'c05-local-v2','scope':'Seven unfiltered municipal source datasets; visual transforms never change downloads','status':'LOCAL_REVIEW_PENDING_HUMAN_ACCEPTANCE','publication':'NOT_AUTHORIZED','files':files}
     # The source ZIP needs a usable download manifest but cannot contain its own hash.
     source_manifest=PACK/'source_download_manifest.json'
     source_manifest.write_text(json.dumps({**manifest,'source_archive_note':'Self archive omitted to avoid a circular checksum'},ensure_ascii=False,indent=2),encoding='utf-8')

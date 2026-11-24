@@ -3,7 +3,7 @@ command = "python3 scripts/build_netlify.py"
 publish = "dist"
 
 # Set BOLIVIA_DATA_RELEASE_TAG in Netlify after uploading the matching Release assets.
-# Missing data and the contractual 250 MiB budget remain build failures.
+# Missing data and the human-authorized 300 MiB budget remain build failures.
 
 [[headers]]
 for = "/data/*"

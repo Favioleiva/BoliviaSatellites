@@ -39,11 +39,10 @@ Open `http://127.0.0.1:8768/`. Restoration verifies archive and member SHA-256,
 sizes and paths against `distribution/webdata-manifest.json`. Complete data
 ZIPs must also be in `Packages` for their download links to work.
 
-**Known build limit:** `dist` is generated, but build exits 1 because its total
-size exceeds the contractual 250 MiB budget. The limit is not silently raised.
-The generated local site is reviewable; Netlify remains blocked pending size
-and other validation requirements. Do not connect a source-only checkout to an
-automatic deploy.
+**Current build budget:** 300 MiB (314,572,800 bytes), explicitly authorized by
+the supervisor in revision 11; the 15,000-file limit remains unchanged. The build
+enforces both limits. The current site is approximately 287 MiB. The data Release
+and remote deployment checks remain pending.
 
 After a separately authorized Release exists, an explicit immutable URL can be used:
 
@@ -97,7 +96,7 @@ validates the asset list, restores both webdata ZIPs using SHA-256, and writes
 versioned download URLs into `dist` only. Source manifests remain unchanged.
 
 Missing tag/Release produces `C05_RELEASE_REQUIRED` or `C05_RELEASE_UNAVAILABLE`.
-Restored data still trigger the existing `C05_BUDGET_EXCEEDED` (~287 versus 250 MiB).
-Do not retry deployment until both requirements are resolved. Nothing is published
+The restored ~287 MiB site fits the authorized 300 MiB budget, still enforced
+by `C05_BUDGET_EXCEEDED`. Upload the data Release and configure its tag before deployment. Nothing is published
 by the build. Offline QA: `python -B scripts/build_netlify.py --release-tag TAG --packages ../Packages`;
 this checks local packages and creates test URLs without verifying a remote Release.

@@ -1,8 +1,8 @@
 {
   "web_distribution": {
-    "bytes": 301131048,
-    "limit_bytes": 262144000,
-    "status": "FAIL_BUDGET_LOCAL_CANDIDATE_ONLY"
+    "bytes": 301131234,
+    "limit_bytes": 314572800,
+    "status": "PASS"
   },
   "snapshot": "c05-local-v2",
   "scope": "Seven unfiltered municipal source datasets; visual transforms never change downloads",
@@ -125,8 +125,8 @@
     {
       "name": "BoliviaSatellites_source.zip",
       "url": "downloads/packages/BoliviaSatellites_source.zip",
-      "bytes": 2142665,
-      "sha256": "0dbe7e452529a985a35d75cd0a09142397c001041533780da8f85b56b4931d7d",
+      "bytes": 2142684,
+      "sha256": "771b636bf1a74983c962c449752fbb2bdc3eef2c2e466a30978781ed64ba14e6",
       "publication": "LOCAL_REVIEW_ONLY",
       "kind": "source"
     }

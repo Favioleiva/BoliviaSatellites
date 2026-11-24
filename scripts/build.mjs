@@ -24,8 +24,8 @@ if(process.env.BOLIVIA_RELEASE_BASE_URL){
 }
 const walk=async d=>(await Promise.all((await readdir(d)).map(async n=>{let p=path.join(d,n);return (await stat(p)).isDirectory()?walk(p):p}))).flat();
 let files=await walk(path.join(root,'dist'));let bytes=0;for(const f of files)bytes+=(await stat(f)).size;
-console.log(JSON.stringify({files:files.length,bytes,limitBytes:250*1024*1024,limitFiles:15000}));
-if(bytes>250*1024*1024||files.length>15000){
-  console.error(`C05_BUDGET_EXCEEDED: ${bytes} bytes / ${files.length} files; limits 262144000 bytes / 15000 files. Data restoration succeeded, but deployment is still blocked.`);
+console.log(JSON.stringify({files:files.length,bytes,limitBytes:300*1024*1024,limitFiles:15000}));
+if(bytes>300*1024*1024||files.length>15000){
+  console.error(`C05_BUDGET_EXCEEDED: ${bytes} bytes / ${files.length} files; limits 314572800 bytes / 15000 files. Data restoration succeeded, but deployment is still blocked.`);
   process.exitCode=1;
 }

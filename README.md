@@ -43,11 +43,10 @@ Abra `http://127.0.0.1:8768/`. El restaurador verifica SHA-256, tamanos y cada
 miembro contra `distribution/webdata-manifest.json`, y rechaza partes mezcladas.
 Las descargas cientificas necesitan tambien sus ZIP correspondientes en `Packages`.
 
-**Estado actual del build:** genera `dist`, pero termina con codigo 1 porque el
-sitio completo supera el presupuesto contractual de 250 MiB. Ese fallo permanece
-visible; no se aumenta el limite. El sitio local se puede revisar despues del
-build. Netlify permanece bloqueado hasta resolver ese presupuesto y sus otras
-verificaciones pendientes. No conectar un checkout sin datos a un deploy automatico.
+**Presupuesto vigente:** 300 MiB (314.572.800 bytes), autorizado por el supervisor
+en la revision 11; se conserva el limite de 15.000 archivos. El build verifica
+ambos limites. El sitio actual ocupa aproximadamente 287 MiB. La Release de datos
+y las verificaciones remotas siguen pendientes.
 
 El tag propuesto y los assets todavia no son enlaces publicados. Tras su publicacion
 expresamente autorizada, puede restaurarse desde un tag concreto mediante:
@@ -111,8 +110,8 @@ assets, restaura los dos webdata ZIP con SHA-256 y escribe las URL versionadas
 solo en el manifiesto de `dist`. No modifica el manifiesto fuente ni publica.
 
 Sin Release/tag emite `C05_RELEASE_REQUIRED` o `C05_RELEASE_UNAVAILABLE`.
-Con los datos presentes, el candidato actual sigue fallando `C05_BUDGET_EXCEEDED`
-(~287 MiB >250 MiB). Este cambio resuelve la dependencia ausente, no autoriza
-ignorar ese limite. No reintentar el despliegue hasta resolver ambos requisitos.
+Con los datos restaurados, el sitio de ~287 MiB cabe en el presupuesto autorizado
+de 300 MiB. `C05_BUDGET_EXCEEDED` sigue protegiendo ese limite. Antes del despliegue
+deben existir la Release de datos y su tag configurado.
 Prueba offline: `python -B scripts/build_netlify.py --release-tag TAG --packages ../Packages`;
 verifica paquetes locales y produce enlaces de prueba, sin comprobar una Release remota.
