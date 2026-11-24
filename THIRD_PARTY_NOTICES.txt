@@ -1,4 +1,4 @@
-Bolivia Satellites — local review candidate, not published.
+Bolivia Satellites — Third-Party Notices and Attributions.
 
 Cartography and municipal crosswalk: exact Bolivia Agriculture / C04 reference 2015, compatible with the Mendez/DS4Bolivia framework. Original source terms and attribution retained; geographic identity does not establish exact historical boundary equivalence.
 
@@ -8,4 +8,4 @@ Trajectory/distribution concepts: Favioleiva/panelplots (9c0bf7b6fba7d540939e5a4
 
 Scientific sources: ECMWF ERA5-Land; NASA GPM IMERG V07; MODIS MCD64A1/MOD13Q1; HKU VIIRS-like; SatPM V6.GL.03; NASA VNP46A2. Source links and scientific restrictions are in public/docs/methods.md. Their licenses are not replaced by panelplots MIT or by any future application license.
 
-License for new project code and approval of redistributable source files are pending supervisor selection. Packages are for local review only. No blanket open-data license is asserted.
+Newly authored project code and documentation are released under the MIT License (see root LICENSE, Copyright (c) 2026 Favio Leiva). Third-party satellite datasets, cartography, and upstream materials retain their respective original licenses and terms; no blanket open-data license is asserted over third-party data.

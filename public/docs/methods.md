@@ -1,6 +1,6 @@
 # Bolivia Satellites — Métodos / Methods
 
-Esta versión local está pendiente de revisión humana. No certifica los productos científicamente bloqueados. / This local version awaits human review. Scientifically blocked products remain uncertified.
+No se declara certificación científica global; las limitaciones de cada producto se documentan abajo. / No global scientific certification is claimed; product-level limitations are documented below.
 
 ## Geografía / Geography
 

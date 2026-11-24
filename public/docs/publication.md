@@ -1,9 +1,6 @@
 # Preparación de publicación / Publication preparation
 
-**Candidato local, sin publicar. / Local candidate, not published.**
-La autorización actual comprende preparación y validación local. No incluye push,
-Releases, Netlify, gastos ni aceptación del contrato. / Current authorization covers
-local preparation and validation, not uploads, deployment, spending or acceptance.
+Documentación de distribución, arquitectura de publicación y presupuesto de despliegue para `Favioleiva/BoliviaSatellites`. / Distribution, publication architecture, and deployment budget documentation for `Favioleiva/BoliviaSatellites`.
 
 ## Destinos / Destinations
 

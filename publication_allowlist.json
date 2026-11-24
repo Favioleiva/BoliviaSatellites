@@ -3,7 +3,7 @@
   "target": "Favioleiva/BoliviaSatellites",
   "published": false,
   "scope": "All candidate source files except this manifest itself; Git metadata excluded",
-  "license": "Project code license pending human selection; third-party terms retained",
+  "license": "MIT License (Copyright (c) 2026 Favio Leiva) for newly authored code and documentation; third-party terms retained",
   "files": [
     {
       "path": ".gitattributes",
@@ -104,11 +104,6 @@
       "path": "LICENSES/panelplots-MIT.txt",
       "bytes": 1085,
       "sha256": "c6c4ac308f57bea2b48d4bdfee0f02f48c2546f79b119d6e7e615d2264cdf0f9"
-    },
-    {
-      "path": "LICENSES/PROJECT_LICENSE_PENDING.txt",
-      "bytes": 532,
-      "sha256": "0ef84ee2671c829cbcf985b9fe964f4f43c999253f8b228b952c0263bd4011a8"
     },
     {
       "path": "provenance/notebook_sanitization.json",

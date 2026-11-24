@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: "BoliviaSatellites: Bilingual Municipal Satellite and Environmental Data Platform for Bolivia (339 Municipalities)"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: Leiva
+    given-names: Favio
+repository-code: "https://github.com/Favioleiva/BoliviaSatellites"
+url: "https://github.com/Favioleiva/BoliviaSatellites"
+license: MIT
+date-released: "2026-11-24"
+abstract: >-
+  Bilingual (Spanish/English) scientific web platform for seven municipal
+  satellite and environmental products over 339 Bolivian municipalities
+  (ERA5-Land, GPM IMERG V07, HKU NTL, MODIS MCD64A1, MODIS MOD13Q1, SatPM PM2.5,
+  and NASA Black Marble). Newly authored code and documentation are released
+  under the MIT License; third-party satellite datasets and cartography retain
+  their respective licenses and terms.

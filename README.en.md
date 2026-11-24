@@ -3,9 +3,9 @@
 [Espanol](README.md) | [Methods](public/docs/methods.md) | [Publication preparation](public/docs/publication.md)
 
 A bilingual scientific application for seven products over the **exact 339
-Bolivia Agriculture municipalities**, linked by `asdf_id`. Human review is
-pending; preparing this repository does not constitute publication, scientific
-certification or contractual acceptance.
+Bolivia Agriculture municipalities**, linked by `asdf_id`. Scientific and
+technical limitations of each product are explicitly documented in
+[Methods](public/docs/methods.md).
 
 ## Current interface
 
@@ -81,10 +81,30 @@ Release assets carry complete data, aggregate sources, webdata and portable part
 Netlify would receive only a validated `dist`. Private evidence, contracts,
 credentials and scientific masters are excluded from the Git candidate.
 
-The new project-code license and redistribution selection await the supervisor's
-decision. Existing third-party licenses and notices remain in `LICENSES` and
-`THIRD_PARTY_NOTICES.txt`. No blanket open-data license is asserted. Nothing
-is published automatically.
+## License and citation
+
+Newly authored code and documentation in this repository are released under the
+**MIT License** ([LICENSE](LICENSE), Copyright (c) 2026 Favio Leiva). Existing
+third-party licenses and notices remain in `LICENSES` and
+`THIRD_PARTY_NOTICES.txt`; the MIT License does not replace the original terms
+of third-party satellite datasets, environmental data, or cartography.
+
+### How to cite
+
+> Leiva, F. (2026). *BoliviaSatellites: Bilingual Municipal Satellite and Environmental Data Platform for Bolivia (339 Municipalities)* [Software]. GitHub. https://github.com/Favioleiva/BoliviaSatellites
+
+```bibtex
+@software{leiva2026boliviasatellites,
+  author       = {Leiva, Favio},
+  title        = {{BoliviaSatellites: Bilingual Municipal Satellite and Environmental Data Platform for Bolivia (339 Municipalities)}},
+  year         = {2026},
+  publisher    = {GitHub},
+  url          = {https://github.com/Favioleiva/BoliviaSatellites},
+  note         = {MIT License (newly authored code and documentation); third-party satellite datasets (ECMWF ERA5-Land, NASA GPM/MODIS/Black Marble, HKU, SatPM) and cartography retain their respective licenses}
+}
+```
+
+Structured citation metadata are available in [CITATION.cff](CITATION.cff).
 
 ## Netlify bootstrap correction
 

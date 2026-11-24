@@ -4,8 +4,8 @@
 
 Plataforma cientifica bilingue para siete productos ambientales y satelitales,
 sobre las **339 geometrias originales de Bolivia Agriculture**, enlazadas por
-`asdf_id`. Candidato para revision humana; la preparacion de este repositorio
-no implica publicacion, aceptacion cientifica ni cierre del contrato.
+`asdf_id`. Las limitaciones cientificas y tecnicas de cada producto se
+documentan explicitamente en [Metodos](public/docs/methods.md).
 
 ## Aplicacion actual
 
@@ -87,17 +87,36 @@ SatPM; escala/extractor/QA y discrepancias numericas de Black Marble pendientes.
 No se declara certificacion cientifica global. Las seis discrepancias de codigos
 HKU/Black Marble se conservan y no se usa cartografia de 343 municipios.
 
-## Distribucion y licencia
+## Distribucion, licencia y cita
 
 Git: codigo, pruebas, documentacion, geografia, catalogos y manifiestos pequenos.
 Releases: datos, fuentes agregadas, webdata, codigo y portable por partes.
 Netlify: solo el `dist` validado; nunca maestros, Evidence, paquetes ni credenciales.
 Los archivos privados de auditoria y contratos no se incluyen en Git.
 
-La licencia del codigo nuevo y la seleccion de archivos redistribuibles estan
-pendientes de decision humana. Se preservan las atribuciones y licencias de
-terceros en `LICENSES` y `THIRD_PARTY_NOTICES.txt`; no se aplica una licencia
-abierta general a todos los datos. Nada se publica automaticamente.
+El codigo fuente y la documentacion originales de este repositorio se distribuyen
+bajo la **Licencia MIT** ([LICENSE](LICENSE), Copyright (c) 2026 Favio Leiva).
+Se preservan las atribuciones y licencias de terceros en `LICENSES` y
+`THIRD_PARTY_NOTICES.txt`; la licencia MIT no reemplaza las licencias ni los
+terminos originales de los productos satelitales, datos ambientales ni cartografia
+de terceros.
+
+### Como citar
+
+> Leiva, F. (2026). *BoliviaSatellites: Bilingual Municipal Satellite and Environmental Data Platform for Bolivia (339 Municipalities)* [Software]. GitHub. https://github.com/Favioleiva/BoliviaSatellites
+
+```bibtex
+@software{leiva2026boliviasatellites,
+  author       = {Leiva, Favio},
+  title        = {{BoliviaSatellites: Bilingual Municipal Satellite and Environmental Data Platform for Bolivia (339 Municipalities)}},
+  year         = {2026},
+  publisher    = {GitHub},
+  url          = {https://github.com/Favioleiva/BoliviaSatellites},
+  note         = {MIT License (newly authored code and documentation); third-party satellite datasets (ECMWF ERA5-Land, NASA GPM/MODIS/Black Marble, HKU, SatPM) and cartography retain their respective licenses}
+}
+```
+
+Metadatos de cita estructurados disponibles en [CITATION.cff](CITATION.cff).
 
 ## Correccion del arranque Netlify
 
