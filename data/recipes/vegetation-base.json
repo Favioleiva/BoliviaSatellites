@@ -1,0 +1,193 @@
+{
+  "recipe_id": "vegetation-base",
+  "product": "vegetation",
+  "frequency": "monthly",
+  "resolution": "250 m; 16-day composites",
+  "source": "MODIS/061/MOD13Q1",
+  "method": {
+    "band": "NDVI, EVI, SummaryQA",
+    "conversion": "raw index * 0.0001",
+    "temporal": "Median of 16-day composites with start date in calendar month",
+    "mask": "SummaryQA <= 1; original mask and coverage preserved"
+  },
+  "local_pipeline": "code/run.py",
+  "workflow_copies": [
+    {
+      "path": "code/source_workflows/vegetation/NDVIEVIBolivia.txt",
+      "sha256": "73ca34ce7c3a4256693d21480bcdb050f3fb131dc782427cb06328fb31398e62"
+    }
+  ],
+  "immutable_sources": [
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2000.csv",
+      "sha256": "8930c47092e42d156dbb7f1a8553f28295f1e7550e9df2b8134632d7c2101a5f",
+      "bytes": 2564577
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2001.csv",
+      "sha256": "906e6f349b627e8267fd8037fa30ac128973e9d14f4f165d85c8239a31fdc02e",
+      "bytes": 3074670
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2002.csv",
+      "sha256": "00aa009fdc95ecce180e5af167757b6f6ef8095a12c60ccd0a761e845f3289a5",
+      "bytes": 3074763
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2003.csv",
+      "sha256": "6f2049628b9005aca08c6336185d8d04c7e92ec4dcf546ee65b738d8d586636c",
+      "bytes": 3076131
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2004.csv",
+      "sha256": "f31903a61a6141a04bb901c39ed76c0f54b4fb0a0d890dc2abe398bdc34264af",
+      "bytes": 3075166
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2005.csv",
+      "sha256": "4b87a9535424eb9186a0fae27b48db26768a2a35af747aa0475d6022bc9a6f1a",
+      "bytes": 3075288
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2006.csv",
+      "sha256": "7c5dd59490bc9343e776e7fe30d756709a7e0cb3f054848079d4768a719d5c4e",
+      "bytes": 3074925
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2007.csv",
+      "sha256": "0571130515ff92b56218f135d4b58037141214d9a5fe31994312ebb7e742f375",
+      "bytes": 3075685
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2008.csv",
+      "sha256": "54a9287e6242555dd932d6417fe77a5fb4efa308609caa4e35c6fec9ef1680d4",
+      "bytes": 3075832
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2009.csv",
+      "sha256": "a8c885e6ef3e8b327fae1030400fdfeafec9720149e36347e47ee24155e02c2f",
+      "bytes": 3075498
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2010.csv",
+      "sha256": "a9c075df5f87c2ba0e6385c16f8de6fcd1ffa84936c2aed8f20043753b6a90d2",
+      "bytes": 3076334
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2011.csv",
+      "sha256": "00bc053069bd02728db3b57c83a7d3ce2adaa31390fa43d3e30fd9fd4b7f22c7",
+      "bytes": 3075207
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2012.csv",
+      "sha256": "9faf518a3a520a9721452ff3b677d3d1c5c32a3215faeaa5112f9848b575b336",
+      "bytes": 3073639
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2013.csv",
+      "sha256": "793cb072ff178a2d4439051f472932adb257d54e2c4c73f9da8640792b0f3c97",
+      "bytes": 3074473
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2014.csv",
+      "sha256": "d41ac7b1ddf4a825706dd652cb068014a14995b142d7fb997cff71b175e3ae54",
+      "bytes": 3074268
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2015.csv",
+      "sha256": "7377f470af1b15990f4040d5f4e5f24bae80b5d87343e0e954248a17d87c34f1",
+      "bytes": 3073969
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2016.csv",
+      "sha256": "3de7c795f1b6ed05b289fbf478785b9eae71a8beec69fc4748fe98abde722730",
+      "bytes": 3076206
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2017.csv",
+      "sha256": "feace27e24688c7b9c0020784e70b911367d6fec7c762a9131104711f3335421",
+      "bytes": 3074983
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2018.csv",
+      "sha256": "cfb09fc85a0e3d1fba62a487a258b6cab8e4241b1d54ca47a74f70e85c1db1a8",
+      "bytes": 3074125
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2019.csv",
+      "sha256": "45ff8fd9c9172b7f3281b86f24ce2ae3b327e75335721dc173282820bc9196bc",
+      "bytes": 3074455
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2020.csv",
+      "sha256": "ec331fbec06cadbe10e109726be16a73f3c7df744202d215ea174807fb7fc6e8",
+      "bytes": 3074662
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2021.csv",
+      "sha256": "f87d905ca663dc6298d7ab4ee23e695f381cf3af6d70cf151570eea31eb7df78",
+      "bytes": 3074872
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2022.csv",
+      "sha256": "5fcdb61ddce07e1675c7eac4e7a1fbcfa8f820fdf9977f5b5f42be193f145b5c",
+      "bytes": 3075209
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2023.csv",
+      "sha256": "59c827219a96e0fc37b0ea6a6bbcc457fbb465a647bbdbfb43c6b5b85686dcfc",
+      "bytes": 3076127
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2024.csv",
+      "sha256": "e2f34e4d5c98a3f6167127b99a117aaacfd893b3670776b19bb3081130819760",
+      "bytes": 3074145
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2025.csv",
+      "sha256": "d9b28e2ebbccf8d2a96d3722855058c8c4de6be1fd2e246bcab0ab1123492dc8",
+      "bytes": 3073156
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly-20261122T024423Z-1-001/GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly/Bolivia_MOD13Q1_NDVI_EVI_Monthly_Municipalities_2026.csv",
+      "sha256": "3881ad233e26ab5a9c8dc1beb63aba0bddfef861528846f47494343cf9e39b05",
+      "bytes": 1278326
+    },
+    {
+      "product": "vegetation",
+      "path": "Inputs/Satellites/MODIS_MOD13Q1_NDVI_EVI_Monthly/Inputs/NDVIEVIBolivia.txt",
+      "sha256": "73ca34ce7c3a4256693d21480bcdb050f3fb131dc782427cb06328fb31398e62",
+      "bytes": 11557
+    }
+  ],
+  "level_A": "Lossless reconstruction from supplied municipal aggregates",
+  "level_B": "See scientific limitations; no new extraction executed",
+  "geography": "Original Agriculture 339; asdf_id join; original codes retained"
+}

@@ -1,0 +1,26 @@
+{
+  "name": [
+    "Área quemada",
+    "Burned area"
+  ],
+  "unit": "km²",
+  "prefix": "burned_",
+  "default": "burned_area_km2",
+  "frequency": "monthly",
+  "source": "MODIS/061/MCD64A1",
+  "resolution": "500 m",
+  "status": "blocked",
+  "note": [
+    "Exploración de fuente: conteos y QA no reconciliados. Cero sin área válida no significa ausencia de fuego.",
+    "Source exploration: counts and QA unresolved. Zero without valid area does not mean no fire."
+  ],
+  "id": "fire",
+  "rows": 104073,
+  "first": "2000-11",
+  "last": "2026-05",
+  "period_count": 307,
+  "variant_names": [
+    "base"
+  ],
+  "elapsed_seconds": 5.469490700001188
+}

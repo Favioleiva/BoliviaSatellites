@@ -1,0 +1,235 @@
+{
+  "recipe_id": "hku-base",
+  "product": "hku",
+  "frequency": "monthly",
+  "resolution": "15 arc seconds (~500 m)",
+  "source": "HKU VIIRS-like monthly; DOI 10.25442/hku.31321315.v2",
+  "method": {
+    "band": "VIIRS-like monthly raster",
+    "conversion": "Source radiance; local raster-to-provider scale provenance pending",
+    "temporal": "Provider reconstructed monthly history",
+    "mask": "rasterstats all_touched=False; nodata handling in supplied notebook"
+  },
+  "local_pipeline": "code/run.py",
+  "workflow_copies": [
+    {
+      "path": "code/source_workflows/hku/[Python]_HKU_VIIRS_Monthly_Nighttime_Lights_×_Bolivia_Municipalities.ipynb",
+      "sha256": "95b2f0c7347304feefb95ffb7590f00aa3f90c6c11a71be5e34297d696753dad"
+    }
+  ],
+  "immutable_sources": [
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/outputs/HKU_VIIRS_Monthly_Bolivia_Admin_Stats_1992_2024.parquet",
+      "sha256": "5d7a00b0ffeca40ae60e884de247ee4284747fbe184e17a27edb20091c33e7d3",
+      "bytes": 4728537
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_1992.parquet",
+      "sha256": "e009f1a512f0a804b3503d7e38ee6e0fabeb13c3bdc4b02c0c404a0e16272d18",
+      "bytes": 184395
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_1993.parquet",
+      "sha256": "096bd0461daf89ce216c6db905eabcbba416bed1099ce247711c73d0df1ca4de",
+      "bytes": 219836
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_1994.parquet",
+      "sha256": "185ab576cd7f73401783631afccee099039b143fc6c1c08dcbc218408d5751a7",
+      "bytes": 217554
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_1995.parquet",
+      "sha256": "eb342dee130e0e25ed7e9dbb07cee3f4db328d027f25416a736cf38dfff8a420",
+      "bytes": 220417
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_1996.parquet",
+      "sha256": "76218aad735f35c64dc77b6b66213efbcde6ce29eaa93d88c3d90c9f0f93870e",
+      "bytes": 221403
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_1997.parquet",
+      "sha256": "bf794f1df1c3700b4f604526f40b03c506c315c3b12dd8ec448086a24920d95a",
+      "bytes": 222852
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_1998.parquet",
+      "sha256": "4a523ee244fa466376511f05c2da3ebdbb805e36ac84ebafd9a8c17995ffa09e",
+      "bytes": 223382
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_1999.parquet",
+      "sha256": "adfb47f1d4d5ea909714db95ddc9454bb438f292251a8aef035edd4b2fa55168",
+      "bytes": 224567
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2000.parquet",
+      "sha256": "e68e232923207ccc28e173b790427a22cfb6ffaa8fee208ada139787a37973c8",
+      "bytes": 223562
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2001.parquet",
+      "sha256": "b0c9cf64dcd635d5233c0c26bcabc758ef9d8c6fba9aa63db1924e654f9fa2f0",
+      "bytes": 223746
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2002.parquet",
+      "sha256": "effc74c7d3ee2968cd5e7ef36a54b1031eedb2e6bad701cbdde40f97dca246c1",
+      "bytes": 224351
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2003.parquet",
+      "sha256": "8f4e82349568540fd021ed6b8ce2e6b501989db34ff21830fa98191b3f73c7d2",
+      "bytes": 224342
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2004.parquet",
+      "sha256": "6ce435a6755fa16ec49cf12b728e952263d1576011dbe265ead0575e29454fba",
+      "bytes": 225490
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2005.parquet",
+      "sha256": "cc7bf75fa8e10b309f5c5642882d39b404796677dca47d1ea4f2a99a69453f12",
+      "bytes": 225554
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2006.parquet",
+      "sha256": "a68177cef32639625182c13f6627dad4b3a39355351434685cc30ac33ceb265b",
+      "bytes": 225090
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2007.parquet",
+      "sha256": "aa6ea4b243649dfe4adedbd93f40708bd743dc8bfb99b1077f2a85baca368655",
+      "bytes": 224990
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2008.parquet",
+      "sha256": "8c08046dbf042c1b30aae1426e0dd58e7adcd097c59845d9404d38f0ecceecae",
+      "bytes": 227540
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2009.parquet",
+      "sha256": "1507da27eb912e6696c77e06f4fa8fb6621e45077ba5e6a45f4f76f4e0d2ba38",
+      "bytes": 230115
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2010.parquet",
+      "sha256": "f01926606d2d3559b7b836a255d169168d5d96e935b23d323c442b5791f4924b",
+      "bytes": 232481
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2011.parquet",
+      "sha256": "cfb6588363c4d79057d003acf6e785a26e0f4151f759b16f66ec323211718800",
+      "bytes": 237854
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2012.parquet",
+      "sha256": "cdb9fe6c04aa80955bc5b4b76b66e9f67d0628530aa109392d3f34eb654d69d4",
+      "bytes": 235025
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2013.parquet",
+      "sha256": "f71d290e066a5c8119ab355dad879a0d56de4208eb85251ce4926b5987ce1d2d",
+      "bytes": 231785
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2014.parquet",
+      "sha256": "b25f8f49c42f04848c012b5131111cdc4bf7de78cf012d0b8b52df5d7f874aeb",
+      "bytes": 234528
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2015.parquet",
+      "sha256": "1238aa54a3782961c9ac51f0ca23ac8898c18d6c34dcce748fb71e600b950e13",
+      "bytes": 237032
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2016.parquet",
+      "sha256": "ce98493d29123edee0cbd65cd5d91548c12fb42056241d4583ce4ff49ed4209f",
+      "bytes": 238387
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2017.parquet",
+      "sha256": "b286e1d21037515923e8805fe1cf02a575c8ce5fa4987f32e19317a31d736f5f",
+      "bytes": 227938
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2018.parquet",
+      "sha256": "99b1a35573026f4264dc04f2b280579c4eb2b9e416728a54e8a7ff800b1f616b",
+      "bytes": 227783
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2019.parquet",
+      "sha256": "59f7dcc804674f2fda140bd4578bee404e5f9bb6cac59f91f5beca65261d930e",
+      "bytes": 232539
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2020.parquet",
+      "sha256": "0ca7d3c2cee2e4191acf7167b73848938b519016d600f85f4067e9e03108f409",
+      "bytes": 225964
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2021.parquet",
+      "sha256": "649edb1cccbd31166f3072ecd13589dbbc7b24e520833519c5a679ac0931460d",
+      "bytes": 226370
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2022.parquet",
+      "sha256": "3d287a9bc72a31fc99b807ffd4219336265ae2dd102431e9712c4478242800c4",
+      "bytes": 226760
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2023.parquet",
+      "sha256": "7b6afbc21a1d4d37d0a67d7a698826fd9693af83d292f192f0e5c85d3260439a",
+      "bytes": 227599
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/NTLVIIRSMonthly/hku_viirs_bolivia_work/checkpoints_yearly/HKU_VIIRS_Monthly_Bolivia_2024.parquet",
+      "sha256": "61f0ffd5c65375ed28b1dec4040537d708b474af0f27fc9e8eea82bd492f1b16",
+      "bytes": 230248
+    },
+    {
+      "product": "hku",
+      "path": "Inputs/Satellites/HKU_NTL_Monthly/Inputs/[Python]_HKU_VIIRS_Monthly_Nighttime_Lights_Ã—_Bolivia_Municipalities.ipynb",
+      "sha256": "d5a8eeb1bd54843eee46412b6c7d52b54490770e10368a6eeed5821d3fc99155",
+      "bytes": 74508533
+    }
+  ],
+  "level_A": "Lossless reconstruction from supplied municipal aggregates",
+  "level_B": "See scientific limitations; no new extraction executed",
+  "geography": "Original Agriculture 339; asdf_id join; original codes retained"
+}

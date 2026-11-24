@@ -1,0 +1,215 @@
+{
+  "recipe_id": "pm25-base",
+  "product": "pm25",
+  "frequency": "monthly",
+  "resolution": "0.01 degrees",
+  "source": "SatPM V6.GL.03",
+  "method": {
+    "band": "pm25",
+    "conversion": "Source concentration micrograms/m3; no emission conversion",
+    "temporal": "Monthly model estimate",
+    "mask": "Strict cells and optional all_touched fallback; fallback not activated in these sources"
+  },
+  "local_pipeline": "code/run.py",
+  "workflow_copies": [
+    {
+      "path": "code/source_workflows/pm25/Bolivia_Monthly_PM25_339.ipynb",
+      "sha256": "29c665d544784bcad1e659ff6d55cb6236656020d1157114eb1e213de51e648b"
+    },
+    {
+      "path": "code/source_workflows/pm25/Build_PM25_MegaParquet.py",
+      "sha256": "23fefd6422c07678115a927bd808fb7fb603cc7d1797f355d2139199a4331fc5"
+    }
+  ],
+  "immutable_sources": [
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/Bolivia_PM25_Monthly_1998_2024.parquet",
+      "sha256": "52e08e7d8ab5f28592a9cd55ca67cd15b2f21d4b196b81c30ac867d26b1c6ed9",
+      "bytes": 11081768
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_1998.parquet",
+      "sha256": "616dc98a880c533992fade29572fb84d277717a0bf0d1d0afb654268120718f1",
+      "bytes": 511277
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_1999.parquet",
+      "sha256": "d7f5cfa026dca13ee2e793ddca52e09a58807478c351be98166abebefdef9888",
+      "bytes": 510310
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2000.parquet",
+      "sha256": "811a54efdacf56c0d92c89163ee3b6fd2fe2dcc9a3754e528ab86790f6245421",
+      "bytes": 511494
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2001.parquet",
+      "sha256": "cfda8c3e3bc5a3e7ae20fe9d106b7977f52c227072f0dd8d3a74642bbee0807e",
+      "bytes": 509922
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2002.parquet",
+      "sha256": "0bd98ac0e122ab03ee31a70d5ec60d03615b668088bb5f851f9388e44c4f313c",
+      "bytes": 510587
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2003.parquet",
+      "sha256": "1009c6e1a0c1ffb32fe59df510c847e3ea54001a1799c26c9c9dcb7073e3bbda",
+      "bytes": 509531
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2004.parquet",
+      "sha256": "449e99ee4327eb6c1e740dbc5b90f672470af836bf034a03199ed28239f4977a",
+      "bytes": 510031
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2005.parquet",
+      "sha256": "6f384293e5cd12fa41d87191bb4d8c489d2614257920ac2ae17e9dc0071156cb",
+      "bytes": 511672
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2006.parquet",
+      "sha256": "f6fbff4fce97a92e31b52e0e51ca36d23604cf28c24a8bc5f1633fa5dbba65da",
+      "bytes": 509431
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2007.parquet",
+      "sha256": "c0cb6483efc63e9e4f6c08fe2c6e09916be032b4ab679e924f628090c036f902",
+      "bytes": 510804
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2008.parquet",
+      "sha256": "26ca6754c598694c07a7d3e3c139f1daee4f3eb7f8933f9fe976edf721ff6caf",
+      "bytes": 509826
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2009.parquet",
+      "sha256": "23b5fceb917111cdf76eaaa89cdcb20565279e3389b8e8a76af6aab48b149d32",
+      "bytes": 509669
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2010.parquet",
+      "sha256": "a70f821d1e5bd5fb180bcd6e099bb8808d6c867614f0c03496523cb7edbb191a",
+      "bytes": 510055
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2011.parquet",
+      "sha256": "a23b6db1847b7bcc853ea6a92bb300f2fda51ca27c53b8ed044a086f03130fba",
+      "bytes": 510357
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2012.parquet",
+      "sha256": "7e64e9168bbb4d9a26b3d4ec1cae2479a9ff08b14a1d4b182473c44a4b3b0fac",
+      "bytes": 510021
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2013.parquet",
+      "sha256": "02d5ce714ea9efd757393be6aa785908ad66388d28d1b211bca6194cd2f92b61",
+      "bytes": 511423
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2014.parquet",
+      "sha256": "c32b63bb41676396417605738ba91fc9028fcd75d6dd01a8d56e26bede3b9d8f",
+      "bytes": 509814
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2015.parquet",
+      "sha256": "0f930f55ca191b79dc058c8d1e978555a754412bcf0e2a2a5d7a77e35f9c14f2",
+      "bytes": 509840
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2016.parquet",
+      "sha256": "21a809925f2cbc65950badaa787e3844d9bad501fb2b83eb4a9cc5c0e619961d",
+      "bytes": 510451
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2017.parquet",
+      "sha256": "eb50d6646b5a26dd2267bbf5381b3d590e93f9ba0cfc32d548e1fa15e1853f11",
+      "bytes": 510445
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2018.parquet",
+      "sha256": "b1ab8bef297fba437c3404857b3e799ab8c93064e98b570fa6b5bb4e2cd444bf",
+      "bytes": 510519
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2019.parquet",
+      "sha256": "3c0668fc2b54cfc33baea7c2e7da423547b3383fcb78555d2a3dc72851207aaa",
+      "bytes": 510550
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2020.parquet",
+      "sha256": "ea7ee28e03cf40829056750740f33da2f82ab01d10cc2fc1fe483e9675313e78",
+      "bytes": 510716
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2021.parquet",
+      "sha256": "b451cdc625f612bdf743781fca5ddad37bdf9c941207c959f2b94c3da353712d",
+      "bytes": 509030
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2022.parquet",
+      "sha256": "ec2559286fc7a3eef8c4e4cc5867450a02c3458eeafd61283cbb674343a8b751",
+      "bytes": 511607
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2023.parquet",
+      "sha256": "dbd9efd070e0523981a854d292a3c5e302deb6bf4a5bfe7582af39ca64f3be8f",
+      "bytes": 510967
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/pm25_monthly/pm25_monthly/SatPM_V6GL03_PM25_Bolivia_Municipality_Stats_2024.parquet",
+      "sha256": "409c5c1c3295445abf99c7320af3e18012498b3e78e187326f94214982859156",
+      "bytes": 511807
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Build_PM25_MegaParquet.py",
+      "sha256": "88a9d80b45b83eb3e6b28cca2c988c25c4dff5a152a2c62ab79aceb6023acf9e",
+      "bytes": 3739
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/Bolivia_Monthly_PM25_339.ipynb",
+      "sha256": "50641916c3f03711f8c868627fe19fb9e42b078a14eae52323e85b3e58f1810f",
+      "bytes": 2428151
+    },
+    {
+      "product": "pm25",
+      "path": "Inputs/Satellites/PM25_Satellite_Estimates/Inputs/Bolivia_PM25_Validation.json",
+      "bytes": 5540,
+      "sha256": "f5d74d3a1513952d2c1060247abd96ff36fa9a636303f3ec1c133f05fca9500b"
+    }
+  ],
+  "level_A": "Lossless reconstruction from supplied municipal aggregates",
+  "level_B": "See scientific limitations; no new extraction executed",
+  "geography": "Original Agriculture 339; asdf_id join; original codes retained"
+}

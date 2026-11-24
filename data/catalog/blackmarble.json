@@ -1,0 +1,26 @@
+{
+  "name": [
+    "Black Marble · diario",
+    "Black Marble · daily"
+  ],
+  "unit": "source radiance · scale unverified",
+  "prefix": "",
+  "default": "sum",
+  "frequency": "daily",
+  "source": "VNP46A2 collection 5200, Gap_Filled_DNB_BRDF-Corrected_NTL",
+  "resolution": "15 arc seconds (~500 m)",
+  "status": "blocked",
+  "note": [
+    "Exploración de fuente con relleno NASA. Escala, QA y extractor original pendientes; no certificada.",
+    "NASA gap-filled source exploration. Scale, QA and original extractor pending; uncertified."
+  ],
+  "id": "blackmarble",
+  "rows": 1778733,
+  "first": "2012-01-19",
+  "last": "2026-05-31",
+  "period_count": 5247,
+  "variant_names": [
+    "base"
+  ],
+  "elapsed_seconds": 108.29356710000138
+}

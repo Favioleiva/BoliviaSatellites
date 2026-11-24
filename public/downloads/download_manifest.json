@@ -1,0 +1,134 @@
+{
+  "web_distribution": {
+    "bytes": 301129372,
+    "limit_bytes": 262144000,
+    "status": "FAIL_BUDGET_LOCAL_CANDIDATE_ONLY"
+  },
+  "snapshot": "c05-local-v2",
+  "scope": "Seven unfiltered municipal source datasets; visual transforms never change downloads",
+  "status": "LOCAL_REVIEW_PENDING_HUMAN_ACCEPTANCE",
+  "publication": "NOT_AUTHORIZED",
+  "files": [
+    {
+      "name": "era5_data_part01.zip",
+      "url": "downloads/packages/era5_data_part01.zip",
+      "bytes": 58830255,
+      "sha256": "58498cad98b43ef7017f207178424223fc60cafae2d61f080ec93d815f7e6a20",
+      "publication": "LOCAL_REVIEW_ONLY",
+      "product": "era5",
+      "frequency": "monthly",
+      "variant": "base",
+      "data": "Unfiltered municipal source statistics and lossless masters; original precision"
+    },
+    {
+      "name": "gpm_data_part01.zip",
+      "url": "downloads/packages/gpm_data_part01.zip",
+      "bytes": 36333328,
+      "sha256": "ae166b4e3222f60b6f2d87bb9d993a7d61897380bce76d92613814b5eb503624",
+      "publication": "LOCAL_REVIEW_ONLY",
+      "product": "gpm",
+      "frequency": "monthly",
+      "variant": "base",
+      "data": "Unfiltered municipal source statistics and lossless masters; original precision"
+    },
+    {
+      "name": "hku_data_part01.zip",
+      "url": "downloads/packages/hku_data_part01.zip",
+      "bytes": 32520207,
+      "sha256": "31f83162a1cc7dc43c1c54762a1154fd083ad650e2a65752fca3e1d91d53efd8",
+      "publication": "LOCAL_REVIEW_ONLY",
+      "product": "hku",
+      "frequency": "monthly",
+      "variant": "base",
+      "data": "Unfiltered municipal source statistics and lossless masters; original precision"
+    },
+    {
+      "name": "fire_data_part01.zip",
+      "url": "downloads/packages/fire_data_part01.zip",
+      "bytes": 18154037,
+      "sha256": "96710b6c7890187484ffcdf2db95f4935dfbe13f7de8dd2b21ff6777161fe7ab",
+      "publication": "LOCAL_REVIEW_ONLY",
+      "product": "fire",
+      "frequency": "monthly",
+      "variant": "base",
+      "data": "Unfiltered municipal source statistics and lossless masters; original precision"
+    },
+    {
+      "name": "vegetation_data_part01.zip",
+      "url": "downloads/packages/vegetation_data_part01.zip",
+      "bytes": 78665837,
+      "sha256": "50cb57f02d51a8bcdf7c71842f5ed0eebdd8146dc9c6f25d6e4289ad1fd231f9",
+      "publication": "LOCAL_REVIEW_ONLY",
+      "product": "vegetation",
+      "frequency": "monthly",
+      "variant": "base",
+      "data": "Unfiltered municipal source statistics and lossless masters; original precision"
+    },
+    {
+      "name": "pm25_data_part01.zip",
+      "url": "downloads/packages/pm25_data_part01.zip",
+      "bytes": 55643254,
+      "sha256": "154c5d7308fe626c74436bb0ddd127d30a42290659672f73a8c61e7e84631a4f",
+      "publication": "LOCAL_REVIEW_ONLY",
+      "product": "pm25",
+      "frequency": "monthly",
+      "variant": "base",
+      "data": "Unfiltered municipal source statistics and lossless masters; original precision"
+    },
+    {
+      "name": "blackmarble_data_part01.zip",
+      "url": "downloads/packages/blackmarble_data_part01.zip",
+      "bytes": 240961904,
+      "sha256": "018081855a3b042474087d7cc08c8e599f1ae5012098cc087b2d4103d75b8356",
+      "publication": "LOCAL_REVIEW_ONLY",
+      "product": "blackmarble",
+      "frequency": "daily",
+      "variant": "base",
+      "data": "Unfiltered municipal source statistics and lossless masters; original precision"
+    },
+    {
+      "name": "blackmarble_data_part02.zip",
+      "url": "downloads/packages/blackmarble_data_part02.zip",
+      "bytes": 248290004,
+      "sha256": "850c4e4a5b9914746581233527aa513ffefe16ff4fa82231cab1b7dcb3216da0",
+      "publication": "LOCAL_REVIEW_ONLY",
+      "product": "blackmarble",
+      "frequency": "daily",
+      "variant": "base",
+      "data": "Unfiltered municipal source statistics and lossless masters; original precision"
+    },
+    {
+      "name": "blackmarble_data_part03.zip",
+      "url": "downloads/packages/blackmarble_data_part03.zip",
+      "bytes": 208452677,
+      "sha256": "4ba8fe3b8c33a951bbb5ee6250c467127759ffae2fe96b47a0cbcaee175416c2",
+      "publication": "LOCAL_REVIEW_ONLY",
+      "product": "blackmarble",
+      "frequency": "daily",
+      "variant": "base",
+      "data": "Unfiltered municipal source statistics and lossless masters; original precision"
+    },
+    {
+      "name": "BoliviaSatellites_webdata_part01.zip",
+      "url": "downloads/packages/BoliviaSatellites_webdata_part01.zip",
+      "bytes": 252619762,
+      "sha256": "034b8f2ff3d8f00a842cf65ba57c9496d6a9eb549228da360616f8941c679c9b",
+      "publication": "LOCAL_REVIEW_ONLY"
+    },
+    {
+      "name": "BoliviaSatellites_webdata_part02.zip",
+      "url": "downloads/packages/BoliviaSatellites_webdata_part02.zip",
+      "bytes": 47500891,
+      "sha256": "e14f5fdd250cd663409268d0ba579dd7a898bd18b68863940f211997eb768b4f",
+      "publication": "LOCAL_REVIEW_ONLY"
+    },
+    {
+      "name": "BoliviaSatellites_source.zip",
+      "url": "downloads/packages/BoliviaSatellites_source.zip",
+      "bytes": 2137491,
+      "sha256": "8c27eb31d240d996b2d115850458eec44bde8bb02c8df73202ba7ee6fc6947e7",
+      "publication": "LOCAL_REVIEW_ONLY",
+      "kind": "source"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+The license for newly authored Bolivia Satellites code has not been selected
+by the human supervisor. This local publication candidate does not grant a new
+blanket license over the application, data, cartography or upstream workflows.
+
+Retain all existing third-party notices, including panelplots-MIT.txt.
+Their terms apply only to their respective materials. Public repository
+visibility is not a substitute for a license. Select the project-code license
+and confirm the redistributable asset list before authorizing publication.

@@ -1,0 +1,26 @@
+{
+  "name": [
+    "Precipitación",
+    "Precipitation"
+  ],
+  "unit": "mm/month",
+  "prefix": "precip_",
+  "default": "precip_mean",
+  "frequency": "monthly",
+  "source": "NASA/GPM_L3/IMERG_V07",
+  "resolution": "11132 m reduction; 30-minute source",
+  "status": "qualified",
+  "note": [
+    "Lluvia numérica recuperada. Cobertura espacial sin certificar; 27 municipios superan 1.",
+    "Numeric rainfall recovered. Spatial coverage uncertified; 27 municipalities exceed 1."
+  ],
+  "id": "gpm",
+  "rows": 105768,
+  "first": "2000-06",
+  "last": "2026-05",
+  "period_count": 312,
+  "variant_names": [
+    "base"
+  ],
+  "elapsed_seconds": 8.815378400002373
+}

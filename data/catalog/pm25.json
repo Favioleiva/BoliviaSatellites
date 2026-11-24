@@ -1,0 +1,26 @@
+{
+  "name": [
+    "Calidad del aire · PM2.5",
+    "Air quality · PM2.5"
+  ],
+  "unit": "µg/m³",
+  "prefix": "pm25_",
+  "default": "pm25_mean",
+  "frequency": "monthly",
+  "source": "SatPM V6.GL.03",
+  "resolution": "0.01 degrees",
+  "status": "qualified",
+  "note": [
+    "Estimación modelada, no estación municipal. Extremos y revisión cartográfica upstream pendientes.",
+    "Modelled estimate, not a municipal monitor. Extremes and upstream map revision pending."
+  ],
+  "id": "pm25",
+  "rows": 109836,
+  "first": "1998-01",
+  "last": "2024-12",
+  "period_count": 324,
+  "variant_names": [
+    "base"
+  ],
+  "elapsed_seconds": 7.837152200001583
+}

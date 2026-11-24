@@ -1,0 +1,1075 @@
+{
+  "recipe_id": "blackmarble-base",
+  "product": "blackmarble",
+  "frequency": "daily",
+  "resolution": "15 arc seconds (~500 m)",
+  "source": "VNP46A2 collection 5200, Gap_Filled_DNB_BRDF-Corrected_NTL",
+  "method": {
+    "band": "Gap_Filled_DNB_BRDF-Corrected_NTL",
+    "conversion": "Applied source scale/offset UNVERIFIED",
+    "temporal": "Daily provider-filled product; original missing days retained",
+    "mask": "Original Bolivia HDF extractor and masks unavailable; BLOCKED"
+  },
+  "local_pipeline": "code/run.py",
+  "workflow_copies": [
+    {
+      "path": "code/source_workflows/blackmarble/Download_BlackMarble_Bolivia.py",
+      "sha256": "664b0b375c5f7928caef31349376e24a802c97340adfe49b4aa5b0c84609db9a"
+    }
+  ],
+  "immutable_sources": [
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2012/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2012_01.parquet",
+      "sha256": "5d1456a5cb43d51c146026f104ccca6349f7b362d580683d62fec70a2c1685fe",
+      "bytes": 449964
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2012/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2012_02.parquet",
+      "sha256": "df7602b7b9f16492a456b6c5f726a5be1e64a4095ef446f1cc644c5c56f81d9e",
+      "bytes": 737143
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2012/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2012_03.parquet",
+      "sha256": "d95c04e2213ad3fe5296af40d7c5202945a19dd1901e68893b88e28785aa903f",
+      "bytes": 973118
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2012/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2012_04.parquet",
+      "sha256": "b41551762b6fa8a148c3ec77d7dad364801573740ce7fc663f7b5cf11347747d",
+      "bytes": 1186486
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2012/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2012_05.parquet",
+      "sha256": "3bcbb9ef71885f332fc675093337529abb18bb716fc10bc99bb3c039b6e52f77",
+      "bytes": 1354843
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2012/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2012_06.parquet",
+      "sha256": "37119a6f934f6c57b452219022dedd00a03e27d1735abf626701333f6c02903d",
+      "bytes": 1288332
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2012/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2012_07.parquet",
+      "sha256": "ea41d8eec7fda96ab6cf025e7b405c67ae3ee86cc92d101d90962f7464b0166c",
+      "bytes": 1363794
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2012/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2012_08.parquet",
+      "sha256": "2fb13b6600e6a634f2ac98e32e55a79e241783f2a78b566b42afca54df76c79f",
+      "bytes": 1370419
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2012/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2012_09.parquet",
+      "sha256": "6a17dd022631b29ca78a06ba609d365e4da20bc1f9dc9302d83736adc65b4c91",
+      "bytes": 1306688
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2012/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2012_10.parquet",
+      "sha256": "183c5012efa28f8e465dd9d41f55edf31db5a8d1df46268253b47e086a313d57",
+      "bytes": 1292081
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2012/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2012_11.parquet",
+      "sha256": "c1e66f965fced03c384b67bd2a5ecf0493c8c7ef8ba8eec7388cb5a761c80b3f",
+      "bytes": 1066942
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2012/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2012_12.parquet",
+      "sha256": "f4de486c6b4da5fd3043e7d70c00f96863da06018876c487cd4271e2e13d83e4",
+      "bytes": 926592
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2013/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2013_01.parquet",
+      "sha256": "8c63376173969ea54cf3c0d5dd022f8d57b6d402be443fae14fad310c2b17262",
+      "bytes": 1008864
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2013/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2013_02.parquet",
+      "sha256": "21bd2d6e338e14419bf2004ee86ac81511e89bc45c0805658dd01f7596e2503d",
+      "bytes": 929485
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2013/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2013_03.parquet",
+      "sha256": "0179700c5c3a9c81410a5b9f2eb1417438bb2adb05b8ea2d2c2c838d643eb600",
+      "bytes": 1175595
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2013/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2013_04.parquet",
+      "sha256": "d902ee2a5318d510e279759025c70b1baf5ed7d2f6e8709c891a93a2656301b3",
+      "bytes": 1303277
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2013/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2013_05.parquet",
+      "sha256": "a13dde7067c3604921a0a90c2df09fe83ec6934ff30eaf63d8a523e2671e2c32",
+      "bytes": 1295935
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2013/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2013_06.parquet",
+      "sha256": "4091f76f664bb2114766221a004f68af7b0ea9f8018e692ee7ddf2b13de4766b",
+      "bytes": 1291993
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2013/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2013_07.parquet",
+      "sha256": "33a191e1957a6b255540b045a0abd11f0ede40aeb2fca5576bc3d3771c4047cd",
+      "bytes": 1354069
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2013/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2013_08.parquet",
+      "sha256": "e45c0c5b852c190e52d1bb92949a3690202c3fbe7b40312af6e98a5fd8ac905f",
+      "bytes": 1336724
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2013/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2013_09.parquet",
+      "sha256": "33d4f8af1aaeda8b3225f40ad16d0103130ebf275c44254ddd67c2de295b9860",
+      "bytes": 1295226
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2013/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2013_10.parquet",
+      "sha256": "901be6d688ff2e5aaeefa6683c2fbb47bff5b11a93b9b96b46d0201c90342b04",
+      "bytes": 1229333
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2013/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2013_11.parquet",
+      "sha256": "7f50f7e33cc13c5302dcac428a355ec7cc074150e12964316875ef8b3c38a270",
+      "bytes": 1200879
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2013/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2013_12.parquet",
+      "sha256": "f900d02e6c577a18a1dbd212de823cd09cd74d4254a1f2d638e8f304dc96bf9f",
+      "bytes": 1029502
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2014/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2014_01.parquet",
+      "sha256": "569c32848794256ce8529e0e44379a67dd93948f4c9e528541b611f92b55cb43",
+      "bytes": 933739
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2014/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2014_02.parquet",
+      "sha256": "7cbf08094ce7c6c18b5d7c4886446f864027eef56c1461c9b1ed81fa8bcc2ba8",
+      "bytes": 882378
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2014/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2014_03.parquet",
+      "sha256": "758e3cdc8d54420cfb1ff8539d7652b55576aeb08003313c949889f719c10d12",
+      "bytes": 1218171
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2014/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2014_04.parquet",
+      "sha256": "d1e29b87f72f00ea87ddfd30dce1800c4c678c1df5ad3fed089ed1166cb72141",
+      "bytes": 1206232
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2014/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2014_05.parquet",
+      "sha256": "b5ca3789055c71083415d9f70751446ff070f714dc996fcb8ceaa6a2c9e0c52e",
+      "bytes": 1294528
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2014/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2014_06.parquet",
+      "sha256": "2465bc542bac03815f9e3a42dd15dc986ebc90acbd96b2dce65563f8c46270a3",
+      "bytes": 1270470
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2014/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2014_07.parquet",
+      "sha256": "d4a1e4f9880d59a89c892b3177adfcbaf1e69503aaeffc7216a0d38fef2ff1ab",
+      "bytes": 1338681
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2014/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2014_08.parquet",
+      "sha256": "ec9692599ab20d2dcc1abc9cee589046142309884102729146a32876a8139192",
+      "bytes": 1309583
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2014/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2014_09.parquet",
+      "sha256": "65cb400dc5406f83e76c130dc60da1e64e08f5ace690d143f0a661b597567f98",
+      "bytes": 1213479
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2014/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2014_10.parquet",
+      "sha256": "62ca6fafea5385a4bc78e11622fc5d7797a2397c00e9ff0209c3acdaa4192a63",
+      "bytes": 1298644
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2014/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2014_11.parquet",
+      "sha256": "75c26f3a7a6e1e136db66bb27ee2cb771a376c0978327edfe951d65bc9012297",
+      "bytes": 1132645
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2014/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2014_12.parquet",
+      "sha256": "f86b498284d2d6caf624c8da9b37402a5c477e9c30cca1940b229e01191ec721",
+      "bytes": 1058815
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2015/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2015_01.parquet",
+      "sha256": "ceed51214fa6b27fbb4ac10c363e821990a496c31c9885fe56bcb139a2e31800",
+      "bytes": 999804
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2015/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2015_02.parquet",
+      "sha256": "8e5fe00c6febf27dc7e0342cb344828ad267d5373ab92caca0ae33c0383e39a8",
+      "bytes": 898983
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2015/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2015_03.parquet",
+      "sha256": "cb5ce6f9a02ae11e7d4c961995b02cf2027fd31cf8132c69a6b653392c1a339d",
+      "bytes": 1156112
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2015/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2015_04.parquet",
+      "sha256": "1aa2876987f04c221322fcb1ef1984f240d57e300aced7ffb2c1423c6f9b5334",
+      "bytes": 1163272
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2015/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2015_05.parquet",
+      "sha256": "e06dc4ce7688590ee60410445c6f2442201dc350cf0f0a743e65651811019437",
+      "bytes": 1340627
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2015/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2015_06.parquet",
+      "sha256": "ea7652237a602d1eae9242c7b427a389b91dd86ddb4e368088f3399066762a36",
+      "bytes": 1330371
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2015/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2015_07.parquet",
+      "sha256": "688552be3ff334fcf76e70a600dbc4c9c272fa0148e46c2b446e7276ecc04bd2",
+      "bytes": 1309002
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2015/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2015_08.parquet",
+      "sha256": "8101b7415024d0fa5638e1b6f679b055c29f7b6fb9bd2854a4284049eaa42c1c",
+      "bytes": 1350469
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2015/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2015_09.parquet",
+      "sha256": "22e5242f4daf9863e14f0540d70c7858ec63ffbf49eefaa88f60e06c0405e5f7",
+      "bytes": 1272620
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2015/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2015_10.parquet",
+      "sha256": "52cadc557b6b00952fb8cabb54e150c747972c90ef01af4ac15e054635315044",
+      "bytes": 1276996
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2015/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2015_11.parquet",
+      "sha256": "62150c5dad8f3fae2e708b4627b7143a944c4564b8a1db11dd8ae948781e1cd7",
+      "bytes": 1142881
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2015/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2015_12.parquet",
+      "sha256": "056cf9c190aba8e05fd334326287bd97ca415e6061e23bb4445e7cebd54e6f84",
+      "bytes": 1160755
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2016/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2016_01.parquet",
+      "sha256": "485d73662ccc755831cc8abc95a4e4d42308b9138fe8d7d9606823b297240aa9",
+      "bytes": 1121746
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2016/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2016_02.parquet",
+      "sha256": "764a5c58e3d6c7a61c65c14015abe80f7fa7c1fe839e3032168557c3c52f7e71",
+      "bytes": 925443
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2016/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2016_03.parquet",
+      "sha256": "b642935f9b506cf39ae507623517ff6fe8988fc451ff384b9e5ca08f5909fafd",
+      "bytes": 1273858
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2016/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2016_04.parquet",
+      "sha256": "520f28d5ffe65816f78fe15a7b9394abdcd315aa18cf66371fcd6b6ad6de752a",
+      "bytes": 1244917
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2016/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2016_05.parquet",
+      "sha256": "ff04cc2e34dbd744a5728f3f400e48e46a3ba28426e23956f5fd9f7c8ac3cfdb",
+      "bytes": 1327098
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2016/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2016_06.parquet",
+      "sha256": "a482e207931f561330809190dfbddafd72d8bb19b6e82cb23e880b33b952f0a7",
+      "bytes": 1261085
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2016/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2016_07.parquet",
+      "sha256": "28a46c99ef440d174dd2c23f7dd33f5dfa7fad8ae055466cc5b562323f4da3a9",
+      "bytes": 1350032
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2016/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2016_08.parquet",
+      "sha256": "d6a92ddc3f8c688d592acc348f96c5dd679aa57eda8125d5a6c4d39c45e3b149",
+      "bytes": 1316383
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2016/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2016_09.parquet",
+      "sha256": "a1ffbbe9c3dd6e8b469d927fb7fde5af6d015d1edb40efe294bf3ac6dc231e96",
+      "bytes": 1299539
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2016/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2016_10.parquet",
+      "sha256": "1f40980cbdfa15ed67446618b2f22b13b814f232c718251079e149af34c0b88d",
+      "bytes": 1217283
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2016/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2016_11.parquet",
+      "sha256": "22fbb055040d7c3bf16299097f5f1cbda2f34188cdf751045d98f63860051eca",
+      "bytes": 1168410
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2016/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2016_12.parquet",
+      "sha256": "df43b374f43d865751ceecebedafa7c3762e82c1ab3c22e77513cf088c8c29ae",
+      "bytes": 1154429
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2017/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2017_01.parquet",
+      "sha256": "92cd8f157229d788b6422628c5969afc52314a0455edb38ffd733647617ff041",
+      "bytes": 914458
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2017/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2017_02.parquet",
+      "sha256": "6ac024197df499867e28a7012c6b4d55144b400706fa1d00c5b7125e55c7d9d7",
+      "bytes": 912706
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2017/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2017_03.parquet",
+      "sha256": "fea48f8facd1b5e4b592cf85d0bd008f9f6eb2f3b37faf3348ad3656a1b8e8d3",
+      "bytes": 1022174
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2017/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2017_04.parquet",
+      "sha256": "cf4f229f0739baa1b30f489945dbde193b14848104c6f465d32efa9869a2aa2b",
+      "bytes": 1213545
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2017/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2017_05.parquet",
+      "sha256": "bbab946d1f1e41d01e36615d10e5cd675fdb2768a67eacf4faadcc4f7e6f872e",
+      "bytes": 1234435
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2017/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2017_06.parquet",
+      "sha256": "31bf35b461b588dbf6ec4496aabc4ea5ddbcc7b1e9aebb80c472de6cc870808f",
+      "bytes": 1308513
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2017/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2017_07.parquet",
+      "sha256": "f0e873d06a6ca4a03f2434b14fb4fe834556836156d54144d89254c1c2998cd2",
+      "bytes": 1357975
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2017/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2017_08.parquet",
+      "sha256": "d901e942a784d65b096322b94515adafb161873d7faf94ec9701ef5b675c960e",
+      "bytes": 1352478
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2017/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2017_09.parquet",
+      "sha256": "7b606536e594850f4aacdf7374c1747dcf19e727fa2a418da01e2f83085a45ee",
+      "bytes": 1231540
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2017/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2017_10.parquet",
+      "sha256": "c1ace278e793457fb547d030aceabb112f5696ad8dd6d4f82ed7e59438b1e1be",
+      "bytes": 1279842
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2017/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2017_11.parquet",
+      "sha256": "baed96d8e785a6a6e201f3a1ba469cecdd3df17679512755bb488abc7182cfe7",
+      "bytes": 1184289
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2017/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2017_12.parquet",
+      "sha256": "7d03068f85bece5bd8c8fed57e97d89073dc6eff93e374265a11689b7cbdb463",
+      "bytes": 1098085
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2018/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2018_01.parquet",
+      "sha256": "db682e4ad97833552f861617ca53c6ff7ec43ef4ffe084d2d3707bac40f98bd6",
+      "bytes": 955422
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2018/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2018_02.parquet",
+      "sha256": "2da0706e32ee18f89e135bd08ce173ce78d2eb439789f706585047e80a5710e0",
+      "bytes": 918317
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2018/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2018_03.parquet",
+      "sha256": "008f7fed6bbf6c1dcd34c29817a1f6cc0f61852986ff468d4c1b579b3cdd215f",
+      "bytes": 1122957
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2018/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2018_04.parquet",
+      "sha256": "3b2c401a694ebdad646bfbc9708ece68f8b8671022f4b3e4a39b2d1bfc799c18",
+      "bytes": 1298931
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2018/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2018_05.parquet",
+      "sha256": "4434e5557524a51ed67e60cfe7f6d14dd76a4302dfffe43a4ba0c920a952ccfc",
+      "bytes": 1349292
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2018/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2018_06.parquet",
+      "sha256": "8f9f273cfe5b6af593b24b8359adc423821646b9cb27652fe1db22571fecb1e4",
+      "bytes": 1271290
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2018/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2018_07.parquet",
+      "sha256": "500a7e20b12966c2f88d84410602623f069f960abea54eaa31707017b5a0b721",
+      "bytes": 1342910
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2018/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2018_08.parquet",
+      "sha256": "bd6351032ccb9d1bf08d774d7efc0e7452f66668cd6985e9d4a3a6f74fd9bdb1",
+      "bytes": 1325961
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2018/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2018_09.parquet",
+      "sha256": "eab5ed83ef84c5d7e68bab3cf57e512a041f8a2b522484f919bb4fa6b0e1782f",
+      "bytes": 1313476
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2018/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2018_10.parquet",
+      "sha256": "9f49ec8bdf88b2b1810b99fd9e79c16b651e9a596b02cc6733222294fca2d79e",
+      "bytes": 1158441
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2018/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2018_11.parquet",
+      "sha256": "8e6c3e962964cfffc5d291dde16c101392e367ed458689c9334517e4591d7c05",
+      "bytes": 1102993
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2018/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2018_12.parquet",
+      "sha256": "0abfbc18a2294a704c48ad131e8d7823c9d4cad070c6240dd2dd4359edfc9d5d",
+      "bytes": 1087996
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2019/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2019_01.parquet",
+      "sha256": "073839b5168a349c8825d8eecdc591ea3b7d3532cfd43dc929a7a6f45dae1a88",
+      "bytes": 941874
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2019/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2019_02.parquet",
+      "sha256": "12a6431ef53c082cb1da75933a838d2c34e9ab431386e8b84531ec27a3078b9a",
+      "bytes": 877971
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2019/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2019_03.parquet",
+      "sha256": "b6b91813a983bf62786f22598380eb1520629cea124154fb4d089e8221a63b9c",
+      "bytes": 1137951
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2019/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2019_04.parquet",
+      "sha256": "ccaf1be958b0935bdcc3164f8ce2233411d91bd3df4f20236465e5d32126aeb9",
+      "bytes": 1188688
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2019/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2019_05.parquet",
+      "sha256": "90fd1dc18a93a32e0f52efad6b8fd6352c8b4b52a157d118cac31754d95445f9",
+      "bytes": 1337338
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2019/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2019_06.parquet",
+      "sha256": "43dd958991a0717862bbdc0cdaaca1bf81ae184917750f8c3d3d99cf25090512",
+      "bytes": 1307505
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2019/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2019_07.parquet",
+      "sha256": "5b3e2304822d4c03b6940ae27f9c14a9f4017f678355cf1d5f1c0790772ea055",
+      "bytes": 1328529
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2019/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2019_08.parquet",
+      "sha256": "e6560333dd05f5225188e7c7d07db162b7626eae1d40e308301484ac88f13f90",
+      "bytes": 1351107
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2019/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2019_09.parquet",
+      "sha256": "04f8c785a9932a8048edc222a26febfd0808f5ddf3ad470cb29bc2f7cde32ffb",
+      "bytes": 1250929
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2019/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2019_10.parquet",
+      "sha256": "5c512974a9d37808ef9d590e31a1f946346ec11346365e8e09ee2a0d80ae2025",
+      "bytes": 1217091
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2019/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2019_11.parquet",
+      "sha256": "39a2f3a398185b27d7d49576d23dadf8c322ccb5cd9d9fec29992030cd5d8014",
+      "bytes": 1156059
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2019/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2019_12.parquet",
+      "sha256": "7206b86ccadf4849d09145381cbe881618f18b372b69a9b0a52ddb7348dc4139",
+      "bytes": 1091010
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2020/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2020_01.parquet",
+      "sha256": "3ff48c56b226f2aca3c18a42f03bd9b3343131fd9f6997668401339b9a1cab56",
+      "bytes": 1006748
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2020/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2020_02.parquet",
+      "sha256": "c99e1c01324d1c1055d27946a3b7efe405b55a9b7b187b1322567d85fb124fd6",
+      "bytes": 899186
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2020/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2020_03.parquet",
+      "sha256": "4a3af9d51d37f2c20678848d2b23d1a5f7b323fb18c52191b654d0fff8051a50",
+      "bytes": 1184648
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2020/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2020_04.parquet",
+      "sha256": "97f08ea21e76535258e18949379aca60cc74200f4af00922d783948d919eb8c0",
+      "bytes": 1258060
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2020/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2020_05.parquet",
+      "sha256": "b9a9bf1e70b3e09c61521ed30242ce3f73386c805f9b6c0ac498a019c7c52607",
+      "bytes": 1294404
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2020/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2020_06.parquet",
+      "sha256": "6c27dfd4c47d294fe6c0ad4147e444c478941d8a96911c53660462ebfdff2566",
+      "bytes": 1299080
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2020/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2020_07.parquet",
+      "sha256": "27bd6ee67023dd7ab0eaeaade9ac63628a623de574a8322364692b3af168328f",
+      "bytes": 1324062
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2020/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2020_08.parquet",
+      "sha256": "b320a87a9e8f5406484f56c1806ab4d3323abc05a39e1df95dc9fd4e32f007bd",
+      "bytes": 1308971
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2020/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2020_09.parquet",
+      "sha256": "61d5344a7d1c34ab7659a77ec51dface7dd65bb4aa65ac23be5ed43288ec319f",
+      "bytes": 1292957
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2020/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2020_10.parquet",
+      "sha256": "8702f25b00b5afb753abe86d2f56349a82155bc2fbff2bdf9094e83cf62fd4ba",
+      "bytes": 1315344
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2020/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2020_11.parquet",
+      "sha256": "b3265845c0b22fe0cb4234654dcafb808ccc0ba3bc481c0f50e681191c44b75a",
+      "bytes": 1281679
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2020/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2020_12.parquet",
+      "sha256": "ac76865c256505a4b6d15e32e3ae66bc4f913272a5b508eb6ac8b8afb4e12922",
+      "bytes": 1093869
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2021/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2021_01.parquet",
+      "sha256": "11dd0fe71279a2ee5e03fe1c4903c617138713736297865768df4b45113070fb",
+      "bytes": 1005641
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2021/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2021_02.parquet",
+      "sha256": "9241c5234b2c80bac16040ec94c88396717f55fdc797ed955e49a95be91d1448",
+      "bytes": 990251
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2021/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2021_03.parquet",
+      "sha256": "0683e4c7513119071e1b1360add67c013f00937750761b3f6afaebbf733c2487",
+      "bytes": 1215759
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2021/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2021_04.parquet",
+      "sha256": "bbb75fa49b69981ab8900815967e1358c162d613af034edf34a2a670af9baf80",
+      "bytes": 1234895
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2021/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2021_05.parquet",
+      "sha256": "5d371e9930cf33948f5a6ffefa00c65b1e94f4b229c1ed4bba907a19a83772eb",
+      "bytes": 1332651
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2021/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2021_06.parquet",
+      "sha256": "8a65a0d7edee4cc4589bda4e5ef9ab64bc4bdff854bf54d7f0281a043e5ee19b",
+      "bytes": 1292315
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2021/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2021_07.parquet",
+      "sha256": "29fb1fe3f22f90fd4ce7e8d390804e93f3f647c40523574c99b309ffbfb204a5",
+      "bytes": 1321544
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2021/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2021_08.parquet",
+      "sha256": "c9627842fee09cdf12f5001213481188f317179b8e3b9af48c657d1fbb1f9765",
+      "bytes": 1283074
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2021/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2021_09.parquet",
+      "sha256": "8d0b93815f335956fb5c5033e6a72a1dcbed61f3caaa51854e4f5b3aa69729f4",
+      "bytes": 1270155
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2021/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2021_10.parquet",
+      "sha256": "63d1073c5f6c047d7f4988439e357ec031732547b3d9644488af557cde455780",
+      "bytes": 1298932
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2021/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2021_11.parquet",
+      "sha256": "364bb6c545e0cabe6f3949aae84927a403c9e22f266d38bf81557b6dc16d2548",
+      "bytes": 1075603
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2021/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2021_12.parquet",
+      "sha256": "762b1dfb43a4b4f5ebb511b17a2814816dd623e5cc8a2efdd816d6b4e1a0d4f1",
+      "bytes": 880499
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2022/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2022_01.parquet",
+      "sha256": "b1e988bf5c9f5cc419f5e2ce0949935b4ee7eb91e0e08cb18f78a98b134d6386",
+      "bytes": 949699
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2022/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2022_02.parquet",
+      "sha256": "350d15e35e20b3b551d394d722c38a2baf99ee0cec6df366ee2cddaa4266c383",
+      "bytes": 1022217
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2022/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2022_03.parquet",
+      "sha256": "9de612b1f6255df896134ebe8f8d94b5799aee2851f77b5d35370d91515773bb",
+      "bytes": 1058202
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2022/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2022_04.parquet",
+      "sha256": "93f3fdd2e3cbc9c27db6162414e939e0340622fa91ef9d311184b1682895d6df",
+      "bytes": 1282406
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2022/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2022_05.parquet",
+      "sha256": "ca205b2d235f25213eb4110e03ee8012b2f3c62a29eef4d8935bbbddecca7dc4",
+      "bytes": 1314127
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2022/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2022_06.parquet",
+      "sha256": "71aa7322ff77807bddabe6a3e7019a3a2a2f2acf9b11b4e3c6437b2e1513451e",
+      "bytes": 1264992
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2022/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2022_07.parquet",
+      "sha256": "ef4e96e6058ccca37e695403377c5bcb10e43514584e67a87f01d27819b18183",
+      "bytes": 1132758
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2022/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2022_08.parquet",
+      "sha256": "0a491fa4e82a9309ac4a1043209621c05292a6cc09e46361df6991546c0ecb89",
+      "bytes": 960362
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2022/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2022_09.parquet",
+      "sha256": "eb00e8183560a11a198df2e439d07bc40393ee1f9dcfffe9de03d84ab83a8768",
+      "bytes": 1286954
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2022/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2022_10.parquet",
+      "sha256": "aea57a1a8c29cd1fb2be25befb9576df571ed1286feb70bc6f054d143836ef41",
+      "bytes": 1327057
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2022/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2022_11.parquet",
+      "sha256": "daaed8536ef73898f41be0be319b8e1c3522af51c05f9ade605912d65f08d1a5",
+      "bytes": 1317506
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2022/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2022_12.parquet",
+      "sha256": "b5c468d8c4cd24b536d1168146b45c9a15e8ab23df57955d3bd8bfafd1346d25",
+      "bytes": 1048032
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2023/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2023_01.parquet",
+      "sha256": "4ce857abb1c5967b92363acc49891b7fba4b29e31d573af85af05a43bf7f67a3",
+      "bytes": 1079578
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2023/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2023_02.parquet",
+      "sha256": "c9e1cc43d32009291e26d7189730242f1d47dc81abe36ee76b9d6e7166be2b3c",
+      "bytes": 904872
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2023/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2023_03.parquet",
+      "sha256": "4334be92b84d69a0a871c5cdc5b4226fedeb65410d9dc9671c42096b09a475bc",
+      "bytes": 1132134
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2023/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2023_04.parquet",
+      "sha256": "0ab4dd53ab33db67b27f4ce0a42d12d4b3dea1a8f57c81edcba62a1a9f2c1c31",
+      "bytes": 1291303
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2023/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2023_05.parquet",
+      "sha256": "5f1fc9a75eab5596061b09448a01a15b5524075a740b8dace910b3fcb862463e",
+      "bytes": 1280323
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2023/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2023_06.parquet",
+      "sha256": "24a5409e6bd7b5e1916c9837a1a5018f20a34d8554166858a71c61621555fdc5",
+      "bytes": 1333451
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2023/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2023_07.parquet",
+      "sha256": "a90305d0f2144e2c2f703d86c7ea2c2f571b9cb63fbfb8a7888d55e30b2b9e65",
+      "bytes": 1296608
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2023/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2023_08.parquet",
+      "sha256": "1355b62ca12614909b260b27464803e0f4eac10ccf66241d497c04d0773953ca",
+      "bytes": 1346477
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2023/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2023_09.parquet",
+      "sha256": "a109d633f6ae185c735697ca862c114adb368734d7bbfae5664e4be7666336ca",
+      "bytes": 1285460
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2023/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2023_10.parquet",
+      "sha256": "8bae8c83479c1da30dfffef7b99f614d6afac8749ae9c980a25df2d0b5d6971e",
+      "bytes": 1287223
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2023/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2023_11.parquet",
+      "sha256": "e0b1b777728bdf8fb7a259edc178495168803a9c4247a92464515ddf8d508dff",
+      "bytes": 1121946
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2023/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2023_12.parquet",
+      "sha256": "d45127458dfd24f0a92c2707d5c5b4446e915bf43566547c939f8dd79aa077da",
+      "bytes": 987663
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2024/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2024_01.parquet",
+      "sha256": "47477cdf19e97eb8c9ea545f3dfef9ff0e939cd87e6ce3edbbae60e626e1e60b",
+      "bytes": 1171456
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2024/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2024_02.parquet",
+      "sha256": "67577e285716276143e632aee02a4f3a3fa82c092fcd6a28d7d5acb5be42b918",
+      "bytes": 951987
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2024/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2024_03.parquet",
+      "sha256": "6c180aca1ede16f836f9319061616ae994d08293733ef184f58ff45c4f317b7d",
+      "bytes": 1001873
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2024/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2024_04.parquet",
+      "sha256": "1f8fe85eba28bdadca347aff88187a13dd8fb4f789b2a857ff0a9e7b78d64e3c",
+      "bytes": 1228519
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2024/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2024_05.parquet",
+      "sha256": "18c0085166dc2ad3761e60f22ea7eeb9888a154913ec1cbadb9c515f97c3bb76",
+      "bytes": 1260901
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2024/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2024_06.parquet",
+      "sha256": "cef2ea97caf898f88d94f3e91cd263a78d8f1ce6bd2bd93d664434f63f489dfd",
+      "bytes": 1200290
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2024/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2024_07.parquet",
+      "sha256": "425a71df0876e05ecf42b3333dae668d30da89647127cd4a266a351f1451a54f",
+      "bytes": 831060
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2024/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2024_08.parquet",
+      "sha256": "d150f7ebc71c0ec4b08a150c69612677519dfb043ecdb2949a6131e3faaaf2f7",
+      "bytes": 1380440
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2024/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2024_09.parquet",
+      "sha256": "2d6951a1365b8197539d7d0057a8d4afcc92eeee7359a07c1ed54186e10b918e",
+      "bytes": 1254303
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2024/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2024_10.parquet",
+      "sha256": "f0309ff6013824ffb39e8ea5882c5448948c3320326f9e62791f1e83db73e90c",
+      "bytes": 1325548
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2024/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2024_11.parquet",
+      "sha256": "5800cb6233fa642a745caf3426de01eb39bde2a254be28162409e944c1347d85",
+      "bytes": 905871
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2024/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2024_12.parquet",
+      "sha256": "2156f81d55c74843d419ddf8aeba98d3514ce8941ebd56d1947a6aa2d60f90ff",
+      "bytes": 1141889
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2025/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2025_01.parquet",
+      "sha256": "a47c92ae8e64e5dd732e122576add9506a6e1d3818c2445f760683048d53a524",
+      "bytes": 903628
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2025/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2025_02.parquet",
+      "sha256": "5fd082ebd7b28d5fa06edcb9ec158ff16d12823b169c7542229c1b494cfb2127",
+      "bytes": 1007307
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2025/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2025_03.parquet",
+      "sha256": "bd98a19d37bb66849f48a3cc3ddd46452586ae9bbde72c98c7f56bde5b5ee4f3",
+      "bytes": 974784
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2025/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2025_04.parquet",
+      "sha256": "601b445ee7b87161b2bfb72bb2f829aef78920d80a46c14eb0685e473d295a53",
+      "bytes": 1209968
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2025/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2025_05.parquet",
+      "sha256": "c2d51333566989a91cd44ca31de26765287d1b2bd2e7e9d83530b63edaf041eb",
+      "bytes": 1328635
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2025/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2025_06.parquet",
+      "sha256": "38b6b9cf6a5ed61ae9cf11a1232dd849e4c8cc342f6b5adff8cc6f6254098b68",
+      "bytes": 1284214
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2025/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2025_07.parquet",
+      "sha256": "989ec9dc2dc90e6948b805aa68cca3e447fed4300c21101b6daa3cfe6e60f79b",
+      "bytes": 1187420
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2025/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2025_08.parquet",
+      "sha256": "8e6ee37b05c11dfcad7d83cbc0432b4ca96e751e70357b6203f04b7a71c5562e",
+      "bytes": 1291338
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2025/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2025_09.parquet",
+      "sha256": "09394ad382c5e9889ac3ee6148ac49d4a2a615f4d3432365cc0288b16411f985",
+      "bytes": 1300736
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2025/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2025_10.parquet",
+      "sha256": "c0eabfa7edfff8d330a8a1426f979c1e0c93a16da9f1c268e44e03cde611445c",
+      "bytes": 1245413
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2025/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2025_11.parquet",
+      "sha256": "2b783e2d69d3dd15c35832aa356df8a819ea94980f834f3b3c53984dea0ca55e",
+      "bytes": 1136796
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2025/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2025_12.parquet",
+      "sha256": "7eeda3a236a8663e7c5b9cf26f2e680b26fcb69017877f680c4c79707ee884c1",
+      "bytes": 1043856
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2026/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2026_01.parquet",
+      "sha256": "2435345abe4b65d79ce87b88d8194d90007e76db3ce18dc8f773351bf878415f",
+      "bytes": 920727
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2026/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2026_02.parquet",
+      "sha256": "fd3e60611ed63cd65406646834db5c113800984caafdcb2577b6d9e00ed3a181",
+      "bytes": 999394
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2026/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2026_03.parquet",
+      "sha256": "3ce81050ca7d37aed6caeecc0dddac7695249f3fab52bacf4464f289263ab4e7",
+      "bytes": 1036778
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2026/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2026_04.parquet",
+      "sha256": "de77396b7507a1a2b8850ffcaeb96a38085ce85fc3d9bab040915c0dc6eb643f",
+      "bytes": 1168076
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/monthly_parquet/year=2026/BlackMarble_VNP46A2_Daily_Bolivia339_main_gapfilled_2026_05.parquet",
+      "sha256": "529fc434436c347d65e6be09ee33a904350cd190920ef9528a34c5172de3a86e",
+      "bytes": 1340857
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Download_BlackMarble_Bolivia.py",
+      "sha256": "eeabf5702fe26e4d3871bae4e69211935ab740530e544e6e4e42804b1210ebaa",
+      "bytes": 1746
+    },
+    {
+      "product": "blackmarble",
+      "path": "Inputs/Satellites/NASA_BlackMarble_Daily/Inputs/daily_raw/vnp46a2_c5200/main_gapfilled/metadata/run_metadata.json",
+      "bytes": 933,
+      "sha256": "38e6dfbe9d397f5aaa103f76a342ebd4d33ae0974fab722323201fadfd2b7d0d"
+    }
+  ],
+  "level_A": "Lossless reconstruction from supplied municipal aggregates",
+  "level_B": "See scientific limitations; no new extraction executed",
+  "geography": "Original Agriculture 339; asdf_id join; original codes retained"
+}

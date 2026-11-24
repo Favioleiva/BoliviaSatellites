@@ -1,0 +1,26 @@
+{
+  "name": [
+    "Temperatura",
+    "Temperature"
+  ],
+  "unit": "°C",
+  "prefix": "temperature_",
+  "default": "temperature_mean",
+  "frequency": "monthly",
+  "source": "ECMWF/ERA5_LAND/MONTHLY_AGGR",
+  "resolution": "11132 m reduction; reanalysis",
+  "status": "qualified",
+  "note": [
+    "Cobertura espacial sin certificar; 27 municipios superan 1. Temperaturas conservadas.",
+    "Spatial coverage uncertified; 27 municipalities exceed 1. Temperatures preserved."
+  ],
+  "id": "era5",
+  "rows": 148143,
+  "first": "1990-01",
+  "last": "2026-05",
+  "period_count": 437,
+  "variant_names": [
+    "base"
+  ],
+  "elapsed_seconds": 11.851744999999937
+}

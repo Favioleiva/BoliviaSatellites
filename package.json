@@ -1,0 +1,17 @@
+{
+  "name": "bolivia-satellites",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test:ui": "python -B tests/ui/check.py",
+    "benchmark": "python -B tests/performance/benchmark.py",
+    "dev": "python -B scripts/serve_local.py --root dist --port 8768",
+    "restore:webdata": "python -B scripts/restore_webdata.py",
+    "prepare:publication": "python -B scripts/prepare_publication.py"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

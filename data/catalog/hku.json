@@ -1,0 +1,26 @@
+{
+  "name": [
+    "Luces nocturnas · HKU",
+    "Night lights · HKU"
+  ],
+  "unit": "source radiance",
+  "prefix": "",
+  "default": "mean",
+  "frequency": "monthly",
+  "source": "HKU VIIRS-like monthly; DOI 10.25442/hku.31321315.v2",
+  "resolution": "15 arc seconds (~500 m)",
+  "status": "qualified",
+  "note": [
+    "Serie municipal fuente sin filtros locales. La historia temprana es reconstruida por el proveedor.",
+    "Municipal source series without local filtering. Early history is reconstructed by the provider."
+  ],
+  "id": "hku",
+  "rows": 133227,
+  "first": "1992-04",
+  "last": "2024-12",
+  "period_count": 393,
+  "variant_names": [
+    "base"
+  ],
+  "elapsed_seconds": 7.936649600000237
+}

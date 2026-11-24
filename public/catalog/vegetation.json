@@ -1,0 +1,1354 @@
+{
+  "name": [
+    "Vegetación · NDVI/EVI",
+    "Vegetation · NDVI/EVI"
+  ],
+  "unit": "dimensionless",
+  "prefix": "ndvi_",
+  "default": "base__ndvi_mean",
+  "frequency": "monthly",
+  "source": "MODIS/061/MOD13Q1",
+  "resolution": "250 m; 16-day composites",
+  "status": "qualified",
+  "note": [
+    "Mediana de compuestos iniciados en el mes; cobertura baja explícita. No es una media diaria.",
+    "Median of composites starting in the month; low coverage explicit. Not a daily mean."
+  ],
+  "id": "vegetation",
+  "rows": 106785,
+  "first": "2000-03",
+  "last": "2026-05",
+  "period_count": 315,
+  "variant_names": [
+    "base"
+  ],
+  "elapsed_seconds": 13.62395480000123,
+  "periods": [
+    "2000-03",
+    "2000-04",
+    "2000-05",
+    "2000-06",
+    "2000-07",
+    "2000-08",
+    "2000-09",
+    "2000-10",
+    "2000-11",
+    "2000-12",
+    "2001-01",
+    "2001-02",
+    "2001-03",
+    "2001-04",
+    "2001-05",
+    "2001-06",
+    "2001-07",
+    "2001-08",
+    "2001-09",
+    "2001-10",
+    "2001-11",
+    "2001-12",
+    "2002-01",
+    "2002-02",
+    "2002-03",
+    "2002-04",
+    "2002-05",
+    "2002-06",
+    "2002-07",
+    "2002-08",
+    "2002-09",
+    "2002-10",
+    "2002-11",
+    "2002-12",
+    "2003-01",
+    "2003-02",
+    "2003-03",
+    "2003-04",
+    "2003-05",
+    "2003-06",
+    "2003-07",
+    "2003-08",
+    "2003-09",
+    "2003-10",
+    "2003-11",
+    "2003-12",
+    "2004-01",
+    "2004-02",
+    "2004-03",
+    "2004-04",
+    "2004-05",
+    "2004-06",
+    "2004-07",
+    "2004-08",
+    "2004-09",
+    "2004-10",
+    "2004-11",
+    "2004-12",
+    "2005-01",
+    "2005-02",
+    "2005-03",
+    "2005-04",
+    "2005-05",
+    "2005-06",
+    "2005-07",
+    "2005-08",
+    "2005-09",
+    "2005-10",
+    "2005-11",
+    "2005-12",
+    "2006-01",
+    "2006-02",
+    "2006-03",
+    "2006-04",
+    "2006-05",
+    "2006-06",
+    "2006-07",
+    "2006-08",
+    "2006-09",
+    "2006-10",
+    "2006-11",
+    "2006-12",
+    "2007-01",
+    "2007-02",
+    "2007-03",
+    "2007-04",
+    "2007-05",
+    "2007-06",
+    "2007-07",
+    "2007-08",
+    "2007-09",
+    "2007-10",
+    "2007-11",
+    "2007-12",
+    "2008-01",
+    "2008-02",
+    "2008-03",
+    "2008-04",
+    "2008-05",
+    "2008-06",
+    "2008-07",
+    "2008-08",
+    "2008-09",
+    "2008-10",
+    "2008-11",
+    "2008-12",
+    "2009-01",
+    "2009-02",
+    "2009-03",
+    "2009-04",
+    "2009-05",
+    "2009-06",
+    "2009-07",
+    "2009-08",
+    "2009-09",
+    "2009-10",
+    "2009-11",
+    "2009-12",
+    "2010-01",
+    "2010-02",
+    "2010-03",
+    "2010-04",
+    "2010-05",
+    "2010-06",
+    "2010-07",
+    "2010-08",
+    "2010-09",
+    "2010-10",
+    "2010-11",
+    "2010-12",
+    "2011-01",
+    "2011-02",
+    "2011-03",
+    "2011-04",
+    "2011-05",
+    "2011-06",
+    "2011-07",
+    "2011-08",
+    "2011-09",
+    "2011-10",
+    "2011-11",
+    "2011-12",
+    "2012-01",
+    "2012-02",
+    "2012-03",
+    "2012-04",
+    "2012-05",
+    "2012-06",
+    "2012-07",
+    "2012-08",
+    "2012-09",
+    "2012-10",
+    "2012-11",
+    "2012-12",
+    "2013-01",
+    "2013-02",
+    "2013-03",
+    "2013-04",
+    "2013-05",
+    "2013-06",
+    "2013-07",
+    "2013-08",
+    "2013-09",
+    "2013-10",
+    "2013-11",
+    "2013-12",
+    "2014-01",
+    "2014-02",
+    "2014-03",
+    "2014-04",
+    "2014-05",
+    "2014-06",
+    "2014-07",
+    "2014-08",
+    "2014-09",
+    "2014-10",
+    "2014-11",
+    "2014-12",
+    "2015-01",
+    "2015-02",
+    "2015-03",
+    "2015-04",
+    "2015-05",
+    "2015-06",
+    "2015-07",
+    "2015-08",
+    "2015-09",
+    "2015-10",
+    "2015-11",
+    "2015-12",
+    "2016-01",
+    "2016-02",
+    "2016-03",
+    "2016-04",
+    "2016-05",
+    "2016-06",
+    "2016-07",
+    "2016-08",
+    "2016-09",
+    "2016-10",
+    "2016-11",
+    "2016-12",
+    "2017-01",
+    "2017-02",
+    "2017-03",
+    "2017-04",
+    "2017-05",
+    "2017-06",
+    "2017-07",
+    "2017-08",
+    "2017-09",
+    "2017-10",
+    "2017-11",
+    "2017-12",
+    "2018-01",
+    "2018-02",
+    "2018-03",
+    "2018-04",
+    "2018-05",
+    "2018-06",
+    "2018-07",
+    "2018-08",
+    "2018-09",
+    "2018-10",
+    "2018-11",
+    "2018-12",
+    "2019-01",
+    "2019-02",
+    "2019-03",
+    "2019-04",
+    "2019-05",
+    "2019-06",
+    "2019-07",
+    "2019-08",
+    "2019-09",
+    "2019-10",
+    "2019-11",
+    "2019-12",
+    "2020-01",
+    "2020-02",
+    "2020-03",
+    "2020-04",
+    "2020-05",
+    "2020-06",
+    "2020-07",
+    "2020-08",
+    "2020-09",
+    "2020-10",
+    "2020-11",
+    "2020-12",
+    "2021-01",
+    "2021-02",
+    "2021-03",
+    "2021-04",
+    "2021-05",
+    "2021-06",
+    "2021-07",
+    "2021-08",
+    "2021-09",
+    "2021-10",
+    "2021-11",
+    "2021-12",
+    "2022-01",
+    "2022-02",
+    "2022-03",
+    "2022-04",
+    "2022-05",
+    "2022-06",
+    "2022-07",
+    "2022-08",
+    "2022-09",
+    "2022-10",
+    "2022-11",
+    "2022-12",
+    "2023-01",
+    "2023-02",
+    "2023-03",
+    "2023-04",
+    "2023-05",
+    "2023-06",
+    "2023-07",
+    "2023-08",
+    "2023-09",
+    "2023-10",
+    "2023-11",
+    "2023-12",
+    "2024-01",
+    "2024-02",
+    "2024-03",
+    "2024-04",
+    "2024-05",
+    "2024-06",
+    "2024-07",
+    "2024-08",
+    "2024-09",
+    "2024-10",
+    "2024-11",
+    "2024-12",
+    "2025-01",
+    "2025-02",
+    "2025-03",
+    "2025-04",
+    "2025-05",
+    "2025-06",
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12",
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05"
+  ],
+  "variables": [
+    {
+      "id": "base__ndvi_mean",
+      "native": "ndvi_mean",
+      "variant": "base",
+      "unit": "dimensionless",
+      "scale": [
+        0.061032547095930915,
+        0.9051096383639372
+      ],
+      "initial": {
+        "requested": "2025-11",
+        "effective": "2025-11",
+        "reason": null
+      },
+      "historical_pool": {
+        "minimum": 0.061032547095930915,
+        "maximum": 0.9051096383639372,
+        "mean": 0.46041721932560215,
+        "count": 106785,
+        "first": "2000-03",
+        "last": "2026-05",
+        "weighting": "equal municipality-period observations",
+        "eligibility": "finite source value and no qa_flags bit 8; area ratio >1 retained",
+        "scope": "all municipalities and all available periods, separately for each variable",
+        "centres": {
+          "linear": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.46041721932560215,
+            "original_center": 0.46041721932560215
+          },
+          "log1p": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.3641704572977955,
+            "original_center": 0.43931953576775423
+          },
+          "log1p1000": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 5.95889324065774,
+            "original_center": 0.3861813704190414
+          }
+        }
+      }
+    },
+    {
+      "id": "base__ndvi_median",
+      "native": "ndvi_median",
+      "variant": "base",
+      "unit": "dimensionless",
+      "scale": [
+        0.06645502685908869,
+        0.9121553803650907
+      ],
+      "initial": {
+        "requested": "2025-11",
+        "effective": "2025-11",
+        "reason": null
+      },
+      "historical_pool": {
+        "minimum": 0.06645502685908869,
+        "maximum": 0.9121553803650907,
+        "mean": 0.4669799422655282,
+        "count": 106785,
+        "first": "2000-03",
+        "last": "2026-05",
+        "weighting": "equal municipality-period observations",
+        "eligibility": "finite source value and no qa_flags bit 8; area ratio >1 retained",
+        "scope": "all municipalities and all available periods, separately for each variable",
+        "centres": {
+          "linear": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.4669799422655282,
+            "original_center": 0.4669799422655282
+          },
+          "log1p": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.36711824721376635,
+            "original_center": 0.4435686069889533
+          },
+          "log1p1000": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 5.958752033728338,
+            "original_center": 0.3861267015865028
+          }
+        }
+      }
+    },
+    {
+      "id": "base__ndvi_min",
+      "native": "ndvi_min",
+      "variant": "base",
+      "unit": "dimensionless",
+      "scale": [
+        -0.20000000298023224,
+        0.6366000175476074
+      ],
+      "initial": {
+        "requested": "2025-11",
+        "effective": "2025-11",
+        "reason": null
+      },
+      "historical_pool": {
+        "minimum": -0.20000000298023224,
+        "maximum": 0.6366000175476074,
+        "mean": 0.008169517178027616,
+        "count": 106785,
+        "first": "2000-03",
+        "last": "2026-05",
+        "weighting": "equal municipality-period observations",
+        "eligibility": "finite source value and no qa_flags bit 8; area ratio >1 retained",
+        "scope": "all municipalities and all available periods, separately for each variable",
+        "centres": {
+          "linear": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.008169517178027616,
+            "original_center": 0.008169517178027616
+          },
+          "log1p": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": -0.0026327564064358676,
+            "original_center": -0.0026292937427379788
+          },
+          "log1p1000": {
+            "available": false,
+            "count": 106785,
+            "invalid_count": 45354,
+            "display_mean": null,
+            "original_center": null
+          }
+        }
+      }
+    },
+    {
+      "id": "base__ndvi_max",
+      "native": "ndvi_max",
+      "variant": "base",
+      "unit": "dimensionless",
+      "scale": [
+        0.1589999943971634,
+        0.9997000098228455
+      ],
+      "initial": {
+        "requested": "2025-11",
+        "effective": "2025-11",
+        "reason": null
+      },
+      "historical_pool": {
+        "minimum": 0.1589999943971634,
+        "maximum": 0.9997000098228455,
+        "mean": 0.7562088239611314,
+        "count": 106785,
+        "first": "2000-03",
+        "last": "2026-05",
+        "weighting": "equal municipality-period observations",
+        "eligibility": "finite source value and no qa_flags bit 8; area ratio >1 retained",
+        "scope": "all municipalities and all available periods, separately for each variable",
+        "centres": {
+          "linear": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.7562088239611314,
+            "original_center": 0.7562088239611314
+          },
+          "log1p": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.5548269322921829,
+            "original_center": 0.7416395371268671
+          },
+          "log1p1000": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 6.576417035016401,
+            "original_center": 0.7169622815559102
+          }
+        }
+      }
+    },
+    {
+      "id": "base__ndvi_stddev",
+      "native": "ndvi_stddev",
+      "variant": "base",
+      "unit": "dimensionless",
+      "scale": [
+        0.011433112346255008,
+        0.3284499883004777
+      ],
+      "initial": {
+        "requested": "2025-11",
+        "effective": "2025-11",
+        "reason": null
+      },
+      "historical_pool": {
+        "minimum": 0.011433112346255008,
+        "maximum": 0.3284499883004777,
+        "mean": 0.09299783802164906,
+        "count": 106785,
+        "first": "2000-03",
+        "last": "2026-05",
+        "weighting": "equal municipality-period observations",
+        "eligibility": "finite source value and no qa_flags bit 8; area ratio >1 retained",
+        "scope": "all municipalities and all available periods, separately for each variable",
+        "centres": {
+          "linear": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.09299783802164906,
+            "original_center": 0.09299783802164906
+          },
+          "log1p": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.08789662292819234,
+            "original_center": 0.09187524132843206
+          },
+          "log1p1000": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 4.395957072819994,
+            "original_center": 0.08012223350585143
+          }
+        }
+      }
+    },
+    {
+      "id": "base__ndvi_p10",
+      "native": "ndvi_p10",
+      "variant": "base",
+      "unit": "dimensionless",
+      "scale": [
+        -0.042219916271156656,
+        0.8810773596380416
+      ],
+      "initial": {
+        "requested": "2025-11",
+        "effective": "2025-11",
+        "reason": null
+      },
+      "historical_pool": {
+        "minimum": -0.042219916271156656,
+        "maximum": 0.8810773596380416,
+        "mean": 0.3489532054976359,
+        "count": 106785,
+        "first": "2000-03",
+        "last": "2026-05",
+        "weighting": "equal municipality-period observations",
+        "eligibility": "finite source value and no qa_flags bit 8; area ratio >1 retained",
+        "scope": "all municipalities and all available periods, separately for each variable",
+        "centres": {
+          "linear": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.3489532054976359,
+            "original_center": 0.3489532054976359
+          },
+          "log1p": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.28590518358282435,
+            "original_center": 0.33096625181792844
+          },
+          "log1p1000": {
+            "available": false,
+            "count": 106785,
+            "invalid_count": 13,
+            "display_mean": null,
+            "original_center": null
+          }
+        }
+      }
+    },
+    {
+      "id": "base__ndvi_p25",
+      "native": "ndvi_p25",
+      "variant": "base",
+      "unit": "dimensionless",
+      "scale": [
+        0.0019325508766222974,
+        0.9029647875165208
+      ],
+      "initial": {
+        "requested": "2025-11",
+        "effective": "2025-11",
+        "reason": null
+      },
+      "historical_pool": {
+        "minimum": 0.0019325508766222974,
+        "maximum": 0.9029647875165208,
+        "mean": 0.4065378903393711,
+        "count": 106785,
+        "first": "2000-03",
+        "last": "2026-05",
+        "weighting": "equal municipality-period observations",
+        "eligibility": "finite source value and no qa_flags bit 8; area ratio >1 retained",
+        "scope": "all municipalities and all available periods, separately for each variable",
+        "centres": {
+          "linear": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.4065378903393711,
+            "original_center": 0.4065378903393711
+          },
+          "log1p": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.32619060930351895,
+            "original_center": 0.3856794671003199
+          },
+          "log1p1000": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 5.802680878815611,
+            "original_center": 0.330186241013854
+          }
+        }
+      }
+    },
+    {
+      "id": "base__ndvi_p75",
+      "native": "ndvi_p75",
+      "variant": "base",
+      "unit": "dimensionless",
+      "scale": [
+        0.10496403292376068,
+        0.9511876512391981
+      ],
+      "initial": {
+        "requested": "2025-11",
+        "effective": "2025-11",
+        "reason": null
+      },
+      "historical_pool": {
+        "minimum": 0.10496403292376068,
+        "maximum": 0.9511876512391981,
+        "mean": 0.5214441841858979,
+        "count": 106785,
+        "first": "2000-03",
+        "last": "2026-05",
+        "weighting": "equal municipality-period observations",
+        "eligibility": "finite source value and no qa_flags bit 8; area ratio >1 retained",
+        "scope": "all municipalities and all available periods, separately for each variable",
+        "centres": {
+          "linear": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.5214441841858979,
+            "original_center": 0.5214441841858979
+          },
+          "log1p": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.4033286515115499,
+            "original_center": 0.4967987360035362
+          },
+          "log1p1000": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 6.088715576811269,
+            "original_center": 0.43985480320957493
+          }
+        }
+      }
+    },
+    {
+      "id": "base__ndvi_p90",
+      "native": "ndvi_p90",
+      "variant": "base",
+      "unit": "dimensionless",
+      "scale": [
+        0.11904009125926197,
+        0.974560159100595
+      ],
+      "initial": {
+        "requested": "2025-11",
+        "effective": "2025-11",
+        "reason": null
+      },
+      "historical_pool": {
+        "minimum": 0.11904009125926197,
+        "maximum": 0.974560159100595,
+        "mean": 0.5649390874290078,
+        "count": 106785,
+        "first": "2000-03",
+        "last": "2026-05",
+        "weighting": "equal municipality-period observations",
+        "eligibility": "finite source value and no qa_flags bit 8; area ratio >1 retained",
+        "scope": "all municipalities and all available periods, separately for each variable",
+        "centres": {
+          "linear": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.5649390874290078,
+            "original_center": 0.5649390874290078
+          },
+          "log1p": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.43215007895214863,
+            "original_center": 0.5405663043890527
+          },
+          "log1p1000": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 6.1900342362978495,
+            "original_center": 0.4868628085449488
+          }
+        }
+      }
+    },
+    {
+      "id": "base__ndvi_iqr",
+      "native": "ndvi_iqr",
+      "variant": "base",
+      "unit": "dimensionless",
+      "scale": [
+        0.006990354350616013,
+        0.664440953954926
+      ],
+      "initial": {
+        "requested": "2025-11",
+        "effective": "2025-11",
+        "reason": null
+      },
+      "historical_pool": {
+        "minimum": 0.006990354350616013,
+        "maximum": 0.664440953954926,
+        "mean": 0.11490629384652684,
+        "count": 106785,
+        "first": "2000-03",
+        "last": "2026-05",
+        "weighting": "equal municipality-period observations",
+        "eligibility": "finite source value and no qa_flags bit 8; area ratio >1 retained",
+        "scope": "all municipalities and all available periods, separately for each variable",
+        "centres": {
+          "linear": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.11490629384652684,
+            "original_center": 0.11490629384652684
+          },
+          "log1p": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.10602914890040435,
+            "original_center": 0.11185428536401548
+          },
+          "log1p1000": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 4.517657660078213,
+            "original_center": 0.0906207395247739
+          }
+        }
+      }
+    },
+    {
+      "id": "base__evi_mean",
+      "native": "evi_mean",
+      "variant": "base",
+      "unit": "dimensionless",
+      "scale": [
+        0.03126173591569665,
+        0.7643486884027236
+      ],
+      "initial": {
+        "requested": "2025-11",
+        "effective": "2025-11",
+        "reason": null
+      },
+      "historical_pool": {
+        "minimum": 0.03126173591569665,
+        "maximum": 0.7643486884027236,
+        "mean": 0.2727069344696605,
+        "count": 106785,
+        "first": "2000-03",
+        "last": "2026-05",
+        "weighting": "equal municipality-period observations",
+        "eligibility": "finite source value and no qa_flags bit 8; area ratio >1 retained",
+        "scope": "all municipalities and all available periods, separately for each variable",
+        "centres": {
+          "linear": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.2727069344696605,
+            "original_center": 0.2727069344696605
+          },
+          "log1p": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.23312958509385573,
+            "original_center": 0.26254507574934166
+          },
+          "log1p1000": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 5.417488547666256,
+            "original_center": 0.22431254961088615
+          }
+        }
+      }
+    },
+    {
+      "id": "base__evi_median",
+      "native": "evi_median",
+      "variant": "base",
+      "unit": "dimensionless",
+      "scale": [
+        0.041018597035042965,
+        0.8184177476491602
+      ],
+      "initial": {
+        "requested": "2025-11",
+        "effective": "2025-11",
+        "reason": null
+      },
+      "historical_pool": {
+        "minimum": 0.041018597035042965,
+        "maximum": 0.8184177476491602,
+        "mean": 0.2718185951618521,
+        "count": 106785,
+        "first": "2000-03",
+        "last": "2026-05",
+        "weighting": "equal municipality-period observations",
+        "eligibility": "finite source value and no qa_flags bit 8; area ratio >1 retained",
+        "scope": "all municipalities and all available periods, separately for each variable",
+        "centres": {
+          "linear": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.2718185951618521,
+            "original_center": 0.2718185951618521
+          },
+          "log1p": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.2318129473986924,
+            "original_center": 0.26088385516357077
+          },
+          "log1p1000": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 5.400562236793182,
+            "original_center": 0.22053093403859753
+          }
+        }
+      }
+    },
+    {
+      "id": "base__evi_min",
+      "native": "evi_min",
+      "variant": "base",
+      "unit": "dimensionless",
+      "scale": [
+        -0.20000000298023224,
+        0.37630000710487366
+      ],
+      "initial": {
+        "requested": "2025-11",
+        "effective": "2025-11",
+        "reason": null
+      },
+      "historical_pool": {
+        "minimum": -0.20000000298023224,
+        "maximum": 0.37630000710487366,
+        "mean": 0.004142984977982199,
+        "count": 106785,
+        "first": "2000-03",
+        "last": "2026-05",
+        "weighting": "equal municipality-period observations",
+        "eligibility": "finite source value and no qa_flags bit 8; area ratio >1 retained",
+        "scope": "all municipalities and all available periods, separately for each variable",
+        "centres": {
+          "linear": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.004142984977982199,
+            "original_center": 0.004142984977982199
+          },
+          "log1p": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.0008421223090213464,
+            "original_center": 0.0008424769935686248
+          },
+          "log1p1000": {
+            "available": false,
+            "count": 106785,
+            "invalid_count": 44601,
+            "display_mean": null,
+            "original_center": null
+          }
+        }
+      }
+    },
+    {
+      "id": "base__evi_max",
+      "native": "evi_max",
+      "variant": "base",
+      "unit": "dimensionless",
+      "scale": [
+        0.11089999973773956,
+        1.0
+      ],
+      "initial": {
+        "requested": "2025-11",
+        "effective": "2025-11",
+        "reason": null
+      },
+      "historical_pool": {
+        "minimum": 0.11089999973773956,
+        "maximum": 1.0,
+        "mean": 0.5834359030000709,
+        "count": 106785,
+        "first": "2000-03",
+        "last": "2026-05",
+        "weighting": "equal municipality-period observations",
+        "eligibility": "finite source value and no qa_flags bit 8; area ratio >1 retained",
+        "scope": "all municipalities and all available periods, separately for each variable",
+        "centres": {
+          "linear": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.5834359030000709,
+            "original_center": 0.5834359030000709
+          },
+          "log1p": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.4485244374997998,
+            "original_center": 0.5659997493322613
+          },
+          "log1p1000": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 6.276745843474738,
+            "original_center": 0.531054455185615
+          }
+        }
+      }
+    },
+    {
+      "id": "base__evi_stddev",
+      "native": "evi_stddev",
+      "variant": "base",
+      "unit": "dimensionless",
+      "scale": [
+        0.008523595798460529,
+        0.2543699361696328
+      ],
+      "initial": {
+        "requested": "2025-11",
+        "effective": "2025-11",
+        "reason": null
+      },
+      "historical_pool": {
+        "minimum": 0.008523595798460529,
+        "maximum": 0.2543699361696328,
+        "mean": 0.0690368487939827,
+        "count": 106785,
+        "first": "2000-03",
+        "last": "2026-05",
+        "weighting": "equal municipality-period observations",
+        "eligibility": "finite source value and no qa_flags bit 8; area ratio >1 retained",
+        "scope": "all municipalities and all available periods, separately for each variable",
+        "centres": {
+          "linear": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.0690368487939827,
+            "original_center": 0.0690368487939827
+          },
+          "log1p": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.06604788091327403,
+            "original_center": 0.06827786606131309
+          },
+          "log1p1000": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 4.065053036002807,
+            "original_center": 0.05726799874234965
+          }
+        }
+      }
+    },
+    {
+      "id": "base__evi_p10",
+      "native": "evi_p10",
+      "variant": "base",
+      "unit": "dimensionless",
+      "scale": [
+        -0.0438413435700943,
+        0.6658377644373514
+      ],
+      "initial": {
+        "requested": "2025-11",
+        "effective": "2025-11",
+        "reason": null
+      },
+      "historical_pool": {
+        "minimum": -0.0438413435700943,
+        "maximum": 0.6658377644373514,
+        "mean": 0.19099244423823125,
+        "count": 106785,
+        "first": "2000-03",
+        "last": "2026-05",
+        "weighting": "equal municipality-period observations",
+        "eligibility": "finite source value and no qa_flags bit 8; area ratio >1 retained",
+        "scope": "all municipalities and all available periods, separately for each variable",
+        "centres": {
+          "linear": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.19099244423823125,
+            "original_center": 0.19099244423823125
+          },
+          "log1p": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.1690547979104171,
+            "original_center": 0.1841850280111422
+          },
+          "log1p1000": {
+            "available": false,
+            "count": 106785,
+            "invalid_count": 14,
+            "display_mean": null,
+            "original_center": null
+          }
+        }
+      }
+    },
+    {
+      "id": "base__evi_p25",
+      "native": "evi_p25",
+      "variant": "base",
+      "unit": "dimensionless",
+      "scale": [
+        -0.001961149002998595,
+        0.7247667676955035
+      ],
+      "initial": {
+        "requested": "2025-11",
+        "effective": "2025-11",
+        "reason": null
+      },
+      "historical_pool": {
+        "minimum": -0.001961149002998595,
+        "maximum": 0.7247667676955035,
+        "mean": 0.22898684643319034,
+        "count": 106785,
+        "first": "2000-03",
+        "last": "2026-05",
+        "weighting": "equal municipality-period observations",
+        "eligibility": "finite source value and no qa_flags bit 8; area ratio >1 retained",
+        "scope": "all municipalities and all available periods, separately for each variable",
+        "centres": {
+          "linear": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.22898684643319034,
+            "original_center": 0.22898684643319034
+          },
+          "log1p": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.19904771693067622,
+            "original_center": 0.2202401906272933
+          },
+          "log1p1000": {
+            "available": false,
+            "count": 106785,
+            "invalid_count": 1,
+            "display_mean": null,
+            "original_center": null
+          }
+        }
+      }
+    },
+    {
+      "id": "base__evi_p75",
+      "native": "evi_p75",
+      "variant": "base",
+      "unit": "dimensionless",
+      "scale": [
+        0.06442680838977925,
+        0.8574066781078702
+      ],
+      "initial": {
+        "requested": "2025-11",
+        "effective": "2025-11",
+        "reason": null
+      },
+      "historical_pool": {
+        "minimum": 0.06442680838977925,
+        "maximum": 0.8574066781078702,
+        "mean": 0.31611807710995055,
+        "count": 106785,
+        "first": "2000-03",
+        "last": "2026-05",
+        "weighting": "equal municipality-period observations",
+        "eligibility": "finite source value and no qa_flags bit 8; area ratio >1 retained",
+        "scope": "all municipalities and all available periods, separately for each variable",
+        "centres": {
+          "linear": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.31611807710995055,
+            "original_center": 0.31611807710995055
+          },
+          "log1p": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.2647350553690559,
+            "original_center": 0.3030856844830873
+          },
+          "log1p1000": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 5.56135595656241,
+            "original_center": 0.2591753837684215
+          }
+        }
+      }
+    },
+    {
+      "id": "base__evi_p90",
+      "native": "evi_p90",
+      "variant": "base",
+      "unit": "dimensionless",
+      "scale": [
+        0.07860084757795703,
+        0.8848290670196538
+      ],
+      "initial": {
+        "requested": "2025-11",
+        "effective": "2025-11",
+        "reason": null
+      },
+      "historical_pool": {
+        "minimum": 0.07860084757795703,
+        "maximum": 0.8848290670196538,
+        "mean": 0.35653968875325676,
+        "count": 106785,
+        "first": "2000-03",
+        "last": "2026-05",
+        "weighting": "equal municipality-period observations",
+        "eligibility": "finite source value and no qa_flags bit 8; area ratio >1 retained",
+        "scope": "all municipalities and all available periods, separately for each variable",
+        "centres": {
+          "linear": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.35653968875325676,
+            "original_center": 0.35653968875325676
+          },
+          "log1p": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.2941753627237057,
+            "original_center": 0.3420192231794752
+          },
+          "log1p1000": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 5.696405960521473,
+            "original_center": 0.29679518767175506
+          }
+        }
+      }
+    },
+    {
+      "id": "base__evi_iqr",
+      "native": "evi_iqr",
+      "variant": "base",
+      "unit": "dimensionless",
+      "scale": [
+        0.0078008262374960335,
+        0.492217692970394
+      ],
+      "initial": {
+        "requested": "2025-11",
+        "effective": "2025-11",
+        "reason": null
+      },
+      "historical_pool": {
+        "minimum": 0.0078008262374960335,
+        "maximum": 0.492217692970394,
+        "mean": 0.08713123067676022,
+        "count": 106785,
+        "first": "2000-03",
+        "last": "2026-05",
+        "weighting": "equal municipality-period observations",
+        "eligibility": "finite source value and no qa_flags bit 8; area ratio >1 retained",
+        "scope": "all municipalities and all available periods, separately for each variable",
+        "centres": {
+          "linear": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.08713123067676022,
+            "original_center": 0.08713123067676022
+          },
+          "log1p": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 0.08188713713868485,
+            "original_center": 0.08533330909404233
+          },
+          "log1p1000": {
+            "available": true,
+            "count": 106785,
+            "invalid_count": 0,
+            "display_mean": 4.2220582793218036,
+            "original_center": 0.06717366041464465
+          }
+        }
+      }
+    }
+  ],
+  "columns": [
+    "base__ndvi_mean",
+    "base__ndvi_median",
+    "base__ndvi_min",
+    "base__ndvi_max",
+    "base__ndvi_stddev",
+    "base__ndvi_p10",
+    "base__ndvi_p25",
+    "base__ndvi_p75",
+    "base__ndvi_p90",
+    "base__ndvi_iqr",
+    "base__evi_mean",
+    "base__evi_median",
+    "base__evi_min",
+    "base__evi_max",
+    "base__evi_stddev",
+    "base__evi_p10",
+    "base__evi_p25",
+    "base__evi_p75",
+    "base__evi_p90",
+    "base__evi_iqr"
+  ],
+  "matrix_width": 23,
+  "snapshot": "c05-local-v1",
+  "source_exploration_required": false,
+  "reference_note": [
+    "Referencia: cumpleaños del profesor Méndez, 10 de noviembre de 2025.",
+    "Reference: Professor Méndez’s birthday, November 10, 2025."
+  ]
+}

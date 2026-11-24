@@ -1,0 +1,16 @@
+[
+  {
+    "path": "code/source_workflows/hku/[Python]_HKU_VIIRS_Monthly_Nighttime_Lights_\u00d7_Bolivia_Municipalities.ipynb",
+    "before_sha256": "95b2f0c7347304feefb95ffb7590f00aa3f90c6c11a71be5e34297d696753dad",
+    "after_sha256": "31614420cd3f87d83912a062ce56dfc1ff0ac0915785b4a5353b4e2d1e6bdb15",
+    "source_cells_unchanged": true,
+    "removed": "widget and session metadata; outputs and execution counts absent"
+  },
+  {
+    "path": "code/source_workflows/pm25/Bolivia_Monthly_PM25_339.ipynb",
+    "before_sha256": "29c665d544784bcad1e659ff6d55cb6236656020d1157114eb1e213de51e648b",
+    "after_sha256": "c4e2525b6b0822820dfb3df53d610f17da0c238e1838b0e27ff82006285b833a",
+    "source_cells_unchanged": true,
+    "removed": "widget and session metadata; outputs and execution counts absent"
+  }
+]

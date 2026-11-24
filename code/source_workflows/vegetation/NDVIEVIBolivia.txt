@@ -1,0 +1,580 @@
+// ============================================================================
+// BOLIVIA — MONTHLY NDVI / EVI MUNICIPAL PANEL
+// MODIS MOD13Q1 Collection 6.1
+// Geography: 339 municipalities, 2015 boundaries
+// Period: 2000-03 to 2026-05
+// Resolution: 250 m
+// Output: Annual CSV files
+// ============================================================================
+
+// 1. SETTINGS
+
+var ASSET =
+  'projects/ee-faviolc2/assets/bolivia339_2015';
+
+var START_YEAR = 2000;
+var START_MONTH = 3;
+
+var END_YEAR = 2026;
+var END_MONTH = 5;
+
+// SMOKE_TEST: all 12 months of 2017.
+// PRODUCTION: entire period.
+var EXPORT_MODE = 'PRODUCTION';
+
+var DRIVE_FOLDER =
+  'GEE_Bolivia_MOD13Q1_NDVI_EVI_Monthly';
+
+var SCALE = 250;
+var TILE_SCALE = 4;
+var MAX_PIXELS_PER_REGION = 1e8;
+
+
+// 2. MUNICIPALITIES
+
+function code6(value) {
+  return ee.String('000000')
+    .cat(ee.String(value))
+    .slice(-6);
+}
+
+var municipalities = ee.FeatureCollection(ASSET)
+  .map(function(f) {
+
+    f = ee.Feature(f);
+
+    return f.set({
+      mun_code: code6(f.get('mun_code')),
+      cna_code: code6(f.get('cna_code')),
+      municipality_area_m2: f.geometry().area(1)
+    });
+  });
+
+print('Municipalities:', municipalities.size());
+
+print(
+  'Distinct mun_code:',
+  municipalities.aggregate_count_distinct('mun_code')
+);
+
+print(
+  'Distinct cna_code:',
+  municipalities.aggregate_count_distinct('cna_code')
+);
+
+print('First municipality:', municipalities.first());
+
+Map.centerObject(municipalities, 6);
+
+Map.addLayer(
+  municipalities.style({
+    color: 'FFFFFF',
+    fillColor: '00000000',
+    width: 1
+  }),
+  {},
+  'Bolivia municipalities',
+  false
+);
+
+
+// 3. MODIS MOD13Q1
+
+var mod13 = ee.ImageCollection(
+  'MODIS/061/MOD13Q1'
+).select([
+  'NDVI',
+  'EVI',
+  'SummaryQA'
+]);
+
+print('MOD13Q1 first image:', mod13.first());
+
+print(
+  'MOD13Q1 available start:',
+  ee.Date(mod13.aggregate_min('system:time_start'))
+);
+
+print(
+  'MOD13Q1 available end:',
+  ee.Date(mod13.aggregate_max('system:time_start'))
+);
+
+
+// 4. QA MASK AND SCALING
+
+// SummaryQA:
+// 0 = Good
+// 1 = Marginal
+// 2 = Snow/ice
+// 3 = Cloudy
+//
+// Accept QA 0 and 1.
+// NDVI/EVI scale factor = 0.0001.
+
+function maskAndScale(image) {
+
+  var qa = image.select('SummaryQA');
+
+  var valid = qa.lte(1);
+
+  var vegetation = image
+    .select(['NDVI', 'EVI'])
+    .multiply(0.0001)
+    .updateMask(valid)
+    .rename(['ndvi', 'evi'])
+    .toFloat();
+
+  return vegetation.copyProperties(
+    image,
+    [
+      'system:time_start',
+      'system:time_end',
+      'system:index'
+    ]
+  );
+}
+
+
+// 5. MONTHLY COMPOSITE
+
+function monthlyImage(year, month) {
+
+  year = ee.Number(year);
+  month = ee.Number(month);
+
+  var start = ee.Date.fromYMD(year, month, 1);
+  var end = start.advance(1, 'month');
+
+  var collection = mod13
+    .filterDate(start, end)
+    .map(maskAndScale);
+
+  var nImages = collection.size();
+
+  // Median of valid 16-day composites.
+  var monthlyVI = collection
+    .median()
+    .rename(['ndvi', 'evi']);
+
+  // Number of valid composites per pixel.
+  var validObs = collection
+    .select('ndvi')
+    .count()
+    .rename('valid_obs');
+
+  return monthlyVI
+    .addBands(validObs)
+    .set({
+      year: year,
+      month: month,
+
+      ym: year.format('%04d')
+        .cat('-')
+        .cat(month.format('%02d')),
+
+      'system:time_start': start.millis(),
+
+      product: 'MODIS/061/MOD13Q1',
+      product_version: '061',
+      source_frequency: '16-day',
+
+      monthly_method:
+        'median_of_valid_16day_composites',
+
+      qa_rule: 'SummaryQA <= 1',
+      scale_factor: 0.0001,
+
+      n_modis_images: nImages,
+      nominal_scale_m: SCALE
+    });
+}
+
+
+// 6. UNIVERSAL SPATIAL REDUCER
+
+var reducer = ee.Reducer.mean()
+
+  .combine({
+    reducer2: ee.Reducer.median(),
+    sharedInputs: true
+  })
+
+  .combine({
+    reducer2: ee.Reducer.minMax(),
+    sharedInputs: true
+  })
+
+  .combine({
+    reducer2: ee.Reducer.stdDev(),
+    sharedInputs: true
+  })
+
+  .combine({
+    reducer2: ee.Reducer.percentile([
+      10, 25, 75, 90
+    ]),
+    sharedInputs: true
+  })
+
+  .combine({
+    reducer2: ee.Reducer.count(),
+    sharedInputs: true
+  });
+
+
+// 7. NULL-SAFE HELPERS
+
+function safeDifference(a, b) {
+
+  return ee.Algorithms.If(
+    ee.Algorithms.IsEqual(a, null),
+    null,
+    ee.Algorithms.If(
+      ee.Algorithms.IsEqual(b, null),
+      null,
+      ee.Number(a).subtract(ee.Number(b))
+    )
+  );
+}
+
+function safeDivide(a, b) {
+
+  return ee.Algorithms.If(
+    ee.Algorithms.IsEqual(a, null),
+    null,
+    ee.Algorithms.If(
+      ee.Algorithms.IsEqual(b, null),
+      null,
+      ee.Algorithms.If(
+        ee.Number(b).gt(0),
+        ee.Number(a).divide(ee.Number(b)),
+        null
+      )
+    )
+  );
+}
+
+
+// 8. MONTHLY MUNICIPAL STATISTICS
+
+function monthlyStats(year, month) {
+
+  year = ee.Number(year);
+  month = ee.Number(month);
+
+  var image = monthlyImage(year, month);
+
+  var viImage = image.select([
+    'ndvi',
+    'evi'
+  ]);
+
+  // 8A. NDVI and EVI statistics
+
+  var stats = viImage.reduceRegions({
+    collection: municipalities,
+    reducer: reducer,
+    scale: SCALE,
+    tileScale: TILE_SCALE,
+    maxPixelsPerRegion: MAX_PIXELS_PER_REGION
+  });
+
+  // 8B. Valid observed area
+
+  var pixelArea = ee.Image.pixelArea();
+
+  var ndviArea = pixelArea
+    .updateMask(viImage.select('ndvi').mask())
+    .rename('ndvi_valid_area_m2');
+
+  var eviArea = pixelArea
+    .updateMask(viImage.select('evi').mask())
+    .rename('evi_valid_area_m2');
+
+  var areaImage = ndviArea.addBands(eviArea);
+
+  var areaStats = areaImage.reduceRegions({
+    collection: municipalities,
+    reducer: ee.Reducer.sum(),
+    scale: SCALE,
+    tileScale: TILE_SCALE,
+    maxPixelsPerRegion: MAX_PIXELS_PER_REGION
+  });
+
+  // 8C. Join using municipal code
+
+  var joined = ee.Join.saveFirst('area_feature')
+    .apply({
+      primary: stats,
+      secondary: areaStats,
+
+      condition: ee.Filter.equals({
+        leftField: 'mun_code',
+        rightField: 'mun_code'
+      })
+    });
+
+  // 8D. Final output
+
+  return ee.FeatureCollection(joined)
+    .map(function(f) {
+
+      f = ee.Feature(f);
+
+      var areaFeature = ee.Feature(
+        f.get('area_feature')
+      );
+
+      var municipalityArea = f.get(
+        'municipality_area_m2'
+      );
+
+      // Multi-band reducers retain band prefixes.
+      var ndviValidArea = areaFeature.get(
+        'ndvi_valid_area_m2'
+      );
+
+      var eviValidArea = areaFeature.get(
+        'evi_valid_area_m2'
+      );
+
+      return ee.Feature(null, {
+
+        // Geographic identifiers
+        mun_code: f.get('mun_code'),
+        cna_code: f.get('cna_code'),
+        municipio: f.get('municipio'),
+        depto: f.get('depto'),
+        provincia: f.get('provincia'),
+
+        map_name: f.get('map_name'),
+        map_year: f.get('map_year'),
+        census_yr: f.get('census_yr'),
+
+        // Time
+        year: year,
+        month: month,
+
+        ym: year.format('%04d')
+          .cat('-')
+          .cat(month.format('%02d')),
+
+        date: ee.Date.fromYMD(year, month, 1)
+          .format('YYYY-MM-dd'),
+
+        // NDVI statistics
+        ndvi_mean: f.get('ndvi_mean'),
+        ndvi_median: f.get('ndvi_median'),
+        ndvi_min: f.get('ndvi_min'),
+        ndvi_max: f.get('ndvi_max'),
+        ndvi_stddev: f.get('ndvi_stdDev'),
+
+        ndvi_p10: f.get('ndvi_p10'),
+        ndvi_p25: f.get('ndvi_p25'),
+        ndvi_p75: f.get('ndvi_p75'),
+        ndvi_p90: f.get('ndvi_p90'),
+
+        ndvi_iqr: safeDifference(
+          f.get('ndvi_p75'),
+          f.get('ndvi_p25')
+        ),
+
+        // EVI statistics
+        evi_mean: f.get('evi_mean'),
+        evi_median: f.get('evi_median'),
+        evi_min: f.get('evi_min'),
+        evi_max: f.get('evi_max'),
+        evi_stddev: f.get('evi_stdDev'),
+
+        evi_p10: f.get('evi_p10'),
+        evi_p25: f.get('evi_p25'),
+        evi_p75: f.get('evi_p75'),
+        evi_p90: f.get('evi_p90'),
+
+        evi_iqr: safeDifference(
+          f.get('evi_p75'),
+          f.get('evi_p25')
+        ),
+
+        // Spatial coverage
+        ndvi_valid_pixel_count:
+          f.get('ndvi_count'),
+
+        evi_valid_pixel_count:
+          f.get('evi_count'),
+
+        ndvi_valid_area_m2: ndviValidArea,
+        evi_valid_area_m2: eviValidArea,
+
+        ndvi_valid_area_share: safeDivide(
+          ndviValidArea,
+          municipalityArea
+        ),
+
+        evi_valid_area_share: safeDivide(
+          eviValidArea,
+          municipalityArea
+        ),
+
+        municipality_area_m2: municipalityArea,
+
+        // Metadata
+        product: 'MODIS/061/MOD13Q1',
+        product_version: '061',
+        source_frequency: '16-day',
+
+        monthly_method:
+          'median_of_valid_16day_composites',
+
+        qa_rule: 'SummaryQA <= 1',
+        scale_factor: 0.0001,
+        n_modis_images: image.get('n_modis_images'),
+        scale_m: SCALE
+      });
+    });
+}
+
+
+// 9. ANNUAL TABLE
+
+function tableForYear(year, firstMonth, lastMonth) {
+
+  var months = ee.List.sequence(
+    firstMonth,
+    lastMonth
+  );
+
+  var tables = months.map(function(month) {
+    return monthlyStats(year, month);
+  });
+
+  return ee.FeatureCollection(tables).flatten();
+}
+
+
+// 10. PREVIEW — AUGUST 2017
+
+var preview = monthlyImage(2017, 8);
+
+Map.addLayer(
+  preview.select('ndvi')
+    .clipToCollection(municipalities),
+  {
+    min: 0,
+    max: 0.9,
+    palette: [
+      '8C510A',
+      'DFC27D',
+      'F6E8C3',
+      'C7EAE5',
+      '5AB4AC',
+      '01665E'
+    ]
+  },
+  'Bolivia NDVI 2017-08',
+  true
+);
+
+Map.addLayer(
+  preview.select('evi')
+    .clipToCollection(municipalities),
+  {
+    min: 0,
+    max: 0.8,
+    palette: [
+      '8C510A',
+      'DFC27D',
+      'F6E8C3',
+      'C7EAE5',
+      '5AB4AC',
+      '01665E'
+    ]
+  },
+  'Bolivia EVI 2017-08',
+  false
+);
+
+Map.addLayer(
+  preview.select('valid_obs')
+    .clipToCollection(municipalities),
+  {
+    min: 0,
+    max: 3
+  },
+  'Valid MOD13Q1 observations',
+  false
+);
+
+print('Preview monthly image:', preview);
+
+print(
+  'Preview municipal statistics:',
+  monthlyStats(2017, 8).limit(5)
+);
+
+
+// 11. EXPORT ANNUAL CSV FILES
+
+var years = [];
+
+if (EXPORT_MODE === 'SMOKE_TEST') {
+
+  years = [2017];
+
+} else if (EXPORT_MODE === 'PRODUCTION') {
+
+  for (
+    var y = START_YEAR;
+    y <= END_YEAR;
+    y++
+  ) {
+    years.push(y);
+  }
+
+} else {
+
+  throw new Error(
+    'Invalid EXPORT_MODE. Use SMOKE_TEST or PRODUCTION.'
+  );
+}
+
+years.forEach(function(year) {
+
+  var firstMonth = 1;
+  var lastMonth = 12;
+
+  if (year === START_YEAR) {
+    firstMonth = START_MONTH;
+  }
+
+  if (year === END_YEAR) {
+    lastMonth = END_MONTH;
+  }
+
+  // Full 2017 smoke test:
+  // January through December, 339 municipalities.
+  if (EXPORT_MODE === 'SMOKE_TEST') {
+    firstMonth = 1;
+    lastMonth = 12;
+  }
+
+  var table = tableForYear(
+    year,
+    firstMonth,
+    lastMonth
+  );
+
+  var name =
+    'Bolivia_MOD13Q1_NDVI_EVI_Monthly_' +
+    'Municipalities_' + String(year);
+
+  Export.table.toDrive({
+    collection: table,
+    description: name,
+    folder: DRIVE_FOLDER,
+    fileNamePrefix: name,
+    fileFormat: 'CSV'
+  });
+
+});

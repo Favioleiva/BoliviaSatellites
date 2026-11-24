@@ -1,0 +1,527 @@
+
+ // ============================================================
+ // BOLIVIA — MONTHLY PRECIPITATION PANEL
+ // NASA GPM IMERG V07 | 2000-06 to 2026-05
+ // Geography: 339 municipalities, 2015 boundaries
+ // CORRECTED VERSION
+ // ============================================================
+
+ // 1. SETTINGS
+
+ var ASSET = 'projects/ee-faviolc2/assets/bolivia339_2015';
+
+ var START_YEAR = 2000;
+ var START_MONTH = 6;
+
+ var END_YEAR = 2026;
+ var END_MONTH = 5;
+
+ // SMOKE_TEST: January 2005 only
+ // PRODUCTION: all annual exports
+ var EXPORT_MODE = 'PRODUCTION';
+
+ var DRIVE_FOLDER =
+   'GEE_Bolivia_GPM_IMERG_V07_Precipitation_Monthly_CORRECTED';
+
+ var SCALE = 11132;
+ var TILE_SCALE = 8;
+ var MAX_PIXELS_PER_REGION = 1e8;
+
+
+ // 2. MUNICIPALITIES
+
+ var municipalities = ee.FeatureCollection(ASSET)
+   .map(function(f) {
+
+     f = ee.Feature(f);
+
+     return f.set({
+       mun_code: ee.String('000000')
+         .cat(ee.String(f.get('mun_code')))
+         .slice(-6),
+
+       cna_code: ee.String('000000')
+         .cat(ee.String(f.get('cna_code')))
+         .slice(-6),
+
+       municipality_area_m2: f.geometry().area(1)
+     });
+   });
+
+ print('Municipalities:', municipalities.size());
+
+ print(
+   'Distinct mun_code:',
+   municipalities.aggregate_count_distinct('mun_code')
+ );
+
+ Map.centerObject(municipalities, 6);
+
+ Map.addLayer(
+   municipalities.style({
+     color: 'FFFFFF',
+     fillColor: '00000000',
+     width: 1
+   }),
+   {},
+   'Bolivia municipalities',
+   true
+ );
+
+
+ // 3. GPM IMERG V07
+
+ var gpm = ee.ImageCollection(
+   'NASA/GPM_L3/IMERG_V07'
+ ).select('precipitation');
+
+ print('GPM first image:', gpm.first());
+
+ print(
+   'GPM available start:',
+   ee.Date(gpm.aggregate_min('system:time_start'))
+ );
+
+ print(
+   'GPM available end:',
+   ee.Date(gpm.aggregate_max('system:time_start'))
+ );
+
+
+ // 4. SPATIAL REDUCER
+
+ var reducer = ee.Reducer.mean()
+   .combine({
+     reducer2: ee.Reducer.median(),
+     sharedInputs: true
+   })
+   .combine({
+     reducer2: ee.Reducer.minMax(),
+     sharedInputs: true
+   })
+   .combine({
+     reducer2: ee.Reducer.stdDev(),
+     sharedInputs: true
+   })
+   .combine({
+     reducer2: ee.Reducer.percentile([10, 25, 75, 90]),
+     sharedInputs: true
+   })
+   .combine({
+     reducer2: ee.Reducer.count(),
+     sharedInputs: true
+   });
+
+
+ // 5. NULL-SAFE HELPERS
+
+ function safeDifference(a, b) {
+
+   return ee.Algorithms.If(
+     ee.Algorithms.IsEqual(a, null),
+     null,
+     ee.Algorithms.If(
+       ee.Algorithms.IsEqual(b, null),
+       null,
+       ee.Number(a).subtract(ee.Number(b))
+     )
+   );
+ }
+
+ function safeDivide(a, b) {
+
+   return ee.Algorithms.If(
+     ee.Algorithms.IsEqual(a, null),
+     null,
+     ee.Algorithms.If(
+       ee.Algorithms.IsEqual(b, null),
+       null,
+       ee.Algorithms.If(
+         ee.Number(b).gt(0),
+         ee.Number(a).divide(ee.Number(b)),
+         null
+       )
+     )
+   );
+ }
+
+
+ // 6. MONTHLY PRECIPITATION IMAGE
+
+ function monthlyImage(year, month) {
+
+   year = ee.Number(year);
+   month = ee.Number(month);
+
+   var start = ee.Date.fromYMD(year, month, 1);
+   var end = start.advance(1, 'month');
+
+   var collection = gpm.filterDate(start, end);
+
+   var nImages = collection.size();
+
+   var daysInMonth = end.difference(start, 'day');
+
+   var expectedImages = daysInMonth.multiply(48);
+
+   var temporalCoverage = nImages.divide(expectedImages);
+
+   // Original units: mm/hour.
+   // Each image represents 0.5 hours.
+   // Monthly accumulation in mm.
+
+   var total = collection
+     .sum()
+     .multiply(0.5)
+     .rename('precip')
+     .toFloat();
+
+   var complete = nImages.eq(expectedImages);
+
+   // An incomplete month must not become zero rainfall.
+
+   var empty = ee.Image.constant(0)
+     .rename('precip')
+     .toFloat()
+     .updateMask(ee.Image.constant(0));
+
+   var result = ee.Image(
+     ee.Algorithms.If(
+       complete,
+       total,
+       empty
+     )
+   );
+
+   return result.set({
+     year: year,
+     month: month,
+
+     ym: year.format('%04d')
+       .cat('-')
+       .cat(month.format('%02d')),
+
+     'system:time_start': start.millis(),
+
+     product: 'NASA/GPM_L3/IMERG_V07',
+     product_version: '07',
+     source_band: 'precipitation',
+     source_units: 'mm/hour',
+     source_frequency: '30-minute',
+     output_units: 'mm/month',
+
+     monthly_method:
+       'sum_of_half_hourly_rates_times_0.5_hours',
+
+     n_gpm_images: nImages,
+     expected_gpm_images: expectedImages,
+     temporal_coverage_share: temporalCoverage,
+     complete_month: complete,
+     nominal_scale_m: SCALE
+   });
+ }
+
+
+ // 7. MONTHLY MUNICIPAL STATISTICS
+
+ function monthlyStats(year, month) {
+
+   year = ee.Number(year);
+   month = ee.Number(month);
+
+   var image = monthlyImage(year, month);
+
+   // 7A. Spatial precipitation statistics
+
+   var stats = image.reduceRegions({
+     collection: municipalities,
+     reducer: reducer,
+     scale: SCALE,
+     tileScale: TILE_SCALE,
+     maxPixelsPerRegion: MAX_PIXELS_PER_REGION
+   });
+
+   // 7B. Spatial area with valid precipitation data
+
+   var validAreaImage = ee.Image.pixelArea()
+     .updateMask(image.mask())
+     .rename('valid_area_m2');
+
+   var areaStats = validAreaImage.reduceRegions({
+     collection: municipalities,
+     reducer: ee.Reducer.sum(),
+     scale: SCALE,
+     tileScale: TILE_SCALE,
+     maxPixelsPerRegion: MAX_PIXELS_PER_REGION
+   });
+
+   // 7C. Join by municipality code
+
+   var joined = ee.Join.saveFirst('area_feature')
+     .apply({
+       primary: stats,
+       secondary: areaStats,
+       condition: ee.Filter.equals({
+         leftField: 'mun_code',
+         rightField: 'mun_code'
+       })
+     });
+
+   // 7D. Complete output
+
+   return ee.FeatureCollection(joined)
+     .map(function(f) {
+
+       f = ee.Feature(f);
+
+       var areaFeature = ee.Feature(
+         f.get('area_feature')
+       );
+
+       // FIX 1:
+       // ee.Reducer.sum() returns property 'sum',
+       // not 'valid_area_m2'.
+
+       var validArea = areaFeature.get('sum');
+
+       var municipalityArea = f.get(
+         'municipality_area_m2'
+       );
+
+       var coverage = safeDivide(
+         validArea,
+         municipalityArea
+       );
+
+       return ee.Feature(null, {
+
+         // Geographic identifiers
+         mun_code: f.get('mun_code'),
+         cna_code: f.get('cna_code'),
+         municipio: f.get('municipio'),
+         depto: f.get('depto'),
+         provincia: f.get('provincia'),
+         map_name: f.get('map_name'),
+         map_year: f.get('map_year'),
+         census_yr: f.get('census_yr'),
+
+         // Time
+         year: year,
+         month: month,
+
+         ym: year.format('%04d')
+           .cat('-')
+           .cat(month.format('%02d')),
+
+         date: ee.Date.fromYMD(year, month, 1)
+           .format('YYYY-MM-dd'),
+
+         // FIX 2:
+         // The combined single-band reducer returns
+         // mean, median, min, max, stdDev, etc.
+         // WITHOUT the 'precip_' prefix.
+
+         precip_mean: f.get('mean'),
+         precip_median: f.get('median'),
+         precip_min: f.get('min'),
+         precip_max: f.get('max'),
+         precip_stddev: f.get('stdDev'),
+
+         precip_p10: f.get('p10'),
+         precip_p25: f.get('p25'),
+         precip_p75: f.get('p75'),
+         precip_p90: f.get('p90'),
+
+         precip_iqr: safeDifference(
+           f.get('p75'),
+           f.get('p25')
+         ),
+
+         precip_valid_pixel_count: f.get('count'),
+
+         // Spatial coverage
+         precip_valid_area_m2: validArea,
+         precip_valid_area_share: coverage,
+
+         municipality_area_m2: municipalityArea,
+
+         // Temporal coverage
+         n_gpm_images: image.get('n_gpm_images'),
+
+         expected_gpm_images:
+           image.get('expected_gpm_images'),
+
+         temporal_coverage_share:
+           image.get('temporal_coverage_share'),
+
+         complete_month:
+           image.get('complete_month'),
+
+         // Metadata
+         product: 'NASA/GPM_L3/IMERG_V07',
+         product_version: '07',
+         source_band: 'precipitation',
+         source_units: 'mm/hour',
+         source_frequency: '30-minute',
+         output_units: 'mm/month',
+
+         monthly_method:
+           'sum_of_half_hourly_rates_times_0.5_hours',
+
+         scale_m: SCALE
+       });
+     });
+ }
+
+
+ // 8. ANNUAL TABLE
+
+ function tableForYear(year, firstMonth, lastMonth) {
+
+   var months = ee.List.sequence(
+     firstMonth,
+     lastMonth
+   );
+
+   var tables = months.map(function(month) {
+     return monthlyStats(year, month);
+   });
+
+   return ee.FeatureCollection(tables).flatten();
+ }
+
+
+ // 9. DIAGNOSTIC TEST — JANUARY 2005
+
+ var testYear = 2005;
+ var testMonth = 1;
+
+ var testImage = monthlyImage(testYear, testMonth);
+
+ Map.addLayer(
+   testImage.clipToCollection(municipalities),
+   {
+     min: 0,
+     max: 500,
+     palette: [
+       'FFFFFF',
+       'D4F0FF',
+       '74ADD1',
+       '4575B4',
+       '313695'
+     ]
+   },
+   'Precipitation 2005-01 (mm)',
+   true
+ );
+
+ print('Test image:', testImage);
+
+ print(
+   'Number of GPM images:',
+   testImage.get('n_gpm_images')
+ );
+
+ print(
+   'Expected images:',
+   testImage.get('expected_gpm_images')
+ );
+
+ print(
+   'Temporal coverage:',
+   testImage.get('temporal_coverage_share')
+ );
+
+ print(
+   'Complete month:',
+   testImage.get('complete_month')
+ );
+
+ // Verify the actual property names returned
+ // by the combined reducer.
+
+ var rawStats = testImage.reduceRegions({
+   collection: municipalities.limit(1),
+   reducer: reducer,
+   scale: SCALE,
+   tileScale: TILE_SCALE
+ });
+
+ print(
+   'RAW REDUCER PROPERTY NAMES:',
+   ee.Feature(rawStats.first()).propertyNames()
+ );
+
+ print(
+   'RAW REDUCER VALUES:',
+   rawStats.first()
+ );
+
+ print(
+   'CORRECTED MUNICIPAL STATISTICS:',
+   monthlyStats(testYear, testMonth).limit(5)
+ );
+
+
+ // 10. EXPORTS
+
+ var years = [];
+
+ if (EXPORT_MODE === 'SMOKE_TEST') {
+
+   years = [2005];
+
+ } else if (EXPORT_MODE === 'PRODUCTION') {
+
+   for (
+     var y = START_YEAR;
+     y <= END_YEAR;
+     y++
+   ) {
+     years.push(y);
+   }
+
+ } else {
+
+   throw new Error('Invalid EXPORT_MODE');
+ }
+
+ years.forEach(function(year) {
+
+   var firstMonth = 1;
+   var lastMonth = 12;
+
+   if (year === START_YEAR) {
+     firstMonth = START_MONTH;
+   }
+
+   if (year === END_YEAR) {
+     lastMonth = END_MONTH;
+   }
+
+   if (EXPORT_MODE === 'SMOKE_TEST') {
+     firstMonth = testMonth;
+     lastMonth = testMonth;
+   }
+
+   var table = tableForYear(
+     year,
+     firstMonth,
+     lastMonth
+   );
+
+   var name =
+     'Bolivia_GPM_IMERG_V07_Precipitation_Monthly_' +
+     'Municipalities_' +
+     String(year) +
+     '_CORRECTED';
+
+   Export.table.toDrive({
+     collection: table,
+     description: name,
+     folder: DRIVE_FOLDER,
+     fileNamePrefix: name,
+     fileFormat: 'CSV'
+   });
+
+ });

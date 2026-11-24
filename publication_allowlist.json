@@ -1,0 +1,601 @@
+{
+  "status": "PREPARED_PENDING_HUMAN_PUBLICATION_AUTHORIZATION",
+  "target": "Favioleiva/BoliviaSatellites",
+  "published": false,
+  "scope": "All candidate source files except this manifest itself; Git metadata excluded",
+  "license": "Project code license pending human selection; third-party terms retained",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 84,
+      "sha256": "119247c581df9241aaf93214a3e8c5da8fe23f3435fcf3787a83103c06312b6d"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 536,
+      "sha256": "43bff7f9c4331cbd764eeb02e5847c6c8202aa827aa4529e25585c62b6c5b336"
+    },
+    {
+      "path": "index.html",
+      "bytes": 389,
+      "sha256": "9d2460ed3fbf10d7520100d317e32fa1582dd2fb99bfc0e00c92ed52e78302ac"
+    },
+    {
+      "path": "netlify.toml",
+      "bytes": 342,
+      "sha256": "2ecf3f1f83889351c52e314ad10bcc5515715a5fdd23325e5f5cbe103dddfc96"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 173,
+      "sha256": "8e998da5ef6bece982125d6d03a4ec6ff944564d3059b81bce5c7fd5865a12f2"
+    },
+    {
+      "path": "package.json",
+      "bytes": 522,
+      "sha256": "06191bdd18898d4d774c6a89cafe6674f6e7908f2414a1024e084ff15e9e7aab"
+    },
+    {
+      "path": "README.en.md",
+      "bytes": 4574,
+      "sha256": "b5d002503b7636eabfac27f6f40e23848599828f09ecfe0abd1db7d827187ab5"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5515,
+      "sha256": "581ac2ae94feb2b881b3a548c6a3ac97cd3b430a611e8b032a2bb77218072d4b"
+    },
+    {
+      "path": "requirements.lock",
+      "bytes": 160,
+      "sha256": "06da17fc7c5c461fa327bb9c89baefb9c62b973c77a6daf280b6ade5d11362b9"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.txt",
+      "bytes": 1348,
+      "sha256": "25772f82effe92338a2fe6dc7b1b2a5369d652c5de7ae71cc4913ca4cc3efe0d"
+    },
+    {
+      "path": "code/blackmarble_variables.py",
+      "bytes": 1303,
+      "sha256": "ca1419f4b9e53e2cde09f012792aac5d0cb77349d4d749a3cb71634394f99bd0"
+    },
+    {
+      "path": "code/historical_pool.py",
+      "bytes": 1535,
+      "sha256": "f02ea7667137b21ad125bb3b286dd485dbf39421d9c26d1fc4fed1213c7ff505"
+    },
+    {
+      "path": "code/optimize_candidate.py",
+      "bytes": 1810,
+      "sha256": "079a0961d6e7a8d571cdabde70398ea6b82b553e0ccc152d23466203fca00504"
+    },
+    {
+      "path": "code/preflight.py",
+      "bytes": 4802,
+      "sha256": "5cb2890ab8d962045edbc3dee2cb55ab3551cdb091a1a65c3c790e617bf4b023"
+    },
+    {
+      "path": "code/reproduce_local.py",
+      "bytes": 2722,
+      "sha256": "71dc18fa51100812b1a65fc52b1ad32a65d17ec6ac2678189f06724968ba25ce"
+    },
+    {
+      "path": "code/run.py",
+      "bytes": 33949,
+      "sha256": "070164d0b722a0beb4a9b7cdc1042c7e58c01999f670d74b0ae052bebdbe677c"
+    },
+    {
+      "path": "code/validate.py",
+      "bytes": 5929,
+      "sha256": "2778fd5d061bd4953096f39630952c811c9a0103e356735fd66ec9a35af37393"
+    },
+    {
+      "path": "code/webcodec.py",
+      "bytes": 954,
+      "sha256": "c99d39db2fae56db3e3f0eda316815b49a1b1b27b6a6d58e627e9e2404194beb"
+    },
+    {
+      "path": "distribution/webdata-manifest.json",
+      "bytes": 1166487,
+      "sha256": "7f88b7672f600ca2a92ced0600fad747c9701d30809adc4cc10cfdd2d5d0bfe1"
+    },
+    {
+      "path": "LICENSES/panelplots-MIT.txt",
+      "bytes": 1085,
+      "sha256": "c6c4ac308f57bea2b48d4bdfee0f02f48c2546f79b119d6e7e615d2264cdf0f9"
+    },
+    {
+      "path": "LICENSES/PROJECT_LICENSE_PENDING.txt",
+      "bytes": 532,
+      "sha256": "0ef84ee2671c829cbcf985b9fe964f4f43c999253f8b228b952c0263bd4011a8"
+    },
+    {
+      "path": "provenance/notebook_sanitization.json",
+      "bytes": 819,
+      "sha256": "1ea0a88cd583a0e4a18aaa86293af086966bf2996c89f067b5bf6f78d441cf15"
+    },
+    {
+      "path": "provenance/sources.json",
+      "bytes": 108201,
+      "sha256": "5cdcf8125f303824ce26955e57dfee24aa3f7c8efca62f1a713708616d7a2821"
+    },
+    {
+      "path": "scripts/audit_distribution.py",
+      "bytes": 1820,
+      "sha256": "8d62cbd2185b244d02ebe5efff8fea661674e4333039c2561aced55e3384b090"
+    },
+    {
+      "path": "scripts/build.mjs",
+      "bytes": 1169,
+      "sha256": "408fdbad33e5dffb1e3cfc210651a29d2b5a02a8b29178e0203c90fa3ff3e4a8"
+    },
+    {
+      "path": "scripts/build_offline.py",
+      "bytes": 2417,
+      "sha256": "9e73813977c5063b255e95a857dd6d45fcaadf62561183a635d35a0a9ec77162"
+    },
+    {
+      "path": "scripts/build_release.py",
+      "bytes": 8582,
+      "sha256": "3c3699db2b8c75463649c5fbd380f544ef3255f56265c726e9e38e2522dbdfd3"
+    },
+    {
+      "path": "scripts/compact_blackmarble_candidate.py",
+      "bytes": 1976,
+      "sha256": "4106cbf2a33b7d648118b4ed6ecdd07be0f8fb0116f6d2df912a6d8d35042ab8"
+    },
+    {
+      "path": "scripts/prepare_blackmarble_extension.py",
+      "bytes": 2279,
+      "sha256": "d4f20a4f884f15986154f7e33a6680668fcf3141d53d969dacc875add3ef0ea2"
+    },
+    {
+      "path": "scripts/prepare_publication.py",
+      "bytes": 2993,
+      "sha256": "8950ef85afd9073362a547659716a3e04bd4199bbece7862dcaf8ca912032329"
+    },
+    {
+      "path": "scripts/prepare_sources.py",
+      "bytes": 1586,
+      "sha256": "4fd5c4d63960708c2a010732905dda2d54a4096c28f63784e2447b1467b7f214"
+    },
+    {
+      "path": "scripts/restore_webdata.py",
+      "bytes": 4590,
+      "sha256": "d99399904c5884fc026fc3c614e0609151e1d39c86a4494decc8d6e3db40a1e2"
+    },
+    {
+      "path": "scripts/serve_local.py",
+      "bytes": 1552,
+      "sha256": "91230646711e4a589cb5eba2b4ad800ae2a2f48394e7a42b109d8155a180f2f4"
+    },
+    {
+      "path": "scripts/summarize_validation.py",
+      "bytes": 12703,
+      "sha256": "db10d392137c4cbfc6b36b768967380775d2ffadfcb4d53a91363d3e77b7f176"
+    },
+    {
+      "path": "scripts/update_context_pools.py",
+      "bytes": 3304,
+      "sha256": "cb1fc4d03e0e12c91d777c20d98bfa2a8e20be183906a6212b1ecade42158539"
+    },
+    {
+      "path": "scripts/update_temperature_pool.py",
+      "bytes": 1056,
+      "sha256": "025038ce25a201dad2eb469832c44ad11b6c15038794fd083510f836dc06940e"
+    },
+    {
+      "path": "scripts/visual_review.py",
+      "bytes": 15626,
+      "sha256": "02f0ae30d98c08a24a3c30e3a20dab8680d436d59a8f9f522e0e9b50671a8768"
+    },
+    {
+      "path": "src/app.js",
+      "bytes": 49837,
+      "sha256": "453b1ec950c2c314d0b1e525995b04235926c38e2e5ca80a70f92c9900a04434"
+    },
+    {
+      "path": "src/distribution-config.js",
+      "bytes": 44,
+      "sha256": "3ce02eed3f3ba70dcb82555a97a4486c812555dee1b51ea6a2eac978e38dbf1f"
+    },
+    {
+      "path": "src/index.html",
+      "bytes": 10877,
+      "sha256": "49e3e104585170d739018f77439da3d89b7755e10e537ce9ece7134320d04408"
+    },
+    {
+      "path": "src/local-loader.js",
+      "bytes": 1224,
+      "sha256": "13b72032bc089482d2a83e07de10f5dbd31208562a1d3b9276c12fd86b744542"
+    },
+    {
+      "path": "src/palettes.js",
+      "bytes": 2659,
+      "sha256": "acec3bb138d5a67c39e599087d35f1d9094b3980297a6924cd1469f1efd7a15e"
+    },
+    {
+      "path": "src/review-design.css",
+      "bytes": 12923,
+      "sha256": "5384efff2c152fb42d06ec1425d675973e0d25f1d5ad976abdab6b65250c680f"
+    },
+    {
+      "path": "src/styles.css",
+      "bytes": 11666,
+      "sha256": "265b0fdaf9dbfd27d4b72b9130d03b0ddbfa268623152666ab51632fd07c4447"
+    },
+    {
+      "path": "src/variable-labels.js",
+      "bytes": 2991,
+      "sha256": "b5aefe4a204dff1b1e1abf99ad001f9c73b14266e9859dc8c5b3261f4e82d6a5"
+    },
+    {
+      "path": "src/worker-source.js",
+      "bytes": 1539,
+      "sha256": "3113bcea9e4e510023c5b6286c16d0bdc5e9b8223c52e05a54f9dc72c957f3a5"
+    },
+    {
+      "path": "src/worker.js",
+      "bytes": 1509,
+      "sha256": "470c3ed2d4e17d73fd2be3fb77cb04cbdac811f7be20555b2ef594781dafcbf2"
+    },
+    {
+      "path": "code/source_workflows/blackmarble/Download_BlackMarble_Bolivia.py",
+      "bytes": 1816,
+      "sha256": "664b0b375c5f7928caef31349376e24a802c97340adfe49b4aa5b0c84609db9a"
+    },
+    {
+      "path": "code/source_workflows/era5/TemperatureBolivia.txt",
+      "bytes": 8307,
+      "sha256": "8213144f671a2be5cee1708068046a632e08f035bdaada062cc7475c019ae652"
+    },
+    {
+      "path": "code/source_workflows/fire/FireBolivia.txt",
+      "bytes": 12922,
+      "sha256": "78c724d70e8d4d69f7eb2a138e9504b2b957cb1332ff14f7157af1d860f9f5e3"
+    },
+    {
+      "path": "code/source_workflows/gpm/RainBolivia.txt",
+      "bytes": 11234,
+      "sha256": "06eb891c831a19da0a2e126cf58da0ac7dda38c2810f8ec44f99743d78007a2d"
+    },
+    {
+      "path": "code/source_workflows/hku/[Python]_HKU_VIIRS_Monthly_Nighttime_Lights_×_Bolivia_Municipalities.ipynb",
+      "bytes": 176375,
+      "sha256": "31614420cd3f87d83912a062ce56dfc1ff0ac0915785b4a5353b4e2d1e6bdb15"
+    },
+    {
+      "path": "code/source_workflows/pm25/Bolivia_Monthly_PM25_339.ipynb",
+      "bytes": 102267,
+      "sha256": "c4e2525b6b0822820dfb3df53d610f17da0c238e1838b0e27ff82006285b833a"
+    },
+    {
+      "path": "code/source_workflows/pm25/Build_PM25_MegaParquet.py",
+      "bytes": 3886,
+      "sha256": "23fefd6422c07678115a927bd808fb7fb603cc7d1797f355d2139199a4331fc5"
+    },
+    {
+      "path": "code/source_workflows/vegetation/NDVIEVIBolivia.txt",
+      "bytes": 11557,
+      "sha256": "73ca34ce7c3a4256693d21480bcdb050f3fb131dc782427cb06328fb31398e62"
+    },
+    {
+      "path": "data/catalog/blackmarble.json",
+      "bytes": 766,
+      "sha256": "70340a906900a08839fdf894a06af69dd9f2164bfc10c57463966f9813d444bc"
+    },
+    {
+      "path": "data/catalog/era5.json",
+      "bytes": 679,
+      "sha256": "fc7e240507e534499dcb11d7ad73ee00ae2a27cedb829c8d886892f399918a4a"
+    },
+    {
+      "path": "data/catalog/fire.json",
+      "bytes": 673,
+      "sha256": "8dc011bcf3eb74426570e9c930a9e8b43a5f06a1a55ba9a974a21e0897c9ca65"
+    },
+    {
+      "path": "data/catalog/gpm.json",
+      "bytes": 683,
+      "sha256": "4ff66001c6eb8b92e76e200dd74f022b7f225a46291b4618ce4fff5564f5d522"
+    },
+    {
+      "path": "data/catalog/hku.json",
+      "bytes": 730,
+      "sha256": "ea28500d839664de2c6b15b938d1aa98ca5916bf71cd34234ff83f53cef88098"
+    },
+    {
+      "path": "data/catalog/pm25.json",
+      "bytes": 682,
+      "sha256": "731f0c78d4cec7dc598984c9cff6937b472cf85b2af76594e70b8d6cf9568856"
+    },
+    {
+      "path": "data/catalog/products.json",
+      "bytes": 5299,
+      "sha256": "f280fad63a242535d3e79f0ed37515f16e78a7af12dfd3e10db27f31fa4f05b3"
+    },
+    {
+      "path": "data/catalog/vegetation.json",
+      "bytes": 698,
+      "sha256": "2a89f27d8f7e9c764fb0c0ec9b8a05fed76a6b54413ad44d915099a41c158b4d"
+    },
+    {
+      "path": "data/dictionaries/columns.json",
+      "bytes": 113436,
+      "sha256": "0f3a0aa323eb1d56c9d4c15d1efd6441b08f74a746d5d0957698d171e1158838"
+    },
+    {
+      "path": "data/geography/bolivia339_2015.cpg",
+      "bytes": 5,
+      "sha256": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824"
+    },
+    {
+      "path": "data/geography/bolivia339_2015.dbf",
+      "bytes": 181687,
+      "sha256": "4ee38c62b5ca688fc7e194fd219403148daeaa1c64c30f1046f8ddb597bb023c"
+    },
+    {
+      "path": "data/geography/bolivia339_2015.prj",
+      "bytes": 145,
+      "sha256": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4"
+    },
+    {
+      "path": "data/geography/bolivia339_2015.shp",
+      "bytes": 317060,
+      "sha256": "54e6c1d529b39df283d7f4d9d6297ba6f6f1c5b97122c4371815d7b842382ea1"
+    },
+    {
+      "path": "data/geography/bolivia339_2015.shx",
+      "bytes": 2812,
+      "sha256": "1b2340d7717287a692e83ad3f715b365e017d540112875d9deb184b2bb1f25ea"
+    },
+    {
+      "path": "data/geography/bolivia339_2015.zip",
+      "bytes": 237475,
+      "sha256": "283f5d22de4ef1c267f48cf831059ad1faaca92b390f79d2fec86ba70ffbd3f0"
+    },
+    {
+      "path": "data/geography/crosswalk_cna2013_geo4bolivia339.csv",
+      "bytes": 137407,
+      "sha256": "8c7d7079978e91a3d5724938180ad0182e400551c3504a5db89778ac681ff2bd"
+    },
+    {
+      "path": "data/recipes/blackmarble-base.json",
+      "bytes": 63101,
+      "sha256": "872707f48488060af3722d889cee9e4781b4254c909142bc8c4ff75406b23e55"
+    },
+    {
+      "path": "data/recipes/era5-base.json",
+      "bytes": 1438,
+      "sha256": "e476f35b1844c15b537f99212bba0dac7d19b94279f856b38478646937a484d9"
+    },
+    {
+      "path": "data/recipes/fire-base.json",
+      "bytes": 11059,
+      "sha256": "7e18fb2f42b4aba00290592b1d3b033364549c4d71f5f57cc3ca51e4d5a6ef7c"
+    },
+    {
+      "path": "data/recipes/gpm-base.json",
+      "bytes": 9867,
+      "sha256": "885624f8fdb2aff22ba004f4db882873c6258fbaaa0c29c450c3d92ca746f27f"
+    },
+    {
+      "path": "data/recipes/hku-base.json",
+      "bytes": 11663,
+      "sha256": "cb39566cfd658e5e799bafeb90fcbc0f018837ea067dcd16302afb65bddcdfce"
+    },
+    {
+      "path": "data/recipes/pm25-base.json",
+      "bytes": 10198,
+      "sha256": "d455d088b620f986c375a26cd16bb8258b7cc754f5bd3f28adfa6b4650ada19f"
+    },
+    {
+      "path": "data/recipes/vegetation-base.json",
+      "bytes": 11532,
+      "sha256": "c0d85fb877e3c4936bab528b3d2781dc8c05b14cf6c8887c7da35b4b835c4fdb"
+    },
+    {
+      "path": "public/assets/hero-satellites-v2.webp",
+      "bytes": 416480,
+      "sha256": "b4378c40ee86dd9a2b1b8c895a98e4d8496a3f6fad27e90a21ffa1f5b1870822"
+    },
+    {
+      "path": "public/catalog/blackmarble.json",
+      "bytes": 137518,
+      "sha256": "fc44d6948f9fc64855503ed2b3993cfb22506aed7ae36eadff39c7441653b903"
+    },
+    {
+      "path": "public/catalog/era5.json",
+      "bytes": 23472,
+      "sha256": "2e45d96edc8424245c2d143f3093870641cafbab0abbc77444759970f818cab7"
+    },
+    {
+      "path": "public/catalog/fire.json",
+      "bytes": 9083,
+      "sha256": "b4aac5d2fa283ff7d0d429557c14265668b5152ab1f91fff8f08d747e7d88a68"
+    },
+    {
+      "path": "public/catalog/geography.json",
+      "bytes": 85244,
+      "sha256": "72b000b2bad7a74f78e5d79cdcf5dff2b2b6e77488cfd65f8a1a39513f2c00cc"
+    },
+    {
+      "path": "public/catalog/gpm.json",
+      "bytes": 21466,
+      "sha256": "7855f65a53e02f21d89f6ee9d29e6065b3b788fe1d6f5ef5213496f5238a5347"
+    },
+    {
+      "path": "public/catalog/hku.json",
+      "bytes": 15463,
+      "sha256": "fbc316d1b2375f136d072ae9f5da47fb7af4871cde62603f36574746265ee7aa"
+    },
+    {
+      "path": "public/catalog/index.json",
+      "bytes": 6210,
+      "sha256": "9cd6f7fa03cecaac845e67f928e0b5532027b69ad27ce0ccc8ea54c436b5404c"
+    },
+    {
+      "path": "public/catalog/pm25.json",
+      "bytes": 22638,
+      "sha256": "9ae488d4f4d997dab1c2178961f126c4ad8a23ffc83f99e7833111cdad2a59ec"
+    },
+    {
+      "path": "public/catalog/vegetation.json",
+      "bytes": 37680,
+      "sha256": "0c0df79a2129e6082f6765fc43409a9bf666af4e56372998d844bfe4e7cdf04c"
+    },
+    {
+      "path": "public/docs/architecture.md",
+      "bytes": 9215,
+      "sha256": "ccdf5f82e5ca0e2826739f859bd354070fb876694aa27ed70127cf73a5cc5a13"
+    },
+    {
+      "path": "public/docs/blackmarble-variables.md",
+      "bytes": 3448,
+      "sha256": "e330f8ae299cbe2857580dac6e1f04f29fb64892c04716320ace76e0d15d61c2"
+    },
+    {
+      "path": "public/docs/hero-production.md",
+      "bytes": 1742,
+      "sha256": "1c5687342862491cce13f4c81fd62820d1cfa3c993dec86f9f2f43998b38506e"
+    },
+    {
+      "path": "public/docs/interface.md",
+      "bytes": 2367,
+      "sha256": "49138ce12261c27bc4e8f5fe4ec8ab3c4b06f88f319262437e17e7eff09e8d3b"
+    },
+    {
+      "path": "public/docs/methods.md",
+      "bytes": 8287,
+      "sha256": "c136914d7cc4d80a644c17d410d3fec954ad5db1c0f7867e7485444569d0c534"
+    },
+    {
+      "path": "public/docs/nightlights-colours.md",
+      "bytes": 3443,
+      "sha256": "ef9009dadcb257ef50a5f4f7de088bcf25056ed71ab2ff31a38066d37b54ce32"
+    },
+    {
+      "path": "public/docs/publication.md",
+      "bytes": 5661,
+      "sha256": "63873724b21b61c40382761799b0b66460467fb0b5d2b8fa967f9a3857b31054"
+    },
+    {
+      "path": "public/docs/reproducibility.md",
+      "bytes": 5220,
+      "sha256": "0c0a985c0cb796f3a7f7c0373b40cbbf0dc44595f7fcbf0ec78250bbc23312bc"
+    },
+    {
+      "path": "public/docs/visual-design.md",
+      "bytes": 14208,
+      "sha256": "2e6a1fa07442b837fa0379990926b227af71e0e22af51988bb0b715f17f5e06b"
+    },
+    {
+      "path": "public/docs/web-encoding.md",
+      "bytes": 1654,
+      "sha256": "30410d10ff2680e48ddbc0e7e6f0d9dbb74b0889c1d8585a109b28b13366963e"
+    },
+    {
+      "path": "public/geo/bolivia339.geojson",
+      "bytes": 918945,
+      "sha256": "52f50770b20fc8d73540151c1c625deec19ae712f44bcecb8ba2364f11620372"
+    },
+    {
+      "path": "public/geo/bolivia339.geojson.gz",
+      "bytes": 303353,
+      "sha256": "ca0cb8b6d121c0cccadc8ee5935432289967c03e339bcc7ff2a7a7915109e2bb"
+    },
+    {
+      "path": "tests/performance/advanced.py",
+      "bytes": 4647,
+      "sha256": "b896312e5588662a19c65c317574e74beb28625023151e12998a26fcbfa1a5ce"
+    },
+    {
+      "path": "tests/performance/benchmark.py",
+      "bytes": 6503,
+      "sha256": "bc64366171fa9e458f5864c8fdeb0e4d5fe90e0324f9e7b1a20f1c06e689d70d"
+    },
+    {
+      "path": "tests/performance/panel.py",
+      "bytes": 1498,
+      "sha256": "081cf065b2a9654a082e4649ce87f21eaf551fb151893e37dadb86d146c46156"
+    },
+    {
+      "path": "tests/performance/renderers.html",
+      "bytes": 3814,
+      "sha256": "edec785da54aa9eafada8c9e641d785b20c3fccaabdda0eed8dad401c34814da"
+    },
+    {
+      "path": "tests/performance/renderers.py",
+      "bytes": 575,
+      "sha256": "d77abed3e4fe6f8f9f79f3bcb8d6ba02c9d2bb3af00c7f4e46601eee8828b0e4"
+    },
+    {
+      "path": "tests/performance/revision_02.py",
+      "bytes": 3947,
+      "sha256": "a569911e5e80537e4e4df9e162d437d31faa8b5b898554e66038501a04a66b5a"
+    },
+    {
+      "path": "tests/scientific/blackmarble_extension.py",
+      "bytes": 3154,
+      "sha256": "66af97519895fc5b133033a2d3349aacbfdf97d5f780ef6fba69659714dc8d6b"
+    },
+    {
+      "path": "tests/scientific/csv_roundtrip.py",
+      "bytes": 1258,
+      "sha256": "15ee994eabe96e3a8c769fa5ad6fbcd1654d2c211631d470f3f95a20471f3fef"
+    },
+    {
+      "path": "tests/scientific/test_dates.py",
+      "bytes": 1796,
+      "sha256": "7a255c84c9218d3f45a2e20d2169c3dd78fc02c42cc668db8ec43b35197c4c3a"
+    },
+    {
+      "path": "tests/ui/check.py",
+      "bytes": 6223,
+      "sha256": "fa5fb2ddf1a65605bdd72ffa64eb4106e1df5667d60141372c5d5fc2c3889bd6"
+    },
+    {
+      "path": "tests/ui/portable.py",
+      "bytes": 3795,
+      "sha256": "6dfed4382a9a81bc6c9a98c1c50499975f3f06ada38c25b9426b32cc9c6a2d9e"
+    },
+    {
+      "path": "tests/ui/rankings_context.py",
+      "bytes": 6953,
+      "sha256": "a0ef340daa70a022fb36c4b23455037f49732016a5f20b58378582d07f2bcbf3"
+    },
+    {
+      "path": "tests/ui/raw_scope.py",
+      "bytes": 2531,
+      "sha256": "027f1c0665db70439455dc49a84bdc26de9cbd544f0d1b228580e43958440071"
+    },
+    {
+      "path": "tests/ui/revision_02.py",
+      "bytes": 12303,
+      "sha256": "6856246c23e8183874c93a6c0fab56bf7ef06bc1ff7d39e11b22e353e8404d80"
+    },
+    {
+      "path": "tests/ui/supplemental.py",
+      "bytes": 3697,
+      "sha256": "05b0c6ab089d6343e1aaef70ef41f4b8752d0e407d6f37ac18da99afa0e261f1"
+    },
+    {
+      "path": "tests/ui/temperature_mean.py",
+      "bytes": 6452,
+      "sha256": "520d8cbc01f27db9354665fce32fe08850bc93c4c2667b66e48e2b3ba9240b5d"
+    },
+    {
+      "path": "tests/ui/transformed_centres.py",
+      "bytes": 6600,
+      "sha256": "643d2bd25e6e4e2652dbe9cce7d1c10a313fcdf0519caac35018b9d8dbdc3b11"
+    },
+    {
+      "path": "public/downloads/download_manifest.json",
+      "bytes": 5354,
+      "sha256": "d5e45cda302102b63fd964349cf8f82c1d92061337feffbbf872e068710cf648"
+    }
+  ],
+  "files_count": 118,
+  "bytes": 5082049
+}

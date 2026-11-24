@@ -1,0 +1,208 @@
+[
+  {
+    "name": [
+      "Temperatura",
+      "Temperature"
+    ],
+    "unit": "°C",
+    "prefix": "temperature_",
+    "default": "base__temperature_mean",
+    "frequency": "monthly",
+    "source": "ECMWF/ERA5_LAND/MONTHLY_AGGR",
+    "resolution": "11132 m reduction; reanalysis",
+    "status": "qualified",
+    "note": [
+      "Cobertura espacial sin certificar; 27 municipios superan 1. Temperaturas conservadas.",
+      "Spatial coverage uncertified; 27 municipalities exceed 1. Temperatures preserved."
+    ],
+    "id": "era5",
+    "rows": 148143,
+    "first": "1990-01",
+    "last": "2026-05",
+    "period_count": 437,
+    "variant_names": [
+      "base"
+    ],
+    "elapsed_seconds": 11.851744999999937,
+    "matrix_width": 13,
+    "snapshot": "c05-local-v1",
+    "source_exploration_required": false
+  },
+  {
+    "name": [
+      "Precipitación",
+      "Precipitation"
+    ],
+    "unit": "mm/month",
+    "prefix": "precip_",
+    "default": "base__precip_mean",
+    "frequency": "monthly",
+    "source": "NASA/GPM_L3/IMERG_V07",
+    "resolution": "11132 m reduction; 30-minute source",
+    "status": "qualified",
+    "note": [
+      "Lluvia numérica recuperada. Cobertura espacial sin certificar; 27 municipios superan 1.",
+      "Numeric rainfall recovered. Spatial coverage uncertified; 27 municipalities exceed 1."
+    ],
+    "id": "gpm",
+    "rows": 105768,
+    "first": "2000-06",
+    "last": "2026-05",
+    "period_count": 312,
+    "variant_names": [
+      "base"
+    ],
+    "elapsed_seconds": 8.815378400002373,
+    "matrix_width": 13,
+    "snapshot": "c05-local-v1",
+    "source_exploration_required": false
+  },
+  {
+    "name": [
+      "Luces nocturnas · HKU",
+      "Night lights · HKU"
+    ],
+    "unit": "source radiance",
+    "prefix": "",
+    "default": "base__mean",
+    "frequency": "monthly",
+    "source": "HKU VIIRS-like monthly; DOI 10.25442/hku.31321315.v2",
+    "resolution": "15 arc seconds (~500 m)",
+    "status": "qualified",
+    "note": [
+      "Serie municipal fuente sin filtros locales. La historia temprana es reconstruida por el proveedor.",
+      "Municipal source series without local filtering. Early history is reconstructed by the provider."
+    ],
+    "id": "hku",
+    "rows": 133227,
+    "first": "1992-04",
+    "last": "2024-12",
+    "period_count": 393,
+    "variant_names": [
+      "base"
+    ],
+    "elapsed_seconds": 7.936649600000237,
+    "matrix_width": 8,
+    "snapshot": "c05-local-v1",
+    "source_exploration_required": false
+  },
+  {
+    "name": [
+      "Área quemada",
+      "Burned area"
+    ],
+    "unit": "km²",
+    "prefix": "burned_",
+    "default": "base__burned_area_km2",
+    "frequency": "monthly",
+    "source": "MODIS/061/MCD64A1",
+    "resolution": "500 m",
+    "status": "blocked",
+    "note": [
+      "Exploración de fuente: conteos y QA no reconciliados. Cero sin área válida no significa ausencia de fuego.",
+      "Source exploration: counts and QA unresolved. Zero without valid area does not mean no fire."
+    ],
+    "id": "fire",
+    "rows": 104073,
+    "first": "2000-11",
+    "last": "2026-05",
+    "period_count": 307,
+    "variant_names": [
+      "base"
+    ],
+    "elapsed_seconds": 5.469490700001188,
+    "matrix_width": 5,
+    "snapshot": "c05-local-v1",
+    "source_exploration_required": true
+  },
+  {
+    "name": [
+      "Vegetación · NDVI/EVI",
+      "Vegetation · NDVI/EVI"
+    ],
+    "unit": "dimensionless",
+    "prefix": "ndvi_",
+    "default": "base__ndvi_mean",
+    "frequency": "monthly",
+    "source": "MODIS/061/MOD13Q1",
+    "resolution": "250 m; 16-day composites",
+    "status": "qualified",
+    "note": [
+      "Mediana de compuestos iniciados en el mes; cobertura baja explícita. No es una media diaria.",
+      "Median of composites starting in the month; low coverage explicit. Not a daily mean."
+    ],
+    "id": "vegetation",
+    "rows": 106785,
+    "first": "2000-03",
+    "last": "2026-05",
+    "period_count": 315,
+    "variant_names": [
+      "base"
+    ],
+    "elapsed_seconds": 13.62395480000123,
+    "matrix_width": 23,
+    "snapshot": "c05-local-v1",
+    "source_exploration_required": false
+  },
+  {
+    "name": [
+      "Calidad del aire · PM2.5",
+      "Air quality · PM2.5"
+    ],
+    "unit": "µg/m³",
+    "prefix": "pm25_",
+    "default": "base__pm25_mean",
+    "frequency": "monthly",
+    "source": "SatPM V6.GL.03",
+    "resolution": "0.01 degrees",
+    "status": "qualified",
+    "note": [
+      "Estimación modelada, no estación municipal. Extremos y revisión cartográfica upstream pendientes.",
+      "Modelled estimate, not a municipal monitor. Extremes and upstream map revision pending."
+    ],
+    "id": "pm25",
+    "rows": 109836,
+    "first": "1998-01",
+    "last": "2024-12",
+    "period_count": 324,
+    "variant_names": [
+      "base"
+    ],
+    "elapsed_seconds": 7.837152200001583,
+    "matrix_width": 13,
+    "snapshot": "c05-local-v1",
+    "source_exploration_required": false
+  },
+  {
+    "name": [
+      "Black Marble · diario",
+      "Black Marble · daily"
+    ],
+    "unit": "source radiance · scale unverified",
+    "prefix": "",
+    "default": "base__sum",
+    "frequency": "daily",
+    "source": "VNP46A2 collection 5200, Gap_Filled_DNB_BRDF-Corrected_NTL",
+    "resolution": "15 arc seconds (~500 m)",
+    "status": "blocked",
+    "note": [
+      "Exploración de fuente con relleno NASA. Escala, QA y extractor original pendientes; no certificada.",
+      "NASA gap-filled source exploration. Scale, QA and original extractor pending; uncertified."
+    ],
+    "id": "blackmarble",
+    "rows": 1778733,
+    "first": "2012-01-19",
+    "last": "2026-05-31",
+    "period_count": 5247,
+    "variant_names": [
+      "base"
+    ],
+    "elapsed_seconds": 108.29356710000138,
+    "matrix_width": 26,
+    "snapshot": "c05-local-v2",
+    "source_exploration_required": false,
+    "series_layout": "municipality_all_variables",
+    "map_layout": "month_blocks",
+    "encoding": "C05SHF02 + gzip; exact Float64; column-major byte shuffle"
+  }
+]

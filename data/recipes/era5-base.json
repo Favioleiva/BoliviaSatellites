@@ -1,0 +1,37 @@
+{
+  "recipe_id": "era5-base",
+  "product": "era5",
+  "frequency": "monthly",
+  "resolution": "11132 m reduction; reanalysis",
+  "source": "ECMWF/ERA5_LAND/MONTHLY_AGGR",
+  "method": {
+    "band": "temperature_2m",
+    "conversion": "K - 273.15 -> Celsius",
+    "temporal": "Monthly aggregate of hourly reanalysis",
+    "mask": "Supplied GEE band mask; spatial coverage diagnostic unresolved"
+  },
+  "local_pipeline": "code/run.py",
+  "workflow_copies": [
+    {
+      "path": "code/source_workflows/era5/TemperatureBolivia.txt",
+      "sha256": "8213144f671a2be5cee1708068046a632e08f035bdaada062cc7475c019ae652"
+    }
+  ],
+  "immutable_sources": [
+    {
+      "product": "era5",
+      "path": "Inputs/Satellites/ERA5_Land_Temperature_Monthly/Inputs/GEE_Bolivia_ERA5Land_Temperature_Monthly-20261122T024005Z-1-001.zip",
+      "sha256": "bc5fbaffe24740399c0caecb92d9831c72b8e0d7ecd9683c419b982f9e86b821",
+      "bytes": 21467970
+    },
+    {
+      "product": "era5",
+      "path": "Inputs/Satellites/ERA5_Land_Temperature_Monthly/Inputs/TemperatureBolivia.txt",
+      "sha256": "8213144f671a2be5cee1708068046a632e08f035bdaada062cc7475c019ae652",
+      "bytes": 8307
+    }
+  ],
+  "level_A": "Lossless reconstruction from supplied municipal aggregates",
+  "level_B": "See scientific limitations; no new extraction executed",
+  "geography": "Original Agriculture 339; asdf_id join; original codes retained"
+}

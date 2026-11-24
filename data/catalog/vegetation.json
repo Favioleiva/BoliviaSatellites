@@ -1,0 +1,26 @@
+{
+  "name": [
+    "Vegetación · NDVI/EVI",
+    "Vegetation · NDVI/EVI"
+  ],
+  "unit": "dimensionless",
+  "prefix": "ndvi_",
+  "default": "ndvi_mean",
+  "frequency": "monthly",
+  "source": "MODIS/061/MOD13Q1",
+  "resolution": "250 m; 16-day composites",
+  "status": "qualified",
+  "note": [
+    "Mediana de compuestos iniciados en el mes; cobertura baja explícita. No es una media diaria.",
+    "Median of composites starting in the month; low coverage explicit. Not a daily mean."
+  ],
+  "id": "vegetation",
+  "rows": 106785,
+  "first": "2000-03",
+  "last": "2026-05",
+  "period_count": 315,
+  "variant_names": [
+    "base"
+  ],
+  "elapsed_seconds": 13.62395480000123
+}

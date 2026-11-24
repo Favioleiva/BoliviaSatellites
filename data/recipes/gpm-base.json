@@ -1,0 +1,199 @@
+{
+  "recipe_id": "gpm-base",
+  "product": "gpm",
+  "frequency": "monthly",
+  "resolution": "11132 m reduction; 30-minute source",
+  "source": "NASA/GPM_L3/IMERG_V07",
+  "method": {
+    "band": "precipitation",
+    "conversion": "sum of half-hourly mm/h * 0.5 h -> mm/month",
+    "temporal": "Calendar month; image count equals days * 48",
+    "mask": "Supplied band validity; per-pixel temporal QA not certified"
+  },
+  "local_pipeline": "code/run.py",
+  "workflow_copies": [
+    {
+      "path": "code/source_workflows/gpm/RainBolivia.txt",
+      "sha256": "06eb891c831a19da0a2e126cf58da0ac7dda38c2810f8ec44f99743d78007a2d"
+    }
+  ],
+  "immutable_sources": [
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2000_CORRECTED.csv",
+      "sha256": "9a62bb24afaf7fc2fad218bc3fa3ef33f53368567284f345cdc08db3c082615a",
+      "bytes": 1274154
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2001_CORRECTED.csv",
+      "sha256": "3a14d1d0cc53f05c1c346dc71b5fd16bbd77cdbdf8907eefa5a288b2f44ec025",
+      "bytes": 2183409
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2002_CORRECTED.csv",
+      "sha256": "e04b292303e637161ee42678cbd2e53663195fa0a0276e893d8bd1bcc134108f",
+      "bytes": 2183088
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2003_CORRECTED.csv",
+      "sha256": "0983a614a5c245fa863a9863fbe3b94a4cb82a5f035d9ffa07ab826eb4baf8df",
+      "bytes": 2184697
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2004_CORRECTED.csv",
+      "sha256": "a7a70abc551f8bf97c9d97749cd3af0ebe9fe255a719dc266f59e89c4039f2b9",
+      "bytes": 2182836
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2005_CORRECTED(1).csv",
+      "sha256": "7526d951bc36728eb0dc58a25b95d01441c81408ecab0a9a1be0d13f5a905c5f",
+      "bytes": 2175844
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2005_CORRECTED.csv",
+      "sha256": "5ff3a9ab1c331c3c8667ab90b2d8440ada109a789226d1c5802174ea72d17d43",
+      "bytes": 182334
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2006_CORRECTED.csv",
+      "sha256": "3b9e5ed7fd0d2d8bb4117d78c6e92d8cb387c51acf233d6d0139518a7702ca43",
+      "bytes": 2181696
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2007_CORRECTED.csv",
+      "sha256": "aa663404f700f073839c3bb94711805de10bc8d7a68ecbab49fb1734d2a52483",
+      "bytes": 2182020
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2008_CORRECTED.csv",
+      "sha256": "f38dde70ca3fc2342a0251a66c4f4f87e877845a143962974ea4e15157397d8a",
+      "bytes": 2179294
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2009_CORRECTED.csv",
+      "sha256": "ce129b1f92898e669fa6c335b6d699e7bd76ce813cd84a3d5c72c5a971a1b2ca",
+      "bytes": 2181012
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2010_CORRECTED.csv",
+      "sha256": "dfec841b5b223699ff16280a87ce07eb30c2ecd9a2cc9aa80da0d13775165993",
+      "bytes": 2178717
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2011_CORRECTED.csv",
+      "sha256": "f0f6918b01e0dfc0603f56bb7547899186cddadc97ff59cb2bf23286d5fa4f89",
+      "bytes": 2183720
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2012_CORRECTED.csv",
+      "sha256": "bb323288ef4b5daf16e980279b0bd68d36f135fe701d2bd4c1d2e7ecfc66dd15",
+      "bytes": 2181944
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2013_CORRECTED.csv",
+      "sha256": "09a68f057e931115069dafce09c867f8249ba99dfeed7c8d393273992580a471",
+      "bytes": 2181510
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2014_CORRECTED.csv",
+      "sha256": "ea5d1582885853e83db5e6b1fa12b16c80f51971b215e63a941bb7fa006bbbcf",
+      "bytes": 2179271
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2015_CORRECTED.csv",
+      "sha256": "0fd27802f7367c9064b8db1ea363e78cdd8e7c6c10d5a32d8b4fade4413aa5d1",
+      "bytes": 2180645
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2016_CORRECTED.csv",
+      "sha256": "2eda79eab0b038f949498a0e6fea5ebf5d6d7699b48bb547b2c3c3f00add9616",
+      "bytes": 2177248
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2017_CORRECTED.csv",
+      "sha256": "2cf2f09d1644a5a4364748304963525bcb6741089f2ad3c38e27d52e5e65bcf9",
+      "bytes": 2174760
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2018_CORRECTED.csv",
+      "sha256": "d08e34a2a6af43f634a4eeda5e6007f2c1240b8f65271b67783fbb1c5e18a040",
+      "bytes": 2183162
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2019_CORRECTED.csv",
+      "sha256": "07ab972bb7cb22eecc549ab225319c7558a8dbfecc35111aee4e0b1dd47fbcce",
+      "bytes": 2176570
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2020_CORRECTED.csv",
+      "sha256": "2fc88b3f172f06d8c1e3906304a7b60e04db61e50bbe9e422f373c13ffa5980d",
+      "bytes": 2178240
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2021_CORRECTED.csv",
+      "sha256": "d097ea5f278d84dd2d8ed6b97f0833337eb18cd2fbf8ceab0e46088e85349a27",
+      "bytes": 2180985
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2022_CORRECTED.csv",
+      "sha256": "2be347dbdd0b6aa9157a7e86330fe5d14175a7f130599f2291a6f1ca2124fd2a",
+      "bytes": 2176734
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2023_CORRECTED.csv",
+      "sha256": "7aef1891cf400b4617306cafc47a333a456419ea1cf9c390eb6ed32e2df7e2ae",
+      "bytes": 2157073
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2024_CORRECTED.csv",
+      "sha256": "c94b61fab1f8b60fa5f58db410a6f3328b44314f37e26a411ed551c28365d182",
+      "bytes": 2168007
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2025_CORRECTED.csv",
+      "sha256": "263f705328b430ab0429b804db89d42f85af1fa12b143583ed4ba47413179a07",
+      "bytes": 2179663
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/Rain/Bolivia_GPM_IMERG_V07_Precipitation_Monthly_Municipalities_2026_CORRECTED.csv",
+      "sha256": "61751900cc9b13b0b40cb86f3a55d5f2e2b6ff93bc1a56e3ea8ffe6657359d8a",
+      "bytes": 908985
+    },
+    {
+      "product": "gpm",
+      "path": "Inputs/Satellites/GPM_IMERG_V07_Precipitation_Monthly/Inputs/RainBolivia.txt",
+      "sha256": "06eb891c831a19da0a2e126cf58da0ac7dda38c2810f8ec44f99743d78007a2d",
+      "bytes": 11234
+    }
+  ],
+  "level_A": "Lossless reconstruction from supplied municipal aggregates",
+  "level_B": "See scientific limitations; no new extraction executed",
+  "geography": "Original Agriculture 339; asdf_id join; original codes retained"
+}

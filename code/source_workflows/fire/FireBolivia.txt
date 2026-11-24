@@ -1,0 +1,612 @@
+// ============================================================================
+// BOLIVIA — MONTHLY BURNED AREA PANEL
+// MODIS MCD64A1 Collection 6.1
+// Geography: 339 municipalities, 2015 boundaries
+// Period: 2000-11 to 2026-05
+// Native resolution: 500 m
+// ============================================================================
+
+// 1. SETTINGS
+
+var ASSET =
+  'projects/ee-faviolc2/assets/bolivia339_2015';
+
+var START_YEAR = 2000;
+var START_MONTH = 11;
+
+var END_YEAR = 2026;
+var END_MONTH = 5;
+
+// SMOKE_TEST: all 12 months of 2017.
+// PRODUCTION: complete extraction period.
+var EXPORT_MODE = 'PRODUCTION';
+
+var DRIVE_FOLDER =
+  'GEE_Bolivia_MCD64A1_Fire_Monthly';
+
+var SCALE = 500;
+var TILE_SCALE = 8;
+var MAX_PIXELS_PER_REGION = 1e8;
+
+
+// 2. MUNICIPALITIES
+
+function code6(value) {
+  return ee.String('000000')
+    .cat(ee.String(value))
+    .slice(-6);
+}
+
+var municipalities = ee.FeatureCollection(ASSET)
+  .map(function(f) {
+
+    f = ee.Feature(f);
+
+    return f.set({
+      mun_code: code6(f.get('mun_code')),
+      cna_code: code6(f.get('cna_code')),
+      municipality_area_m2: f.geometry().area(1)
+    });
+  });
+
+print('Municipalities:', municipalities.size());
+
+print(
+  'Distinct mun_code:',
+  municipalities.aggregate_count_distinct('mun_code')
+);
+
+print(
+  'Distinct cna_code:',
+  municipalities.aggregate_count_distinct('cna_code')
+);
+
+print('First municipality:', municipalities.first());
+
+Map.centerObject(municipalities, 6);
+
+Map.addLayer(
+  municipalities.style({
+    color: 'FFFFFF',
+    fillColor: '00000000',
+    width: 1
+  }),
+  {},
+  'Bolivia municipalities',
+  false
+);
+
+
+// 3. MODIS MCD64A1
+
+var mcd64 = ee.ImageCollection(
+  'MODIS/061/MCD64A1'
+).select(['BurnDate', 'QA']);
+
+print('MCD64A1 first image:', mcd64.first());
+
+print(
+  'MCD64A1 available start:',
+  ee.Date(mcd64.aggregate_min('system:time_start'))
+);
+
+print(
+  'MCD64A1 available end:',
+  ee.Date(mcd64.aggregate_max('system:time_start'))
+);
+
+
+// 4. QA MASK
+
+// QA bit 0 = land
+// QA bit 1 = sufficient valid observations
+
+function validMCD64Mask(image) {
+
+  var qa = image.select('QA');
+
+  var land = qa.bitwiseAnd(1).eq(1);
+
+  var valid = qa.bitwiseAnd(2).neq(0);
+
+  return land.and(valid);
+}
+
+
+// 5. MONTHLY FIRE IMAGE
+
+function monthlyImage(year, month) {
+
+  year = ee.Number(year);
+  month = ee.Number(month);
+
+  var start = ee.Date.fromYMD(year, month, 1);
+  var end = start.advance(1, 'month');
+
+  var collection = mcd64.filterDate(start, end);
+  var nImages = collection.size();
+
+  // Avoid converting missing imagery into zero fires.
+  var empty = ee.Image.constant([0, 0])
+    .rename(['BurnDate', 'QA'])
+    .updateMask(ee.Image.constant(0));
+
+  var source = ee.Image(
+    ee.Algorithms.If(
+      nImages.gt(0),
+      collection.first(),
+      empty
+    )
+  );
+
+  var validMask = validMCD64Mask(source);
+
+  // 1 = burned, 0 = valid unburned land.
+  var burned = source
+    .select('BurnDate')
+    .gt(0)
+    .rename('burned')
+    .updateMask(validMask)
+    .toByte();
+
+  // Physical burned area in square metres.
+  var burnedArea = ee.Image.pixelArea()
+    .updateMask(burned.eq(1))
+    .rename('burned_area_m2');
+
+  // Valid observed land area.
+  var validArea = ee.Image.pixelArea()
+    .updateMask(validMask)
+    .rename('valid_area_m2');
+
+  return burned
+    .addBands(burnedArea)
+    .addBands(validArea)
+    .set({
+      year: year,
+      month: month,
+
+      ym: year.format('%04d')
+        .cat('-')
+        .cat(month.format('%02d')),
+
+      'system:time_start': start.millis(),
+
+      product: 'MODIS/061/MCD64A1',
+      product_version: '061',
+      source_frequency: 'monthly',
+      monthly_method: 'native_monthly_product',
+
+      qa_rule:
+        'QA bit 0 = land; QA bit 1 = valid data',
+
+      burn_rule: 'BurnDate > 0',
+
+      n_source_images: nImages,
+      source_available: nImages.gt(0),
+      nominal_scale_m: SCALE
+    });
+}
+
+
+// 6. UNIVERSAL SPATIAL REDUCER
+
+// Explicit output names for single-band reduction.
+
+var reducer = ee.Reducer.mean()
+  .setOutputs(['burned_mean'])
+
+  .combine({
+    reducer2: ee.Reducer.median()
+      .setOutputs(['burned_median']),
+    sharedInputs: true
+  })
+
+  .combine({
+    reducer2: ee.Reducer.minMax()
+      .setOutputs(['burned_min', 'burned_max']),
+    sharedInputs: true
+  })
+
+  .combine({
+    reducer2: ee.Reducer.stdDev()
+      .setOutputs(['burned_stddev']),
+    sharedInputs: true
+  })
+
+  .combine({
+    reducer2: ee.Reducer.percentile([
+      10, 25, 75, 90
+    ]).setOutputs([
+      'burned_p10',
+      'burned_p25',
+      'burned_p75',
+      'burned_p90'
+    ]),
+    sharedInputs: true
+  })
+
+  .combine({
+    reducer2: ee.Reducer.count()
+      .setOutputs(['burned_count']),
+    sharedInputs: true
+  })
+
+  .combine({
+    reducer2: ee.Reducer.sum()
+      .setOutputs(['burned_sum']),
+    sharedInputs: true
+  });
+
+
+// 7. NULL-SAFE HELPERS
+
+function safeDifference(a, b) {
+
+  return ee.Algorithms.If(
+    ee.Algorithms.IsEqual(a, null),
+    null,
+    ee.Algorithms.If(
+      ee.Algorithms.IsEqual(b, null),
+      null,
+      ee.Number(a).subtract(ee.Number(b))
+    )
+  );
+}
+
+function safeDivide(a, b) {
+
+  return ee.Algorithms.If(
+    ee.Algorithms.IsEqual(a, null),
+    null,
+    ee.Algorithms.If(
+      ee.Algorithms.IsEqual(b, null),
+      null,
+      ee.Algorithms.If(
+        ee.Number(b).gt(0),
+        ee.Number(a).divide(ee.Number(b)),
+        null
+      )
+    )
+  );
+}
+
+function safeKm2(a) {
+
+  return ee.Algorithms.If(
+    ee.Algorithms.IsEqual(a, null),
+    null,
+    ee.Number(a).divide(1e6)
+  );
+}
+
+
+// 8. MONTHLY MUNICIPAL STATISTICS
+
+function monthlyStats(year, month) {
+
+  year = ee.Number(year);
+  month = ee.Number(month);
+
+  var image = monthlyImage(year, month);
+
+  // 8A. Binary burned statistics
+
+  var stats = image.select('burned')
+    .reduceRegions({
+      collection: municipalities,
+      reducer: reducer,
+      scale: SCALE,
+      tileScale: TILE_SCALE,
+      maxPixelsPerRegion: MAX_PIXELS_PER_REGION
+    });
+
+  // 8B. Burned area totals
+
+  var burnedAreaStats = image
+    .select('burned_area_m2')
+    .reduceRegions({
+      collection: municipalities,
+      reducer: ee.Reducer.sum()
+        .setOutputs(['total_burned_area_m2']),
+      scale: SCALE,
+      tileScale: TILE_SCALE,
+      maxPixelsPerRegion: MAX_PIXELS_PER_REGION
+    });
+
+  // 8C. Valid area totals
+
+  var validAreaStats = image
+    .select('valid_area_m2')
+    .reduceRegions({
+      collection: municipalities,
+      reducer: ee.Reducer.sum()
+        .setOutputs(['total_valid_area_m2']),
+      scale: SCALE,
+      tileScale: TILE_SCALE,
+      maxPixelsPerRegion: MAX_PIXELS_PER_REGION
+    });
+
+  // 8D. Join burned area statistics
+
+  var joinedBurned = ee.Join.saveFirst(
+    'burn_area_feature'
+  ).apply({
+    primary: stats,
+    secondary: burnedAreaStats,
+    condition: ee.Filter.equals({
+      leftField: 'mun_code',
+      rightField: 'mun_code'
+    })
+  });
+
+  // 8E. Join valid observed area
+
+  var joinedAll = ee.Join.saveFirst(
+    'valid_area_feature'
+  ).apply({
+    primary: ee.FeatureCollection(joinedBurned),
+    secondary: validAreaStats,
+    condition: ee.Filter.equals({
+      leftField: 'mun_code',
+      rightField: 'mun_code'
+    })
+  });
+
+  // 8F. Final output
+
+  return ee.FeatureCollection(joinedAll)
+    .map(function(f) {
+
+      f = ee.Feature(f);
+
+      var burnFeature = ee.Feature(
+        f.get('burn_area_feature')
+      );
+
+      var validFeature = ee.Feature(
+        f.get('valid_area_feature')
+      );
+
+      var burnedAreaM2 = burnFeature.get(
+        'total_burned_area_m2'
+      );
+
+      var validAreaM2 = validFeature.get(
+        'total_valid_area_m2'
+      );
+
+      var municipalityArea = f.get(
+        'municipality_area_m2'
+      );
+
+      var burnedPixels = f.get('burned_sum');
+      var validPixels = f.get('burned_count');
+
+      // A valid observation with no fires has zero
+      // burned area, not missing burned area.
+      var burnedAreaSafe = ee.Algorithms.If(
+        ee.Algorithms.IsEqual(burnedAreaM2, null),
+        ee.Algorithms.If(
+          ee.Number(validPixels).gt(0),
+          0,
+          null
+        ),
+        burnedAreaM2
+      );
+
+      return ee.Feature(null, {
+
+        // Geographic identifiers
+        mun_code: f.get('mun_code'),
+        cna_code: f.get('cna_code'),
+        municipio: f.get('municipio'),
+        depto: f.get('depto'),
+        provincia: f.get('provincia'),
+
+        map_name: f.get('map_name'),
+        map_year: f.get('map_year'),
+        census_yr: f.get('census_yr'),
+
+        // Time
+        year: year,
+        month: month,
+
+        ym: year.format('%04d')
+          .cat('-')
+          .cat(month.format('%02d')),
+
+        date: ee.Date.fromYMD(year, month, 1)
+          .format('YYYY-MM-dd'),
+
+        // Binary burned-mask statistics
+        burned_mean: f.get('burned_mean'),
+        burned_median: f.get('burned_median'),
+        burned_min: f.get('burned_min'),
+        burned_max: f.get('burned_max'),
+        burned_stddev: f.get('burned_stddev'),
+
+        burned_p10: f.get('burned_p10'),
+        burned_p25: f.get('burned_p25'),
+        burned_p75: f.get('burned_p75'),
+        burned_p90: f.get('burned_p90'),
+
+        burned_iqr: safeDifference(
+          f.get('burned_p75'),
+          f.get('burned_p25')
+        ),
+
+        // Valid pixel statistics
+        burned_valid_pixel_count: validPixels,
+
+        burned_valid_area_m2: validAreaM2,
+
+        burned_valid_area_share: safeDivide(
+          validAreaM2,
+          municipalityArea
+        ),
+
+        // Burned pixel statistics
+        burned_pixel_count: burnedPixels,
+
+        burned_pixel_share: safeDivide(
+          burnedPixels,
+          validPixels
+        ),
+
+        // Physical burned area
+        burned_area_m2: burnedAreaSafe,
+
+        burned_area_km2: safeKm2(
+          burnedAreaSafe
+        ),
+
+        burned_area_share: safeDivide(
+          burnedAreaSafe,
+          municipalityArea
+        ),
+
+        municipality_area_m2: municipalityArea,
+
+        // Source availability
+        n_source_images: image.get('n_source_images'),
+        source_available: image.get('source_available'),
+
+        // Metadata
+        product: 'MODIS/061/MCD64A1',
+        product_version: '061',
+        source_frequency: 'monthly',
+        monthly_method: 'native_monthly_product',
+
+        qa_rule:
+          'QA bit 0 = land; QA bit 1 = valid data',
+
+        burn_rule: 'BurnDate > 0',
+        scale_m: SCALE
+      });
+    });
+}
+
+
+// 9. ANNUAL TABLE
+
+function tableForYear(year, firstMonth, lastMonth) {
+
+  var months = ee.List.sequence(
+    firstMonth,
+    lastMonth
+  );
+
+  var tables = months.map(function(month) {
+    return monthlyStats(year, month);
+  });
+
+  return ee.FeatureCollection(tables).flatten();
+}
+
+
+// 10. PREVIEW — AUGUST 2017
+
+var preview = monthlyImage(2017, 8);
+
+Map.addLayer(
+  preview.select('burned')
+    .clipToCollection(municipalities),
+  {
+    min: 0,
+    max: 1,
+    palette: ['FFFFFF', 'D73027']
+  },
+  'Bolivia burned pixels 2017-08',
+  true
+);
+
+Map.addLayer(
+  preview.select('burned_area_m2')
+    .clipToCollection(municipalities),
+  {
+    min: 0,
+    max: 250000,
+    palette: [
+      'FFFFB2',
+      'FECC5C',
+      'FD8D3C',
+      'F03B20',
+      'BD0026'
+    ]
+  },
+  'Burned area per pixel 2017-08',
+  false
+);
+
+print('Preview monthly fire image:', preview);
+
+print(
+  'Preview municipality statistics:',
+  monthlyStats(2017, 8).limit(5)
+);
+
+
+// 11. EXPORT ANNUAL CSV FILES
+
+var years = [];
+
+if (EXPORT_MODE === 'SMOKE_TEST') {
+
+  years = [2017];
+
+} else if (EXPORT_MODE === 'PRODUCTION') {
+
+  for (
+    var y = START_YEAR;
+    y <= END_YEAR;
+    y++
+  ) {
+    years.push(y);
+  }
+
+} else {
+
+  throw new Error(
+    'Invalid EXPORT_MODE. Use SMOKE_TEST or PRODUCTION.'
+  );
+}
+
+years.forEach(function(year) {
+
+  var firstMonth = 1;
+  var lastMonth = 12;
+
+  if (year === START_YEAR) {
+    firstMonth = START_MONTH;
+  }
+
+  if (year === END_YEAR) {
+    lastMonth = END_MONTH;
+  }
+
+  // Full 2017 smoke test.
+  if (EXPORT_MODE === 'SMOKE_TEST') {
+    firstMonth = 1;
+    lastMonth = 12;
+  }
+
+  var table = tableForYear(
+    year,
+    firstMonth,
+    lastMonth
+  );
+
+  var name =
+    'Bolivia_MCD64A1_Fire_Monthly_' +
+    'Municipalities_' + String(year);
+
+  Export.table.toDrive({
+    collection: table,
+    description: name,
+    folder: DRIVE_FOLDER,
+    fileNamePrefix: name,
+    fileFormat: 'CSV'
+  });
+
+});
