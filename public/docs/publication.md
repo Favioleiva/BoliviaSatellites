@@ -79,3 +79,30 @@ Las advertencias científicas y criterios pendientes acompañan la entrega; una
 prueba técnica PASS no equivale a aceptación humana. / No automatic publishing or
 deployment is configured, and no Netlify URL is claimed. Scientific limitations
 remain visible; technical PASS does not constitute human acceptance.
+
+## Revision 10: arranque Netlify / Netlify bootstrap
+
+La configuracion ahora restaura los datos antes del build mediante
+`python3 scripts/build_netlify.py`. Se requiere `BOLIVIA_DATA_RELEASE_TAG` en el
+entorno de build y una Release publicada con los 12 assets exactos del manifiesto.
+El script comprueba el inventario remoto, restaura ambos ZIP webdata con SHA-256
+y genera las URL de descargas en `dist`; reemplaza el paso manual de sustitucion
+antes descrito. Las fuentes conservan sus rutas locales. No sube archivos.
+
+The build now restores the exact webdata before compilation. Set
+`BOLIVIA_DATA_RELEASE_TAG` to a published tag containing all 12 matching download
+assets. Release metadata is validated (including SHA-256 when GitHub supplies it);
+restoration independently checks both archive hashes and every webdata member.
+Scientific ZIPs retain their recorded hashes without being downloaded into the
+site. The script generates pinned Release download links only in `dist`.
+
+La consulta del remoto durante esta correccion no encontro Releases. La subida
+de datos debe completarse por separado. El limite de 250 MiB permanece vigente:
+la restauracion no elimina ese bloqueo ni certifica un despliegue.
+
+No Release existed at the read-only check for this correction. Asset uploading is
+a separate step. The 250 MiB budget remains enforced; restoration alone does not
+make the current build deployable.
+
+Referencia tecnica / Technical reference:
+[Netlify build environment variables](https://docs.netlify.com/build/configure-builds/environment-variables/).

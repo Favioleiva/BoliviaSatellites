@@ -86,3 +86,18 @@ The new project-code license and redistribution selection await the supervisor's
 decision. Existing third-party licenses and notices remain in `LICENSES` and
 `THIRD_PARTY_NOTICES.txt`. No blanket open-data license is asserted. Nothing
 is published automatically.
+
+## Netlify bootstrap correction
+
+`netlify.toml` now runs `python3 scripts/build_netlify.py`. Set the exact published
+Release tag in the Netlify build environment variable `BOLIVIA_DATA_RELEASE_TAG`.
+The 12 assets in the download manifest must already be uploaded with matching
+sizes/hashes; the 10 portable ZIPs are independent of web bootstrap. The script
+validates the asset list, restores both webdata ZIPs using SHA-256, and writes
+versioned download URLs into `dist` only. Source manifests remain unchanged.
+
+Missing tag/Release produces `C05_RELEASE_REQUIRED` or `C05_RELEASE_UNAVAILABLE`.
+Restored data still trigger the existing `C05_BUDGET_EXCEEDED` (~287 versus 250 MiB).
+Do not retry deployment until both requirements are resolved. Nothing is published
+by the build. Offline QA: `python -B scripts/build_netlify.py --release-tag TAG --packages ../Packages`;
+this checks local packages and creates test URLs without verifying a remote Release.

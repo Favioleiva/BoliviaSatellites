@@ -22,8 +22,8 @@
     },
     {
       "path": "netlify.toml",
-      "bytes": 342,
-      "sha256": "2ecf3f1f83889351c52e314ad10bcc5515715a5fdd23325e5f5cbe103dddfc96"
+      "bytes": 522,
+      "sha256": "9540f36e3367514f7a58f0b065323a8543f5a4241206f8f8cdb4755dc08cdc11"
     },
     {
       "path": "package-lock.json",
@@ -37,13 +37,13 @@
     },
     {
       "path": "README.en.md",
-      "bytes": 4574,
-      "sha256": "b5d002503b7636eabfac27f6f40e23848599828f09ecfe0abd1db7d827187ab5"
+      "bytes": 5545,
+      "sha256": "1c28c2725c779996955f4518bfc466191f64d31c6e650b72487394ee171e6cb8"
     },
     {
       "path": "README.md",
-      "bytes": 5515,
-      "sha256": "581ac2ae94feb2b881b3a548c6a3ac97cd3b430a611e8b032a2bb77218072d4b"
+      "bytes": 6631,
+      "sha256": "21f85200c6264f1a9582b26e3b6296db2a8e1f502047c9133a188851774e8a48"
     },
     {
       "path": "requirements.lock",
@@ -127,8 +127,13 @@
     },
     {
       "path": "scripts/build.mjs",
-      "bytes": 1169,
-      "sha256": "408fdbad33e5dffb1e3cfc210651a29d2b5a02a8b29178e0203c90fa3ff3e4a8"
+      "bytes": 2334,
+      "sha256": "b5f6dc1d399eeef6f1d5d41ce05e5b71276781b2c0de96b9de72fd52bf31f571"
+    },
+    {
+      "path": "scripts/build_netlify.py",
+      "bytes": 4369,
+      "sha256": "db63c8c6740f9c691925254732abada8e8adad05c8f33923136d97071e730f8a"
     },
     {
       "path": "scripts/build_offline.py",
@@ -239,6 +244,11 @@
       "path": "src/worker.js",
       "bytes": 1509,
       "sha256": "470c3ed2d4e17d73fd2be3fb77cb04cbdac811f7be20555b2ef594781dafcbf2"
+    },
+    {
+      "path": "tests/test_netlify_bootstrap.py",
+      "bytes": 1929,
+      "sha256": "cb4e58eb498ffd3f0f0afdad37dafc4c4c482f4579373057a1e8073a811fdf55"
     },
     {
       "path": "code/source_workflows/blackmarble/Download_BlackMarble_Bolivia.py",
@@ -477,8 +487,8 @@
     },
     {
       "path": "public/docs/publication.md",
-      "bytes": 5661,
-      "sha256": "63873724b21b61c40382761799b0b66460467fb0b5d2b8fa967f9a3857b31054"
+      "bytes": 7334,
+      "sha256": "c8ce231a34b01f48f8e34e0c5b5cd4f0a3492bf1e374ff769644c0f9dce09aa1"
     },
     {
       "path": "public/docs/reproducibility.md",
@@ -593,9 +603,9 @@
     {
       "path": "public/downloads/download_manifest.json",
       "bytes": 5354,
-      "sha256": "d5e45cda302102b63fd964349cf8f82c1d92061337feffbbf872e068710cf648"
+      "sha256": "04b2460a41c2e2487aa7a0740a156c5c59521a4b12341d6c00bd0536c38647cc"
     }
   ],
-  "files_count": 118,
-  "bytes": 5082049
+  "files_count": 120,
+  "bytes": 5093452
 }

@@ -99,3 +99,20 @@ La licencia del codigo nuevo y la seleccion de archivos redistribuibles estan
 pendientes de decision humana. Se preservan las atribuciones y licencias de
 terceros en `LICENSES` y `THIRD_PARTY_NOTICES.txt`; no se aplica una licencia
 abierta general a todos los datos. Nada se publica automaticamente.
+
+## Correccion del arranque Netlify
+
+`netlify.toml` ejecuta ahora `python3 scripts/build_netlify.py`. Antes del build,
+restaura los arrays desde una Release publicada cuyo tag exacto se indica en
+`BOLIVIA_DATA_RELEASE_TAG` (variable del entorno de build de Netlify). Deben estar
+subidos los 12 assets del manifiesto de descargas, con los tamanos/hashes previstos.
+Los 10 ZIP portable son independientes del arranque web. El script valida los
+assets, restaura los dos webdata ZIP con SHA-256 y escribe las URL versionadas
+solo en el manifiesto de `dist`. No modifica el manifiesto fuente ni publica.
+
+Sin Release/tag emite `C05_RELEASE_REQUIRED` o `C05_RELEASE_UNAVAILABLE`.
+Con los datos presentes, el candidato actual sigue fallando `C05_BUDGET_EXCEEDED`
+(~287 MiB >250 MiB). Este cambio resuelve la dependencia ausente, no autoriza
+ignorar ese limite. No reintentar el despliegue hasta resolver ambos requisitos.
+Prueba offline: `python -B scripts/build_netlify.py --release-tag TAG --packages ../Packages`;
+verifica paquetes locales y produce enlaces de prueba, sin comprobar una Release remota.

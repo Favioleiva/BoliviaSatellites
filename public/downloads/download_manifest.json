@@ -1,6 +1,6 @@
 {
   "web_distribution": {
-    "bytes": 301129372,
+    "bytes": 301131048,
     "limit_bytes": 262144000,
     "status": "FAIL_BUDGET_LOCAL_CANDIDATE_ONLY"
   },
@@ -125,8 +125,8 @@
     {
       "name": "BoliviaSatellites_source.zip",
       "url": "downloads/packages/BoliviaSatellites_source.zip",
-      "bytes": 2137491,
-      "sha256": "8c27eb31d240d996b2d115850458eec44bde8bb02c8df73202ba7ee6fc6947e7",
+      "bytes": 2142665,
+      "sha256": "0dbe7e452529a985a35d75cd0a09142397c001041533780da8f85b56b4931d7d",
       "publication": "LOCAL_REVIEW_ONLY",
       "kind": "source"
     }
